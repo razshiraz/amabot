@@ -23,11 +23,13 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Logo() {
+function Logo({ size = "md" }: { size?: "md" | "lg" }) {
+  const iconCls = size === "lg" ? "h-20 w-20 md:h-24 md:w-24" : "h-14 w-14";
+  const wordCls = size === "lg" ? "h-12 md:h-14 w-auto" : "h-10 w-auto";
   return (
     <div className="flex items-center gap-3">
-      <img src={amabotIcon} alt="" className="h-12 w-12 drop-shadow-[0_0_16px_oklch(0.85_0.17_88/0.5)]" />
-      <img src={amabotWordmark} alt="AmaBot" className="h-8 w-auto" />
+      <img src={amabotIcon} alt="" className={`${iconCls} drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
+      <img src={amabotWordmark} alt="AmaBot" className={wordCls} />
     </div>
   );
 }
