@@ -38,8 +38,9 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-5 py-3.5">
-          <Logo />
+        <div className="glass flex items-center justify-between rounded-2xl px-5 py-4">
+          <Logo size="lg" />
+
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#features" className="hover:text-foreground transition">Features</a>
             <a href="#how" className="hover:text-foreground transition">How it works</a>
