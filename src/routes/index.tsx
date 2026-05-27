@@ -64,6 +64,10 @@ function Hero() {
       <img src={heroGlow} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] w-full object-cover opacity-30 mix-blend-screen" />
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
+        <div className="relative mx-auto mb-8 flex h-32 w-32 items-center justify-center md:h-40 md:w-40">
+          <div className="absolute inset-0 -z-10 rounded-full bg-primary/30 blur-3xl animate-pulse-glow" />
+          <img src={amabotIcon} alt="AmaBot" className="h-full w-full drop-shadow-[0_0_40px_oklch(0.85_0.17_88/0.7)]" />
+        </div>
         <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary backdrop-blur">
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -71,6 +75,7 @@ function Hero() {
           </span>
           Live • 1,284 collectors online
         </div>
+
 
         <h1 className="mt-6 text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
           Never Miss A <br className="hidden md:block" />
