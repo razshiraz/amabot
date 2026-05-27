@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Package, LineChart, Users,
   ArrowRight, Check, Sparkles, Shield, MessageCircle, Send,
-  ChevronDown, Twitter, Github,
+  ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
 import dashboardImg from "@/assets/dashboard-mockup.jpg";
 import heroGlow from "@/assets/hero-glow.jpg";
