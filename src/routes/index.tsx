@@ -3,10 +3,12 @@ import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Package, LineChart, Users,
   ArrowRight, Check, Sparkles, Shield, MessageCircle, Send,
-  ChevronDown, Twitter, Github, Bot,
+  ChevronDown, Twitter, Github,
 } from "lucide-react";
 import dashboardImg from "@/assets/dashboard-mockup.jpg";
 import heroGlow from "@/assets/hero-glow.jpg";
+import amabotIcon from "@/assets/amabot-icon.png";
+import amabotWordmark from "@/assets/amabot-wordmark.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
