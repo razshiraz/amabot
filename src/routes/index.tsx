@@ -25,9 +25,9 @@ export const Route = createFileRoute("/")({
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2.5">
-      <img src={amabotIcon} alt="" className="h-9 w-9 drop-shadow-[0_0_12px_oklch(0.85_0.17_88/0.5)]" />
-      <img src={amabotWordmark} alt="AmaBot" className="h-5 w-auto" />
+    <div className="flex items-center gap-3">
+      <img src={amabotIcon} alt="" className="h-12 w-12 drop-shadow-[0_0_16px_oklch(0.85_0.17_88/0.5)]" />
+      <img src={amabotWordmark} alt="AmaBot" className="h-7 w-auto" />
     </div>
   );
 }
