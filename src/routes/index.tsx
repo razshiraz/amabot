@@ -312,7 +312,8 @@ function CTA() {
       <div className="mx-auto max-w-4xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
           <div className="absolute inset-0 -z-10 bg-gradient-radial-glow" style={{ background: "var(--gradient-radial-glow)" }} />
-          <Sparkles className="mx-auto h-8 w-8 text-primary animate-pulse-glow rounded-full p-1.5" />
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 opacity-[0.08]" />
+          <img src={amabotIcon} alt="AmaBot" className="mx-auto h-20 w-20 drop-shadow-[0_0_30px_oklch(0.85_0.17_88/0.6)] animate-pulse-glow" />
           <h2 className="mt-6 text-balance text-3xl font-bold md:text-5xl">
             The next drop is <span className="text-gradient-gold">already loading</span>.
           </h2>
