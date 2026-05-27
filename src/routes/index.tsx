@@ -23,11 +23,13 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Logo() {
+function Logo({ size = "md" }: { size?: "md" | "lg" }) {
+  const iconCls = size === "lg" ? "h-20 w-20 md:h-24 md:w-24" : "h-14 w-14";
+  const wordCls = size === "lg" ? "h-12 md:h-14 w-auto" : "h-10 w-auto";
   return (
     <div className="flex items-center gap-3">
-      <img src={amabotIcon} alt="" className="h-12 w-12 drop-shadow-[0_0_16px_oklch(0.85_0.17_88/0.5)]" />
-      <img src={amabotWordmark} alt="AmaBot" className="h-8 w-auto" />
+      <img src={amabotIcon} alt="" className={`${iconCls} drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
+      <img src={amabotWordmark} alt="AmaBot" className={wordCls} />
     </div>
   );
 }
@@ -36,8 +38,9 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-5 py-3.5">
-          <Logo />
+        <div className="glass flex items-center justify-between rounded-2xl px-5 py-4">
+          <Logo size="lg" />
+
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#features" className="hover:text-foreground transition">Features</a>
             <a href="#how" className="hover:text-foreground transition">How it works</a>
@@ -61,6 +64,10 @@ function Hero() {
       <img src={heroGlow} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] w-full object-cover opacity-30 mix-blend-screen" />
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
+        <div className="relative mx-auto mb-8 flex h-32 w-32 items-center justify-center md:h-40 md:w-40">
+          <div className="absolute inset-0 -z-10 rounded-full bg-primary/30 blur-3xl animate-pulse-glow" />
+          <img src={amabotIcon} alt="AmaBot" className="h-full w-full drop-shadow-[0_0_40px_oklch(0.85_0.17_88/0.7)]" />
+        </div>
         <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary backdrop-blur">
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -68,6 +75,7 @@ function Hero() {
           </span>
           Live • 1,284 collectors online
         </div>
+
 
         <h1 className="mt-6 text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
           Never Miss A <br className="hidden md:block" />
@@ -195,8 +203,10 @@ function SocialProof() {
   return (
     <section className="relative py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="glass-gold rounded-3xl p-10 md:p-14">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
+          <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-bold text-gradient-gold md:text-5xl">{s.n}</div>
@@ -204,6 +214,7 @@ function SocialProof() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
@@ -304,7 +315,8 @@ function CTA() {
       <div className="mx-auto max-w-4xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
           <div className="absolute inset-0 -z-10 bg-gradient-radial-glow" style={{ background: "var(--gradient-radial-glow)" }} />
-          <Sparkles className="mx-auto h-8 w-8 text-primary animate-pulse-glow rounded-full p-1.5" />
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 opacity-[0.08]" />
+          <img src={amabotIcon} alt="AmaBot" className="mx-auto h-20 w-20 drop-shadow-[0_0_30px_oklch(0.85_0.17_88/0.6)] animate-pulse-glow" />
           <h2 className="mt-6 text-balance text-3xl font-bold md:text-5xl">
             The next drop is <span className="text-gradient-gold">already loading</span>.
           </h2>
@@ -364,7 +376,8 @@ function Footer() {
 function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.ReactNode; sub?: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-primary">
+      <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
+        <img src={amabotIcon} alt="" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
         {eyebrow}
       </div>
       <h2 className="mt-5 text-balance text-4xl font-bold md:text-5xl">{title}</h2>
