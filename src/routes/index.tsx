@@ -203,8 +203,10 @@ function SocialProof() {
   return (
     <section className="relative py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="glass-gold rounded-3xl p-10 md:p-14">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
+          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
+          <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-bold text-gradient-gold md:text-5xl">{s.n}</div>
@@ -212,6 +214,7 @@ function SocialProof() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
