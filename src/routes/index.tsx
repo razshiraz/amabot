@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Package, LineChart, Users,
   ArrowRight, Check, Sparkles, Shield, MessageCircle, Send,
-  ChevronDown, Twitter, Github,
+  ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
 import dashboardImg from "@/assets/dashboard-mockup.jpg";
 import heroGlow from "@/assets/hero-glow.jpg";
@@ -25,9 +25,9 @@ export const Route = createFileRoute("/")({
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2.5">
-      <img src={amabotIcon} alt="" className="h-9 w-9 drop-shadow-[0_0_12px_oklch(0.85_0.17_88/0.5)]" />
-      <img src={amabotWordmark} alt="AmaBot" className="h-5 w-auto" />
+    <div className="flex items-center gap-3">
+      <img src={amabotIcon} alt="" className="h-12 w-12 drop-shadow-[0_0_16px_oklch(0.85_0.17_88/0.5)]" />
+      <img src={amabotWordmark} alt="AmaBot" className="h-7 w-auto" />
     </div>
   );
 }
@@ -36,7 +36,7 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-4 py-2.5">
+        <div className="glass flex items-center justify-between rounded-2xl px-5 py-3.5">
           <Logo />
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#features" className="hover:text-foreground transition">Features</a>
@@ -44,9 +44,9 @@ function Nav() {
             <a href="#community" className="hover:text-foreground transition">Community</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
-          <a href="#cta" className="group inline-flex items-center gap-1.5 rounded-xl bg-gradient-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow">
-            Join Early Access
-            <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+          <a href="#cta" className="group inline-flex items-center gap-1.5 rounded-xl bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow">
+            Free Download
+            <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </a>
         </div>
       </div>
@@ -80,8 +80,8 @@ function Hero() {
 
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#cta" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
-            Join Early Access
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+            Free Download
+            <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </a>
           <a href="#how" className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/10">
             See How It Works
@@ -319,7 +319,7 @@ function CTA() {
               className="flex-1 rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
             />
             <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
-              Get Invite <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              Free Download <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </button>
           </form>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
