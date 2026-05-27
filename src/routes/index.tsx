@@ -319,7 +319,7 @@ function CTA() {
               className="flex-1 rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
             />
             <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
-              Get Invite <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              Free Download <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </button>
           </form>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
