@@ -38,7 +38,7 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-5 py-4">
+        <div className="glass flex items-center justify-between gap-2 rounded-2xl px-3 py-3 md:px-5 md:py-4">
           <Logo size="lg" />
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
@@ -47,7 +47,7 @@ function Nav() {
             <a href="#community" className="hover:text-foreground transition">Community</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
-          <a href="#cta" className="group inline-flex items-center gap-1.5 rounded-xl bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow">
+          <a href="#cta" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
             Free Download
             <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </a>
