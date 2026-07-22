@@ -54,8 +54,9 @@ function Nav() {
 }
 
 function Hero() {
+  const [playing, setPlaying] = useState(false);
   return (
-    <section className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
+    <section className="relative overflow-hidden pt-32 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <img src={heroGlow} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] w-full object-cover opacity-30 mix-blend-screen" />
 
@@ -84,17 +85,27 @@ function Hero() {
         <p className="mt-4 text-xs text-muted-foreground">Free during beta • No card required</p>
 
         {/* Product demo video */}
-        <div className="relative mx-auto mt-16 max-w-5xl">
+        <div className="relative mx-auto mt-10 max-w-5xl md:mt-16">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
-            <div className="overflow-hidden rounded-2xl border border-white/5">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
                 src={amabotDemo.url}
+                poster={amabotDemoPoster.url}
                 controls
                 playsInline
                 preload="metadata"
-                className="w-full"
+                onPlay={() => setPlaying(true)}
+                className="absolute inset-0 h-full w-full object-cover"
               />
+              {!playing && (
+                <img
+                  src={amabotDemoPoster.url}
+                  alt="Preview of the amabot dashboard demo video"
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                />
+              )}
             </div>
           </div>
         </div>
