@@ -454,6 +454,7 @@ function Landing() {
       <Nav />
       <Hero />
       <Features />
+      <DashboardShowcase />
       <HowItWorks />
       <SocialProof />
       <Community />
