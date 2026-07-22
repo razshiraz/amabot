@@ -3,14 +3,14 @@ import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Activity, SlidersHorizontal, Filter, LayoutDashboard,
   ArrowRight, Sparkles, MessageCircle, Send,
-  ChevronDown, Twitter, Github, Download,
+  ChevronDown, Download,
 } from "lucide-react";
 import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
-import amabotIcon from "@/assets/amabot-icon.png";
-import amabotWordmark from "@/assets/amabot-wordmark.png";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
+import { Logo, SiteFooter } from "@/components/site-chrome";
+import amabotIcon from "@/assets/amabot-icon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,16 +25,6 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Logo({ size = "md" }: { size?: "md" | "lg" }) {
-  const iconCls = size === "lg" ? "h-11 w-11 md:h-24 md:w-24" : "h-14 w-14";
-  const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
-  return (
-    <div className="flex items-center gap-2 md:gap-3">
-      <img src={amabotIcon} alt="" className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
-      <img src={amabotWordmark} alt="AmaBot" className={wordCls} />
-    </div>
-  );
-}
 
 
 function Nav() {
@@ -427,33 +417,8 @@ function FAQ() {
 }
 
 
-function Footer() {
-  return (
-    <footer className="border-t border-border/50 py-12">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <Logo />
-            <p className="mt-3 max-w-sm text-xs text-muted-foreground">
-              AmaBot is an independent tool and is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. or The Pokémon Company. As an Amazon Associate we may earn from qualifying purchases.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-6 text-sm">
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Terms</a>
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Affiliate Disclosure</a>
-            <a href="#" aria-label="Twitter" className="text-muted-foreground transition hover:text-primary"><Twitter className="h-4 w-4" /></a>
-            <a href="#" aria-label="Discord" className="text-muted-foreground transition hover:text-primary"><MessageCircle className="h-4 w-4" /></a>
-            <a href="#" aria-label="GitHub" className="text-muted-foreground transition hover:text-primary"><Github className="h-4 w-4" /></a>
-          </div>
-        </div>
-        <div className="mt-10 border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} AmaBot. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
+const Footer = SiteFooter;
+
 
 function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.ReactNode; sub?: string }) {
   return (
