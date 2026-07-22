@@ -6,7 +6,7 @@ import {
   ChevronDown, Twitter, Github, Download, LogOut,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import dashboardAsset from "@/assets/amabot-dashboard.png.asset.json";
+import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import amabotIcon from "@/assets/amabot-icon.png";
@@ -169,8 +169,10 @@ function DashboardShowcase() {
               <img src={dashboardImg} alt="AmaBot dashboard showing Pokémon product tracking and alerts" width={1600} height={1100} className="w-full" />
             </div>
           </div>
-          <FloatingAlert className="hidden md:flex absolute -left-6 top-1/4 animate-float" icon={<Bell className="h-4 w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
-          <FloatingAlert className="hidden md:flex absolute -right-4 top-1/2 animate-float [animation-delay:1s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
+          <FloatingAlert className="hidden md:flex absolute -left-6 top-[18%] animate-float" icon={<Bell className="h-4 w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
+          <FloatingAlert className="hidden md:flex absolute -right-8 top-[38%] animate-float [animation-delay:0.6s]" icon={<Zap className="h-4 w-4" />} title="Restock Alert" subtitle="Prismatic Evolutions • 3 units" />
+          <FloatingAlert className="hidden md:flex absolute -left-4 top-[58%] animate-float [animation-delay:1.2s]" icon={<Sparkles className="h-4 w-4" />} title="ASCENDED HEROES" subtitle="Deal found • -22% off" />
+          <FloatingAlert className="hidden md:flex absolute -right-4 bottom-[14%] animate-float [animation-delay:1.8s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
         </div>
       </div>
     </section>
