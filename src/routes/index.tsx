@@ -13,6 +13,32 @@ import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    ["What is amabot?", "amabot is an Amazon monitoring and auto-buy tool designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
+    ["Why is amabot free?", "amabot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
+    ["Do you store my personal information?", "amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
+    ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
+    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. amabot checks products in rotation, allowing approximately five seconds per product."],
+    ["What's the difference between Monitor Only and Auto-buy?", "Monitor Only sends a notification when a product meets your conditions and never places orders. Auto-buy automatically places an order when an eligible offer matches your rules, continuing until your configured order target has been reached."],
+    ["Which shipping address will amabot use?", "By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."],
+    ["Which payment method will amabot use?", "amabot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."],
+    ["Can I switch Amazon accounts?", "Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."],
+    ["Is my Amazon account at risk?", "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. amabot follows safer automation practices but no tool can guarantee that an account will never be affected."],
+    ["How do I update amabot?", "amabot updates automatically in the background. To verify that you are running the latest version, use the \"Check for Updates\" button on the Settings page."],
+    ["Does amabot guarantee successful purchases?", "No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. amabot can improve your chances but cannot guarantee a successful purchase."],
+    ["Do I need to keep my computer running?", "Yes. Because amabot runs locally, your computer, internet connection, and amabot session must remain active while monitoring or automatic purchasing is enabled."],
+    ["What happens after an order is placed?", "The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."],
+    ["Is amabot affiliated with Amazon?", "No. amabot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."],
+  ].map(([q, a]) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -21,6 +47,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "AmaBot — Never Miss A Pokémon Drop Again" },
       { property: "og:description", content: "Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://amabot.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://amabot.app/" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
     ],
   }),
   component: Landing,
