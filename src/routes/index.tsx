@@ -253,22 +253,24 @@ function Community() {
   return (
     <section id="community" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Join thousands of trainers trading intel, drop tips, and pulls in real-time." />
+        <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the amabot community, get help, and stay up to date through Discord and Telegram." />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <CommunityCard
             icon={<MessageCircle className="h-6 w-6" />}
             name="Discord"
-            members="1,840 members"
-            desc="Live drop pings, pull threads, restock chatter, and direct line to the team."
-            tagline="Most active channel"
+            label="Community & Support"
+            desc="Ask questions, get setup help, share feedback, and connect with other amabot users."
+            cta="Open Discord"
+            href="https://discord.gg/CT9F6ZYxhx"
           />
           <CommunityCard
             icon={<Send className="h-6 w-6" />}
             name="Telegram"
-            members="690 members"
-            desc="Lightweight, fast push alerts straight to your phone. Perfect for collectors on the move."
-            tagline="Instant on mobile"
+            label="News & Updates"
+            desc="Follow amabot for product updates, announcements, and important news delivered directly to Telegram."
+            cta="Open Telegram"
+            href="https://t.me/amabot_app"
           />
         </div>
       </div>
@@ -276,28 +278,33 @@ function Community() {
   );
 }
 
-function CommunityCard({ icon, name, members, desc, tagline }: { icon: React.ReactNode; name: string; members: string; desc: string; tagline: string }) {
+function CommunityCard({ icon, name, label, desc, cta, href }: { icon: React.ReactNode; name: string; label: string; desc: string; cta: string; href: string }) {
   return (
     <div className="group glass relative overflow-hidden rounded-3xl p-8 transition hover:border-primary/40">
       <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
-      <div className="relative flex items-start justify-between">
+      <div className="relative flex items-start justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20">
             {icon}
           </div>
           <div>
             <div className="text-xl font-semibold">{name}</div>
-            <div className="text-xs text-muted-foreground">{members}</div>
           </div>
         </div>
-        <span className="rounded-full bg-success/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-success">
-          {tagline}
+        <span className="rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
+          {label}
         </span>
       </div>
       <p className="relative mt-6 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-      <button className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition group-hover:gap-2.5">
-        Join {name} <ArrowRight className="h-4 w-4" />
-      </button>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${cta} (opens in a new tab)`}
+        className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition group-hover:gap-2.5"
+      >
+        {cta} <ArrowRight className="h-4 w-4" />
+      </a>
     </div>
   );
 }
