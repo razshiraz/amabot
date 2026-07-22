@@ -10,6 +10,7 @@ import dashboardImg from "@/assets/dashboard-mockup.jpg";
 import heroGlow from "@/assets/hero-glow.jpg";
 import amabotIcon from "@/assets/amabot-icon.png";
 import amabotWordmark from "@/assets/amabot-wordmark.png";
+import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -145,6 +146,24 @@ function Hero() {
           {/* Floating alert cards */}
           <FloatingAlert className="hidden md:flex absolute -left-6 top-1/4 animate-float" icon={<Bell className="h-4 w-4" />} title="Charizard ETB" subtitle="In stock • $59.99" />
           <FloatingAlert className="hidden md:flex absolute -right-4 top-1/2 animate-float [animation-delay:1s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
+        </div>
+
+        {/* Product demo video */}
+        <div className="relative mx-auto mt-10 max-w-5xl">
+          <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
+          <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
+            <div className="overflow-hidden rounded-2xl border border-white/5">
+              <video
+                src={amabotDemo.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
