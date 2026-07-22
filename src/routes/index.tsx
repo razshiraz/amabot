@@ -182,12 +182,13 @@ function DashboardShowcase() {
   return (
     <section className="relative overflow-x-clip pt-6 pb-12 md:pt-10 md:pb-20">
       <div className="mx-auto max-w-6xl px-4">
-        <p
-          className="mx-auto mb-10 text-pretty text-center font-medium text-white px-2 md:mb-14"
-          style={{ maxWidth: "900px", fontSize: "clamp(17px, 1.4vw, 21px)", lineHeight: 1.6 }}
+        <h2
+          className="mx-auto text-balance text-center text-white px-2 mb-7 md:mb-12"
+          style={{ maxWidth: "950px", fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.2, fontWeight: 700 }}
         >
-          amabot is a <span className="text-gradient-gold font-semibold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold font-semibold">product monitor</span>. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
-        </p>
+          amabot is a <span className="text-gradient-gold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
+        </h2>
+
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
