@@ -153,10 +153,10 @@ function DashboardShowcase() {
               <img src={dashboardImg} alt="AmaBot dashboard showing Pokémon product tracking and alerts" width={1600} height={1100} className="w-full" />
             </div>
           </div>
-          <FloatingAlert className="hidden md:flex absolute -left-6 top-[18%] animate-float" icon={<Bell className="h-4 w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
-          <FloatingAlert className="hidden md:flex absolute -right-8 top-[38%] animate-float [animation-delay:0.6s]" icon={<Zap className="h-4 w-4" />} title="Restock Alert" subtitle="Prismatic Evolutions • 3 units" />
-          <FloatingAlert className="hidden md:flex absolute -left-4 top-[58%] animate-float [animation-delay:1.2s]" icon={<Sparkles className="h-4 w-4" />} title="ASCENDED HEROES" subtitle="Deal found • -22% off" />
-          <FloatingAlert className="hidden md:flex absolute -right-4 bottom-[14%] animate-float [animation-delay:1.8s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
+          <FloatingAlert className="absolute left-2 top-2 md:left-auto md:top-[18%] md:-left-6 motion-safe:animate-float" icon={<Bell className="h-3 w-3 md:h-4 md:w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
+          <FloatingAlert className="absolute right-2 top-2 md:top-[38%] md:-right-8 motion-safe:animate-float [animation-delay:0.6s]" icon={<Zap className="h-3 w-3 md:h-4 md:w-4" />} title="Restock Alert" subtitle="Prismatic Evolutions • 3 units" />
+          <FloatingAlert className="absolute left-2 bottom-2 md:bottom-auto md:top-[58%] md:-left-4 motion-safe:animate-float [animation-delay:1.2s]" icon={<Sparkles className="h-3 w-3 md:h-4 md:w-4" />} title="ASCENDED HEROES" subtitle="Deal found • -22% off" />
+          <FloatingAlert className="absolute right-2 bottom-2 md:-right-4 md:bottom-[14%] motion-safe:animate-float [animation-delay:1.8s]" icon={<ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
         </div>
       </div>
     </section>
@@ -165,13 +165,13 @@ function DashboardShowcase() {
 
 function FloatingAlert({ icon, title, subtitle, success, className = "" }: { icon: React.ReactNode; title: string; subtitle: string; success?: boolean; className?: string }) {
   return (
-    <div className={`glass-gold flex items-center gap-3 rounded-2xl px-4 py-3 shadow-glow-sm ${className}`}>
-      <div className={`flex h-8 w-8 items-center justify-center rounded-full ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
+    <div className={`glass-gold pointer-events-none z-10 flex max-w-[45%] items-center gap-2 rounded-xl px-2.5 py-2 shadow-glow-sm sm:max-w-[155px] md:flex md:max-w-none md:gap-3 md:rounded-2xl md:px-4 md:py-3 ${className}`}>
+      <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full md:h-8 md:w-8 ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
         {icon}
       </div>
-      <div className="text-left">
-        <div className="text-xs font-semibold">{title}</div>
-        <div className="text-[10px] text-muted-foreground">{subtitle}</div>
+      <div className="min-w-0 text-left">
+        <div className="truncate text-[11px] font-semibold md:text-xs">{title}</div>
+        <div className="truncate text-[10px] text-muted-foreground md:text-[10px]">{subtitle}</div>
       </div>
     </div>
   );
