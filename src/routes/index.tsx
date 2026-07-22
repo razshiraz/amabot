@@ -309,11 +309,74 @@ function CommunityCard({ icon, name, label, desc, cta, href }: { icon: React.Rea
   );
 }
 
-const faqs = [
-  { q: "How fast are the alerts?", a: "Most alerts hit your device within 200–500ms of Amazon updating stock. Auto-checkout typically completes in under 800ms." },
-  { q: "Which Amazon products are supported?", a: "All Pokémon TCG: booster boxes, ETBs, collector tins, special collections, Crown Zenith, 151, Surging Sparks, and any new sets the moment they list." },
-  { q: "Is auto-buy safe?", a: "Yes. AmaBot uses your official Amazon session via secure browser extension — no password sharing, no third-party checkout. Same trust level as 1-Click ordering." },
-  { q: "When does early access open?", a: "Early access is rolling out now. Join the waitlist and you'll get an invite within 1–2 weeks, along with founding-member pricing locked in." },
+type FaqAnswer = { paragraphs: Array<string | React.ReactNode> };
+const faqs: Array<{ q: string; a: FaqAnswer }> = [
+  {
+    q: "What is amabot?",
+    a: { paragraphs: ["amabot is an Amazon monitoring and auto-buy tool designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
+  },
+  {
+    q: "Why is amabot free?",
+    a: { paragraphs: ["amabot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
+  },
+  {
+    q: "Do you store my personal information?",
+    a: { paragraphs: ["amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."] },
+  },
+  {
+    q: "What is Register Passkey?",
+    a: { paragraphs: ["Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."] },
+  },
+  {
+    q: "Can I monitor multiple products?",
+    a: { paragraphs: [
+      "Yes. You can add multiple Amazon products and configure different buying rules for each one.",
+      "amabot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
+    ] },
+  },
+  {
+    q: "What's the difference between Monitor Only and Auto-buy?",
+    a: { paragraphs: [
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Monitor Only</span><span className="mt-2 block">amabot checks for matching offers and sends a notification when a product meets your configured conditions. Purchases are never made automatically.</span></>,
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Auto-buy</span><span className="mt-2 block">amabot automatically places an order when an eligible offer matches your configured conditions. It continues purchasing until your configured order target has been reached.</span></>,
+    ] },
+  },
+  {
+    q: "Which shipping address will amabot use?",
+    a: { paragraphs: ["By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."] },
+  },
+  {
+    q: "Which payment method will amabot use?",
+    a: { paragraphs: ["amabot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."] },
+  },
+  {
+    q: "Can I switch Amazon accounts?",
+    a: { paragraphs: ["Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."] },
+  },
+  {
+    q: "Is my Amazon account at risk?",
+    a: { paragraphs: ["Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. amabot is designed with account safety as a priority and follows safer automation practices to reduce unnecessary activity, but no tool can guarantee that an account will never be affected."] },
+  },
+  {
+    q: "How do I update amabot?",
+    a: { paragraphs: ["amabot updates automatically in the background. To verify that you are running the latest version, use the \u201CCheck for Updates\u201D button on the Settings page."] },
+  },
+  {
+    q: "Does amabot guarantee successful purchases?",
+    a: { paragraphs: ["No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. amabot can improve your chances of securing a product but cannot guarantee a successful purchase."] },
+  },
+  {
+    q: "Do I need to keep my computer running?",
+    a: { paragraphs: ["Yes. Because amabot runs locally, your computer, internet connection, and amabot session must remain active while monitoring or automatic purchasing is enabled."] },
+  },
+  {
+    q: "What happens after an order is placed?",
+    a: { paragraphs: ["The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."] },
+  },
+  {
+    q: "Is amabot affiliated with Amazon?",
+    a: { paragraphs: ["No. amabot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."] },
+  },
 ];
 
 function FAQ() {
@@ -323,21 +386,40 @@ function FAQ() {
       <div className="mx-auto max-w-3xl px-4">
         <SectionHeader eyebrow="FAQ" title={<>Questions, <span className="text-gradient-gold">answered</span></>} />
         <div className="mt-12 space-y-3">
-          {faqs.map((f, i) => (
-            <button
-              key={f.q}
-              onClick={() => setOpen(open === i ? null : i)}
-              className="glass w-full rounded-2xl px-6 py-5 text-left transition hover:border-primary/30"
-            >
-              <div className="flex items-center justify-between gap-4">
-                <span className="font-semibold">{f.q}</span>
-                <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition ${open === i ? "rotate-180 text-primary" : ""}`} />
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            const panelId = `faq-panel-${i}`;
+            const btnId = `faq-btn-${i}`;
+            return (
+              <div key={f.q} className="glass rounded-2xl transition hover:border-primary/30">
+                <button
+                  id={btnId}
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full rounded-2xl px-6 py-5 text-left"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="font-semibold">{f.q}</span>
+                    <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition ${isOpen ? "rotate-180 text-primary" : ""}`} />
+                  </div>
+                </button>
+                {isOpen && (
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
+                    className="px-6 pb-5 space-y-3 text-sm leading-relaxed text-muted-foreground animate-fade-in"
+                  >
+                    {f.a.paragraphs.map((p, idx) => (
+                      <p key={idx}>{p}</p>
+                    ))}
+                  </div>
+                )}
               </div>
-              {open === i && (
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground animate-fade-in">{f.a}</p>
-              )}
-            </button>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
