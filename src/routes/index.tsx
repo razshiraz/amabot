@@ -453,7 +453,7 @@ function Landing() {
       <SocialProof />
       <Community />
       <FAQ />
-      <CTA />
+      
       <Footer />
     </main>
   );
