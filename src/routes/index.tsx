@@ -55,6 +55,16 @@ function Nav() {
 
 function Hero() {
   const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const startPlayback = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play().catch(() => {
+      /* ignore autoplay rejections */
+    });
+  };
+
   return (
     <section className="relative overflow-hidden pt-32 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
@@ -90,21 +100,37 @@ function Hero() {
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
+                ref={videoRef}
                 src={amabotDemo.url}
                 poster={amabotDemoPoster.url}
                 controls
                 playsInline
                 preload="metadata"
                 onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
+                onEnded={() => setPlaying(false)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               {!playing && (
-                <img
-                  src={amabotDemoPoster.url}
-                  alt="Preview of the amabot dashboard demo video"
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-                />
+                <>
+                  <img
+                    src={amabotDemoPoster.url}
+                    alt="Preview of the amabot dashboard demo video"
+                    aria-hidden
+                    onClick={startPlayback}
+                    className="absolute inset-0 h-full w-full cursor-pointer object-cover"
+                  />
+                  <button
+                    type="button"
+                    onClick={startPlayback}
+                    aria-label="Play amabot demo video"
+                    className="group absolute left-1/2 top-1/2 z-10 flex h-[58px] w-[58px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/40 bg-black/50 text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[76px] md:w-[76px] min-h-11 min-w-11"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden className="ml-1 h-6 w-6 fill-current md:h-8 md:w-8">
+                      <path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11.14-6.86a1 1 0 0 0 0-1.72L9.52 4.28A1 1 0 0 0 8 5.14z" />
+                    </svg>
+                  </button>
+                </>
               )}
             </div>
           </div>
