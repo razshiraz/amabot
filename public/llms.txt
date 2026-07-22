@@ -1,0 +1,12 @@
+# amabot
+
+> amabot is a free Amazon monitoring and auto-buy assistant focused on Pokémon and high-demand product drops. It continuously watches product availability and pricing and can either send alerts or automatically place orders when your buying rules match.
+
+amabot runs locally on the user's computer with a separate Amazon browser session. It supports Monitor-Only alerts, Auto-buy with custom rules, seller and price filters, and a live activity dashboard. Community support is available on Discord and Telegram.
+
+## Pages
+
+- [Home](/): Product overview, features, how it works, community, and FAQ.
+- [Terms of Service](/terms): Terms governing use of amabot.
+- [Privacy Policy](/privacy): How amabot handles data.
+- [Affiliate Disclosure](/affiliate-disclosure): Amazon Associates disclosure.
