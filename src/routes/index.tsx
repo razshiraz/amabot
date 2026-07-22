@@ -10,6 +10,7 @@ const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
+import amabotIcon from "@/assets/amabot-icon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
