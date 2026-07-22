@@ -151,11 +151,11 @@ function Hero() {
               />
             </div>
           </div>
-          {/* Floating alert cards */}
-          </div>
         </div>
       </div>
     </section>
+  );
+}
   );
 }
 
