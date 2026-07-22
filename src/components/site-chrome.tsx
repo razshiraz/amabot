@@ -26,7 +26,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   return (
     <Link to="/" className="flex items-center gap-2 md:gap-3" aria-label="amabot home">
       <img src={amabotIcon} alt="" className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
-      <img src={amabotWordmark} alt="amabot" className={wordCls} />
+      <img src={amabotWordmark} alt="amabot wordmark" className={wordCls} />
     </Link>
   );
 }
