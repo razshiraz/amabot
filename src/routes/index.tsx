@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Bell, Zap, ShoppingCart, Package, LineChart, Users,
+  Bell, Zap, ShoppingCart, Activity, SlidersHorizontal, Filter, LayoutDashboard,
   ArrowRight, Sparkles, MessageCircle, Send,
   ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
@@ -150,19 +150,19 @@ function FloatingAlert({ icon, title, subtitle, success, className = "" }: { ico
 }
 
 const features = [
-  { icon: Bell, title: "Real-Time Restock Alerts", desc: "The moment Amazon refills stock, you know. Push, SMS, Discord — your choice." },
-  { icon: Zap, title: "Instant Deal Notifications", desc: "Price drops, lightning deals, and hidden warehouse listings surfaced in milliseconds." },
-  { icon: ShoppingCart, title: "Ultra-Fast Auto Checkout", desc: "Pre-loaded cart, address, and payment. Secures the drop in under 800ms." },
-  { icon: Package, title: "Pokémon Product Tracking", desc: "Booster boxes, ETBs, collector tins, Crown Zenith, 151 — every SKU monitored." },
-  { icon: LineChart, title: "Smart Price Monitoring", desc: "Historical pricing data so you only buy when it's actually a deal." },
-  { icon: Users, title: "Community Driven Drops", desc: "Collectors share intel. Get tipped off on drops before they hit feeds." },
+  { icon: Activity, title: "Always-On Monitoring", desc: "Add your Amazon products and amabot continuously checks their latest prices and available offers." },
+  { icon: SlidersHorizontal, title: "Custom Buying Rules", desc: "Set a maximum price, quantity, purchase limit, and buying preferences for every product." },
+  { icon: ShoppingCart, title: "Automatic Purchasing", desc: "When an eligible offer matches all your rules, amabot can automatically place the order for you." },
+  { icon: Bell, title: "Monitor-Only Alerts", desc: "Prefer to stay in control? Receive an update when a matching opportunity appears without making a purchase." },
+  { icon: Filter, title: "Seller & Price Filters", desc: "Choose Amazon-only or any eligible seller while checking the complete price, including shipping." },
+  { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, blocks, and purchase status from one clear dashboard." },
 ];
 
 function Features() {
   return (
     <section id="features" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Features" title={<>Built for the <span className="text-gradient-gold">fastest</span> collectors</>} sub="Every feature engineered to put you one step ahead of bots, scalpers, and sold-out signs." />
+        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />Let amabot <span className="text-gradient-gold">do the watching.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
