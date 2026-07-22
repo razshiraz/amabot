@@ -113,6 +113,10 @@ function Hero() {
           Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
+        <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm text-muted-foreground/90 md:text-base">
+          amabot is a free Amazon auto checkout bot and product monitor. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
+        </p>
+
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
