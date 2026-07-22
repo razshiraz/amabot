@@ -120,16 +120,20 @@ function Hero() {
                     onClick={startPlayback}
                     className="absolute inset-0 h-full w-full cursor-pointer object-cover"
                   />
-                  <button
-                    type="button"
-                    onClick={startPlayback}
-                    aria-label="Play amabot demo video"
-                    className="group absolute left-1/2 top-1/2 z-10 grid h-[58px] w-[58px] min-h-11 min-w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-primary/40 bg-black/50 p-0 leading-none text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[76px] md:w-[76px]"
-                  >
-                    <svg viewBox="4 3 9 10" aria-hidden className="block h-6 w-6 fill-current m-0 md:h-8 md:w-8">
-                      <path d="M4 3 L13 8 L4 13 Z" />
-                    </svg>
-                  </button>
+                  <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
+                    <button
+                      type="button"
+                      onClick={startPlayback}
+                      aria-label="Play amabot demo video"
+                      style={{ aspectRatio: "1 / 1", boxSizing: "border-box", padding: 0, lineHeight: 0, flexShrink: 0 }}
+                      className="pointer-events-auto group grid h-[60px] w-[60px] place-items-center rounded-full border border-primary/40 bg-black/50 text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[74px] md:w-[74px]"
+                    >
+                      <span
+                        aria-hidden
+                        className="block h-0 w-0 translate-x-[2px] border-y-[9px] border-l-[14px] border-y-transparent border-l-white md:border-y-[11px] md:border-l-[17px]"
+                      />
+                    </button>
+                  </div>
                 </>
               )}
             </div>
