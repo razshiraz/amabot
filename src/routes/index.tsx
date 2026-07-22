@@ -17,12 +17,13 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    ["What is amabot?", "amabot is an Amazon monitoring and auto-buy tool designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
-    ["Why is amabot free?", "amabot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
+    ["What is amabot?", "amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
+    ["Why is amabot free?", "amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
     ["Do you store my personal information?", "amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
     ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
-    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. amabot checks products in rotation, allowing approximately five seconds per product."],
-    ["What's the difference between Monitor Only and Auto-buy?", "Monitor Only sends a notification when a product meets your conditions and never places orders. Auto-buy automatically places an order when an eligible offer matches your rules, continuing until your configured order target has been reached."],
+    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. As an Amazon price tracker, amabot checks products in rotation, allowing approximately five seconds per product."],
+    ["What's the difference between Monitor Only and Auto-buy?", "Monitor Only sends Amazon restock alerts when a product meets your conditions and never places orders. Auto-buy works as an Amazon auto buy tool that automatically places an order when an eligible offer matches your rules, continuing until your configured order target has been reached."],
+
     ["Which shipping address will amabot use?", "By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."],
     ["Which payment method will amabot use?", "amabot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."],
     ["Can I switch Amazon accounts?", "Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."],
@@ -146,7 +147,7 @@ function Hero() {
                 <>
                   <img
                     src={amabotDemoPoster.url}
-                    alt="Preview of the amabot dashboard demo video"
+                    alt="Free Amazon auto checkout bot demo showing amabot dashboard, restock alerts, and buying rules"
                     aria-hidden
                     onClick={startPlayback}
                     className="absolute inset-0 h-full w-full cursor-pointer object-cover"
@@ -191,7 +192,7 @@ function DashboardShowcase() {
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="overflow-hidden rounded-2xl border border-white/5">
-              <img src={dashboardImg} alt="AmaBot dashboard showing Pokémon product tracking and alerts" width={1600} height={1100} fetchPriority="high" decoding="async" className="w-full" />
+              <img src={dashboardImg} alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts" width={1600} height={1100} fetchPriority="high" decoding="async" className="w-full" />
             </div>
           </div>
           <FloatingAlert
@@ -445,11 +446,11 @@ type FaqAnswer = { paragraphs: Array<string | React.ReactNode> };
 const faqs: Array<{ q: string; a: FaqAnswer }> = [
   {
     q: "What is amabot?",
-    a: { paragraphs: ["amabot is an Amazon monitoring and auto-buy tool designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
+    a: { paragraphs: ["amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
   },
   {
     q: "Why is amabot free?",
-    a: { paragraphs: ["amabot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
+    a: { paragraphs: ["amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
   },
   {
     q: "Do you store my personal information?",
@@ -463,16 +464,17 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
     q: "Can I monitor multiple products?",
     a: { paragraphs: [
       "Yes. You can add multiple Amazon products and configure different buying rules for each one.",
-      "amabot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
+      "As an Amazon price tracker, amabot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
     ] },
   },
   {
     q: "What's the difference between Monitor Only and Auto-buy?",
     a: { paragraphs: [
-      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Monitor Only</span><span className="mt-2 block">amabot checks for matching offers and sends a notification when a product meets your configured conditions. Purchases are never made automatically.</span></>,
-      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Auto-buy</span><span className="mt-2 block">amabot automatically places an order when an eligible offer matches your configured conditions. It continues purchasing until your configured order target has been reached.</span></>,
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Monitor Only</span><span className="mt-2 block">amabot checks for matching offers and sends Amazon restock alerts when a product meets your configured conditions. Purchases are never made automatically.</span></>,
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Auto-buy</span><span className="mt-2 block">Working as an Amazon auto buy tool, amabot automatically places an order when an eligible offer matches your configured conditions. It continues purchasing until your configured order target has been reached.</span></>,
     ] },
   },
+
   {
     q: "Which shipping address will amabot use?",
     a: { paragraphs: ["By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."] },
