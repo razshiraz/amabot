@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Bell, Zap, ShoppingCart, Package, LineChart, Users,
+  Bell, Zap, ShoppingCart, Activity, SlidersHorizontal, Filter, LayoutDashboard,
   ArrowRight, Sparkles, MessageCircle, Send,
   ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
