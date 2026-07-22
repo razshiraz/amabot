@@ -157,3 +157,12 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-marquee,
+  .animate-pop-in {
+    animation: none !important;
+  }
+}
