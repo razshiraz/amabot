@@ -9,7 +9,9 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: "Privacy Policy | amabot" },
       { property: "og:description", content: "Learn how amabot handles account information, local Amazon sessions, product settings, and technical data." },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://amabot.app/privacy" },
     ],
+    links: [{ rel: "canonical", href: "https://amabot.app/privacy" }],
   }),
   component: PrivacyPage,
 });

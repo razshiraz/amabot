@@ -9,7 +9,9 @@ export const Route = createFileRoute("/affiliate-disclosure")({
       { property: "og:title", content: "Affiliate Disclosure | amabot" },
       { property: "og:description", content: "Learn how amabot uses Amazon affiliate links and may earn commissions from qualifying purchases." },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://amabot.app/affiliate-disclosure" },
     ],
+    links: [{ rel: "canonical", href: "https://amabot.app/affiliate-disclosure" }],
   }),
   component: AffiliatePage,
 });
