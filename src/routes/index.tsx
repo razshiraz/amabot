@@ -118,7 +118,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative py-16 md:py-20">
+    <section className="relative py-12 md:py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
@@ -162,7 +162,7 @@ const features = [
 
 function Features() {
   return (
-    <section id="features" className="relative py-24 md:py-32">
+    <section id="features" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
@@ -196,7 +196,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative py-24 md:py-32">
+    <section id="how" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">amabot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
@@ -231,7 +231,7 @@ const stats = [
 
 function SocialProof() {
   return (
-    <section className="relative py-20">
+    <section className="relative py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
           <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
@@ -253,7 +253,7 @@ function SocialProof() {
 
 function Community() {
   return (
-    <section id="community" className="relative py-24 md:py-32">
+    <section id="community" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the amabot community, get help, and stay up to date through Discord and Telegram." />
 
@@ -384,7 +384,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative py-24 md:py-32">
+    <section id="faq" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-3xl px-4">
         <SectionHeader eyebrow="FAQ" title={<>Questions, <span className="text-gradient-gold">answered</span></>} />
         <div className="mt-12 space-y-3">
