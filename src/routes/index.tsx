@@ -155,14 +155,14 @@ const features = [
   { icon: ShoppingCart, title: "Automatic Purchasing", desc: "When an eligible offer matches all your rules, amabot can automatically place the order for you." },
   { icon: Bell, title: "Monitor-Only Alerts", desc: "Prefer to stay in control? Receive an update when a matching opportunity appears without making a purchase." },
   { icon: Filter, title: "Seller & Price Filters", desc: "Choose Amazon-only or any eligible seller while checking the complete price, including shipping." },
-  { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, blocks, and purchase status from one clear dashboard." },
+  { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, and purchase status from one clear dashboard." },
 ];
 
 function Features() {
   return (
     <section id="features" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />Let amabot <span className="text-gradient-gold">do the watching.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
+        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
