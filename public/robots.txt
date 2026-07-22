@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /mcp
+Disallow: /.well-known/
+Disallow: /.lovable/
 
 Sitemap: https://amabot.app/sitemap.xml
