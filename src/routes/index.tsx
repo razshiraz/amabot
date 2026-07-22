@@ -261,7 +261,7 @@ function Community() {
             name="Discord"
             label="Community & Support"
             desc="Ask questions, get setup help, share feedback, and connect with other amabot users."
-            cta="Open Discord"
+            cta="Join Discord"
             href="https://discord.gg/CT9F6ZYxhx"
           />
           <CommunityCard
@@ -269,7 +269,7 @@ function Community() {
             name="Telegram"
             label="News & Updates"
             desc="Follow amabot for product updates, announcements, and important news delivered directly to Telegram."
-            cta="Open Telegram"
+            cta="Join Telegram"
             href="https://t.me/amabot_app"
           />
         </div>
