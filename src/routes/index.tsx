@@ -9,6 +9,7 @@ import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
+import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
 
@@ -53,8 +54,9 @@ function Nav() {
 }
 
 function Hero() {
+  const [playing, setPlaying] = useState(false);
   return (
-    <section className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
+    <section className="relative overflow-hidden pt-32 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <img src={heroGlow} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] w-full object-cover opacity-30 mix-blend-screen" />
 
@@ -83,17 +85,27 @@ function Hero() {
         <p className="mt-4 text-xs text-muted-foreground">Free during beta • No card required</p>
 
         {/* Product demo video */}
-        <div className="relative mx-auto mt-16 max-w-5xl">
+        <div className="relative mx-auto mt-10 max-w-5xl md:mt-16">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
-            <div className="overflow-hidden rounded-2xl border border-white/5">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
                 src={amabotDemo.url}
+                poster={amabotDemoPoster.url}
                 controls
                 playsInline
                 preload="metadata"
-                className="w-full"
+                onPlay={() => setPlaying(true)}
+                className="absolute inset-0 h-full w-full object-cover"
               />
+              {!playing && (
+                <img
+                  src={amabotDemoPoster.url}
+                  alt="Preview of the amabot dashboard demo video"
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -106,7 +118,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative py-16 md:py-20">
+    <section className="relative py-12 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
@@ -150,7 +162,7 @@ const features = [
 
 function Features() {
   return (
-    <section id="features" className="relative py-24 md:py-32">
+    <section id="features" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
@@ -184,7 +196,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative py-24 md:py-32">
+    <section id="how" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">amabot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
@@ -219,7 +231,7 @@ const stats = [
 
 function SocialProof() {
   return (
-    <section className="relative py-20">
+    <section className="relative py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
           <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
@@ -241,7 +253,7 @@ function SocialProof() {
 
 function Community() {
   return (
-    <section id="community" className="relative py-24 md:py-32">
+    <section id="community" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the amabot community, get help, and stay up to date through Discord and Telegram." />
 
@@ -372,7 +384,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative py-24 md:py-32">
+    <section id="faq" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-3xl px-4">
         <SectionHeader eyebrow="FAQ" title={<>Questions, <span className="text-gradient-gold">answered</span></>} />
         <div className="mt-12 space-y-3">
