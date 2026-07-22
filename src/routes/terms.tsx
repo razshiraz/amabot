@@ -9,7 +9,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: "Terms of Use | amabot" },
       { property: "og:description", content: "Review the terms that apply when using the amabot Amazon monitoring and auto-buy application." },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://amabot.app/terms" },
     ],
+    links: [{ rel: "canonical", href: "https://amabot.app/terms" }],
   }),
   component: TermsPage,
 });
