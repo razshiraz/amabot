@@ -72,12 +72,12 @@ function Hero() {
 
 
         <h1 className="mt-6 text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
-          Never Miss A <br className="hidden md:block" />
-          <span className="text-gradient-gold">Pokémon Drop</span> Again
+          Never Miss An <br className="hidden md:block" />
+          <span className="text-gradient-gold">Amazon Drop</span> Again
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors who refuse to miss rare drops.
+          Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
