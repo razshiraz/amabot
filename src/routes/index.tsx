@@ -82,7 +82,7 @@ function Hero() {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-muted-foreground">Free during beta • No card required</p>
+        <p className="mt-4 text-xs text-muted-foreground">Always free • No credit card required</p>
 
         {/* Product demo video */}
         <div className="relative mx-auto mt-10 max-w-5xl md:mt-16">
