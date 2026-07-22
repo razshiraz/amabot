@@ -3,14 +3,13 @@ import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Activity, SlidersHorizontal, Filter, LayoutDashboard,
   ArrowRight, Sparkles, MessageCircle, Send,
-  ChevronDown, Twitter, Github, Download,
+  ChevronDown, Download,
 } from "lucide-react";
 import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
-import amabotIcon from "@/assets/amabot-icon.png";
-import amabotWordmark from "@/assets/amabot-wordmark.png";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
+import { Logo, SiteFooter } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
