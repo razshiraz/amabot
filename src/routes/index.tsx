@@ -158,30 +158,38 @@ function DashboardShowcase() {
             </div>
           </div>
           <FloatingAlert
-            wrapperClassName="left-[8%] top-[-16px] -rotate-2 md:left-auto md:top-[18%] md:-left-6 md:rotate-0"
-            delay={0}
-            icon={<Bell className="h-3 w-3 md:h-4 md:w-4" />}
+            wrapperClassName="left-[8%] top-[-16px] -rotate-2 lg:left-[-32px] lg:right-auto lg:top-[20%] lg:bottom-auto lg:rotate-0"
+            popDelay={0}
+            floatDuration={3.4}
+            floatDelay={0}
+            icon={<Bell className="h-3 w-3 lg:h-4 lg:w-4" />}
             title="151 ETB"
             subtitle="In stock • $59.99"
           />
           <FloatingAlert
-            wrapperClassName="right-[-14px] top-[22%] rotate-1 md:right-auto md:top-[38%] md:-right-8 md:rotate-0"
-            delay={350}
-            icon={<Zap className="h-3 w-3 md:h-4 md:w-4" />}
+            wrapperClassName="right-[-14px] top-[22%] rotate-1 lg:left-auto lg:right-[-40px] lg:top-[38%] lg:bottom-auto lg:rotate-0"
+            popDelay={350}
+            floatDuration={4.1}
+            floatDelay={-0.8}
+            icon={<Zap className="h-3 w-3 lg:h-4 lg:w-4" />}
             title="Restock Alert"
             subtitle="Prismatic Evolutions • 3 units"
           />
           <FloatingAlert
-            wrapperClassName="left-[-14px] bottom-[24%] rotate-[1.5deg] md:left-auto md:bottom-auto md:top-[58%] md:-left-4 md:rotate-0"
-            delay={700}
-            icon={<Sparkles className="h-3 w-3 md:h-4 md:w-4" />}
+            wrapperClassName="left-[-14px] bottom-[24%] rotate-[1.5deg] lg:left-[-24px] lg:right-auto lg:top-[62%] lg:bottom-auto lg:rotate-0"
+            popDelay={700}
+            floatDuration={3.7}
+            floatDelay={-1.5}
+            icon={<Sparkles className="h-3 w-3 lg:h-4 lg:w-4" />}
             title="ASCENDED HEROES"
             subtitle="Deal found • -22% off"
           />
           <FloatingAlert
-            wrapperClassName="right-[10%] bottom-[-16px] -rotate-1 md:right-auto md:bottom-[14%] md:-right-4 md:rotate-0"
-            delay={1050}
-            icon={<ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />}
+            wrapperClassName="right-[10%] bottom-[-16px] -rotate-1 lg:left-auto lg:right-[-24px] lg:top-[76%] lg:bottom-auto lg:rotate-0"
+            popDelay={1050}
+            floatDuration={4.5}
+            floatDelay={-2.2}
+            icon={<ShoppingCart className="h-3 w-3 lg:h-4 lg:w-4" />}
             title="Auto-buy success"
             subtitle="Order #A28-91"
             success
@@ -198,26 +206,33 @@ function FloatingAlert({
   subtitle,
   success,
   wrapperClassName = "",
-  delay = 0,
+  popDelay = 0,
+  floatDuration = 4,
+  floatDelay = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   subtitle: string;
   success?: boolean;
   wrapperClassName?: string;
-  delay?: number;
+  popDelay?: number;
+  floatDuration?: number;
+  floatDelay?: number;
 }) {
   return (
     <div className={`pointer-events-none absolute z-10 ${wrapperClassName}`}>
-      <div className="motion-safe:animate-pop-in" style={{ animationDelay: `${delay}ms` }}>
-        <div className="motion-safe:animate-float" style={{ animationDelay: `${delay + 800}ms` }}>
-          <div className="glass-gold flex min-w-[105px] max-w-[145px] items-center gap-2 rounded-full px-2.5 py-1.5 shadow-glow-sm md:min-w-0 md:max-w-none md:gap-3 md:rounded-2xl md:px-4 md:py-3">
-            <div className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full md:h-8 md:w-8 ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
+      <div className="motion-safe:animate-pop-in" style={{ animationDelay: `${popDelay}ms` }}>
+        <div
+          className="motion-safe:animate-float"
+          style={{ animationDuration: `${floatDuration}s`, animationDelay: `${floatDelay}s` }}
+        >
+          <div className="glass-gold flex min-w-[105px] max-w-[145px] items-center gap-2 rounded-full px-2.5 py-1.5 shadow-glow-sm lg:min-w-[180px] lg:max-w-[240px] lg:gap-3 lg:rounded-2xl lg:px-4 lg:py-3">
+            <div className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full lg:h-9 lg:w-9 ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
               {icon}
             </div>
             <div className="min-w-0 text-left">
-              <div className="truncate text-[11px] font-semibold md:text-xs">{title}</div>
-              <div className="truncate text-[9px] text-muted-foreground md:text-[10px]">{subtitle}</div>
+              <div className="truncate text-[11px] font-semibold lg:text-sm">{title}</div>
+              <div className="truncate text-[9px] text-muted-foreground lg:text-xs">{subtitle}</div>
             </div>
           </div>
         </div>
