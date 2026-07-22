@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Package, LineChart, Users,
-  ArrowRight, Check, Sparkles, Shield, MessageCircle, Send,
-  ChevronDown, Twitter, Github, Download, LogOut,
+  ArrowRight, Sparkles, MessageCircle, Send,
+  ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
