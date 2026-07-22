@@ -6,7 +6,8 @@ import {
   ChevronDown, Twitter, Github, Download, LogOut,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import dashboardImg from "@/assets/dashboard-mockup.jpg";
+import dashboardAsset from "@/assets/amabot-dashboard.png.asset.json";
+const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import amabotIcon from "@/assets/amabot-icon.png";
 import amabotWordmark from "@/assets/amabot-wordmark.png";
