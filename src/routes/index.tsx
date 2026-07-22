@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Package, LineChart, Users,
-  ArrowRight, Check, Sparkles, Shield, MessageCircle, Send,
-  ChevronDown, Twitter, Github, Download, LogOut,
+  ArrowRight, Sparkles, MessageCircle, Send,
+  ChevronDown, Twitter, Github, Download,
 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
@@ -37,41 +36,6 @@ function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   );
 }
 
-function AccountButton() {
-  const [email, setEmail] = useState<string | null>(null);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setEmail(data.session?.user.email ?? null);
-      setReady(true);
-    });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      setEmail(session?.user.email ?? null);
-    });
-    return () => sub.subscription.unsubscribe();
-  }, []);
-
-  if (!ready) return <div className="h-8 w-20 shrink-0" aria-hidden />;
-  if (!email) {
-    return (
-      <a href="/auth" className="hidden shrink-0 items-center rounded-xl border border-border bg-white/5 px-3 py-2 text-xs font-semibold text-foreground backdrop-blur transition hover:bg-white/10 sm:inline-flex md:px-4 md:text-sm">
-        Sign in
-      </a>
-    );
-  }
-  return (
-    <button
-      type="button"
-      onClick={() => supabase.auth.signOut()}
-      title={`Signed in as ${email} — click to sign out`}
-      className="hidden shrink-0 items-center gap-1.5 rounded-xl border border-border bg-white/5 px-3 py-2 text-xs font-semibold text-foreground backdrop-blur transition hover:bg-white/10 sm:inline-flex md:px-4 md:text-sm"
-    >
-      <LogOut className="h-3.5 w-3.5" />
-      Sign out
-    </button>
-  );
-}
 
 function Nav() {
   return (
@@ -87,7 +51,6 @@ function Nav() {
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
-            <AccountButton />
             <a href="#cta" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
@@ -106,13 +69,6 @@ function Hero() {
       <img src={heroGlow} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[700px] w-full object-cover opacity-30 mix-blend-screen" />
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
-        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary backdrop-blur">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-          </span>
-          Live • 1,284 collectors online
-        </div>
 
 
         <h1 className="mt-6 text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
@@ -373,41 +329,6 @@ function FAQ() {
   );
 }
 
-function CTA() {
-  return (
-    <section id="cta" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-4xl px-4">
-        <div className="glass-gold relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
-          <div className="absolute inset-0 -z-10 bg-gradient-radial-glow" style={{ background: "var(--gradient-radial-glow)" }} />
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 opacity-[0.08]" />
-          <img src={amabotIcon} alt="AmaBot" className="mx-auto h-20 w-20 drop-shadow-[0_0_30px_oklch(0.85_0.17_88/0.6)]" />
-          <h2 className="mt-6 text-balance text-3xl font-bold md:text-5xl">
-            The next drop is <span className="text-gradient-gold">already loading</span>.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Join early access. Lock in founding-member pricing. Catch every Pokémon drop before it sells out.
-          </p>
-          <form className="mx-auto mt-8 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              required
-              placeholder="trainer@email.com"
-              className="flex-1 rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
-            />
-            <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
-              Free Download <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
-            </button>
-          </form>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-success" /> No card required</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-success" /> Cancel anytime</span>
-            <span className="inline-flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-success" /> Secure checkout</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
@@ -461,7 +382,7 @@ function Landing() {
       <SocialProof />
       <Community />
       <FAQ />
-      <CTA />
+      
       <Footer />
     </main>
   );
