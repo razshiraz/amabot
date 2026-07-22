@@ -221,9 +221,9 @@ function FloatingAlert({
 }) {
   return (
     <div className={`pointer-events-none absolute z-10 ${wrapperClassName}`}>
-      <div className="motion-safe:animate-pop-in" style={{ animationDelay: `${popDelay}ms` }}>
+      <div className="animate-pop-in" style={{ animationDelay: `${popDelay}ms` }}>
         <div
-          className="motion-safe:animate-float"
+          className="animate-float [will-change:transform]"
           style={{ animationDuration: `${floatDuration}s`, animationDelay: `${floatDelay}s` }}
         >
           <div className="glass-gold flex min-w-[105px] max-w-[145px] items-center gap-2 rounded-full px-2.5 py-1.5 shadow-glow-sm lg:min-w-[180px] lg:max-w-[240px] lg:gap-3 lg:rounded-2xl lg:px-4 lg:py-3">
