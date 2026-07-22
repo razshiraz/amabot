@@ -179,9 +179,12 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative overflow-x-clip py-12 md:py-20">
+    <section className="relative overflow-x-clip pt-6 pb-12 md:pt-10 md:pb-20">
       <div className="mx-auto max-w-6xl px-4">
-        <p className="mx-auto mb-10 max-w-3xl text-pretty text-center text-base leading-relaxed text-white px-2 md:mb-14 md:text-lg">
+        <p
+          className="mx-auto mb-10 text-pretty text-center font-medium text-white px-2 md:mb-14"
+          style={{ maxWidth: "900px", fontSize: "clamp(17px, 1.4vw, 21px)", lineHeight: 1.6 }}
+        >
           amabot is a <span className="text-gradient-gold font-semibold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold font-semibold">product monitor</span>. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
         </p>
         <div className="relative mx-auto max-w-5xl">
