@@ -144,7 +144,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative py-12 md:py-20">
+    <section className="relative overflow-x-clip py-12 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
@@ -153,25 +153,70 @@ function DashboardShowcase() {
               <img src={dashboardImg} alt="AmaBot dashboard showing Pokémon product tracking and alerts" width={1600} height={1100} className="w-full" />
             </div>
           </div>
-          <FloatingAlert className="absolute left-2 top-2 md:left-auto md:top-[18%] md:-left-6 motion-safe:animate-float" icon={<Bell className="h-3 w-3 md:h-4 md:w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
-          <FloatingAlert className="absolute right-2 top-2 md:top-[38%] md:-right-8 motion-safe:animate-float [animation-delay:0.6s]" icon={<Zap className="h-3 w-3 md:h-4 md:w-4" />} title="Restock Alert" subtitle="Prismatic Evolutions • 3 units" />
-          <FloatingAlert className="absolute left-2 bottom-2 md:bottom-auto md:top-[58%] md:-left-4 motion-safe:animate-float [animation-delay:1.2s]" icon={<Sparkles className="h-3 w-3 md:h-4 md:w-4" />} title="ASCENDED HEROES" subtitle="Deal found • -22% off" />
-          <FloatingAlert className="absolute right-2 bottom-2 md:-right-4 md:bottom-[14%] motion-safe:animate-float [animation-delay:1.8s]" icon={<ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
+          <FloatingAlert
+            wrapperClassName="left-[8%] top-[-16px] -rotate-2 md:left-auto md:top-[18%] md:-left-6 md:rotate-0"
+            delay={0}
+            icon={<Bell className="h-3 w-3 md:h-4 md:w-4" />}
+            title="151 ETB"
+            subtitle="In stock • $59.99"
+          />
+          <FloatingAlert
+            wrapperClassName="right-[-14px] top-[22%] rotate-1 md:right-auto md:top-[38%] md:-right-8 md:rotate-0"
+            delay={350}
+            icon={<Zap className="h-3 w-3 md:h-4 md:w-4" />}
+            title="Restock Alert"
+            subtitle="Prismatic Evolutions • 3 units"
+          />
+          <FloatingAlert
+            wrapperClassName="left-[-14px] bottom-[24%] rotate-[1.5deg] md:left-auto md:bottom-auto md:top-[58%] md:-left-4 md:rotate-0"
+            delay={700}
+            icon={<Sparkles className="h-3 w-3 md:h-4 md:w-4" />}
+            title="ASCENDED HEROES"
+            subtitle="Deal found • -22% off"
+          />
+          <FloatingAlert
+            wrapperClassName="right-[10%] bottom-[-16px] -rotate-1 md:right-auto md:bottom-[14%] md:-right-4 md:rotate-0"
+            delay={1050}
+            icon={<ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />}
+            title="Auto-buy success"
+            subtitle="Order #A28-91"
+            success
+          />
         </div>
       </div>
     </section>
   );
 }
 
-function FloatingAlert({ icon, title, subtitle, success, className = "" }: { icon: React.ReactNode; title: string; subtitle: string; success?: boolean; className?: string }) {
+function FloatingAlert({
+  icon,
+  title,
+  subtitle,
+  success,
+  wrapperClassName = "",
+  delay = 0,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  success?: boolean;
+  wrapperClassName?: string;
+  delay?: number;
+}) {
   return (
-    <div className={`glass-gold pointer-events-none z-10 flex max-w-[45%] items-center gap-2 rounded-xl px-2.5 py-2 shadow-glow-sm sm:max-w-[155px] md:flex md:max-w-none md:gap-3 md:rounded-2xl md:px-4 md:py-3 ${className}`}>
-      <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full md:h-8 md:w-8 ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
-        {icon}
-      </div>
-      <div className="min-w-0 text-left">
-        <div className="truncate text-[11px] font-semibold md:text-xs">{title}</div>
-        <div className="truncate text-[10px] text-muted-foreground md:text-[10px]">{subtitle}</div>
+    <div className={`pointer-events-none absolute z-10 ${wrapperClassName}`}>
+      <div className="motion-safe:animate-pop-in" style={{ animationDelay: `${delay}ms` }}>
+        <div className="motion-safe:animate-float" style={{ animationDelay: `${delay + 800}ms` }}>
+          <div className="glass-gold flex min-w-[105px] max-w-[145px] items-center gap-2 rounded-full px-2.5 py-1.5 shadow-glow-sm md:min-w-0 md:max-w-none md:gap-3 md:rounded-2xl md:px-4 md:py-3">
+            <div className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full md:h-8 md:w-8 ${success ? "bg-success/20 text-success" : "bg-primary/20 text-primary"}`}>
+              {icon}
+            </div>
+            <div className="min-w-0 text-left">
+              <div className="truncate text-[11px] font-semibold md:text-xs">{title}</div>
+              <div className="truncate text-[9px] text-muted-foreground md:text-[10px]">{subtitle}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
