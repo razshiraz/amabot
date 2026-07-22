@@ -151,14 +151,13 @@ function Hero() {
               />
             </div>
           </div>
-          {/* Floating alert cards */}
-          <FloatingAlert className="hidden md:flex absolute -left-6 top-1/4 animate-float" icon={<Bell className="h-4 w-4" />} title="Charizard ETB" subtitle="In stock • $59.99" />
-          <FloatingAlert className="hidden md:flex absolute -right-4 top-1/2 animate-float [animation-delay:1s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
         </div>
       </div>
     </section>
   );
 }
+
+
 
 function DashboardShowcase() {
   return (
@@ -171,6 +170,8 @@ function DashboardShowcase() {
               <img src={dashboardImg} alt="AmaBot dashboard showing Pokémon product tracking and alerts" width={1600} height={1100} className="w-full" />
             </div>
           </div>
+          <FloatingAlert className="hidden md:flex absolute -left-6 top-1/4 animate-float" icon={<Bell className="h-4 w-4" />} title="151 ETB" subtitle="In stock • $59.99" />
+          <FloatingAlert className="hidden md:flex absolute -right-4 top-1/2 animate-float [animation-delay:1s]" icon={<ShoppingCart className="h-4 w-4" />} title="Auto-buy success" subtitle="Order #A28-91" success />
         </div>
       </div>
     </section>
