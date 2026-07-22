@@ -42,10 +42,10 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AmaBot — Never Miss A Pokémon Drop Again" },
-      { name: "description", content: "Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors who refuse to miss rare drops." },
-      { property: "og:title", content: "AmaBot — Never Miss A Pokémon Drop Again" },
-      { property: "og:description", content: "Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors." },
+      { title: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
+      { name: "description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
+      { property: "og:title", content: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
+      { property: "og:description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
