@@ -24,16 +24,6 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function Logo({ size = "md" }: { size?: "md" | "lg" }) {
-  const iconCls = size === "lg" ? "h-11 w-11 md:h-24 md:w-24" : "h-14 w-14";
-  const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
-  return (
-    <div className="flex items-center gap-2 md:gap-3">
-      <img src={amabotIcon} alt="" className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
-      <img src={amabotWordmark} alt="AmaBot" className={wordCls} />
-    </div>
-  );
-}
 
 
 function Nav() {
