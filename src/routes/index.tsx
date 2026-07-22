@@ -416,33 +416,8 @@ function FAQ() {
 }
 
 
-function Footer() {
-  return (
-    <footer className="border-t border-border/50 py-12">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <Logo />
-            <p className="mt-3 max-w-sm text-xs text-muted-foreground">
-              AmaBot is an independent tool and is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. or The Pokémon Company. As an Amazon Associate we may earn from qualifying purchases.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-6 text-sm">
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Terms</a>
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground transition hover:text-foreground">Affiliate Disclosure</a>
-            <a href="#" aria-label="Twitter" className="text-muted-foreground transition hover:text-primary"><Twitter className="h-4 w-4" /></a>
-            <a href="#" aria-label="Discord" className="text-muted-foreground transition hover:text-primary"><MessageCircle className="h-4 w-4" /></a>
-            <a href="#" aria-label="GitHub" className="text-muted-foreground transition hover:text-primary"><Github className="h-4 w-4" /></a>
-          </div>
-        </div>
-        <div className="mt-10 border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} AmaBot. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
+const Footer = SiteFooter;
+
 
 function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.ReactNode; sub?: string }) {
   return (
