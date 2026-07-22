@@ -42,10 +42,10 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AmaBot — Never Miss A Pokémon Drop Again" },
-      { name: "description", content: "Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors who refuse to miss rare drops." },
-      { property: "og:title", content: "AmaBot — Never Miss A Pokémon Drop Again" },
-      { property: "og:description", content: "Real-time Amazon Pokémon deal alerts and ultra-fast auto checkout for collectors." },
+      { title: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
+      { name: "description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
+      { property: "og:title", content: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
+      { property: "og:description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
@@ -111,6 +111,10 @@ function Hero() {
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
           Track any product, set your target price, and choose between alerts or automatic purchasing.
+        </p>
+
+        <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm text-muted-foreground/90 md:text-base">
+          amabot is a free Amazon auto checkout bot and product monitor. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
