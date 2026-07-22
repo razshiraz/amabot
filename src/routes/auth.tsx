@@ -135,6 +135,7 @@ function AuthPage() {
           <form onSubmit={onEmailSubmit} className="space-y-3">
             <input
               type="email" required autoComplete="email" placeholder="trainer@email.com"
+              aria-label="Email address"
               value={email} onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
             />
@@ -142,6 +143,7 @@ function AuthPage() {
               type="password" required minLength={6}
               autoComplete={mode === "signup" ? "new-password" : "current-password"}
               placeholder="Password"
+              aria-label="Password"
               value={password} onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
             />
