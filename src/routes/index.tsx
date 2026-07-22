@@ -37,41 +37,6 @@ function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   );
 }
 
-function AccountButton() {
-  const [email, setEmail] = useState<string | null>(null);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setEmail(data.session?.user.email ?? null);
-      setReady(true);
-    });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      setEmail(session?.user.email ?? null);
-    });
-    return () => sub.subscription.unsubscribe();
-  }, []);
-
-  if (!ready) return <div className="h-8 w-20 shrink-0" aria-hidden />;
-  if (!email) {
-    return (
-      <a href="/auth" className="hidden shrink-0 items-center rounded-xl border border-border bg-white/5 px-3 py-2 text-xs font-semibold text-foreground backdrop-blur transition hover:bg-white/10 sm:inline-flex md:px-4 md:text-sm">
-        Sign in
-      </a>
-    );
-  }
-  return (
-    <button
-      type="button"
-      onClick={() => supabase.auth.signOut()}
-      title={`Signed in as ${email} — click to sign out`}
-      className="hidden shrink-0 items-center gap-1.5 rounded-xl border border-border bg-white/5 px-3 py-2 text-xs font-semibold text-foreground backdrop-blur transition hover:bg-white/10 sm:inline-flex md:px-4 md:text-sm"
-    >
-      <LogOut className="h-3.5 w-3.5" />
-      Sign out
-    </button>
-  );
-}
 
 function Nav() {
   return (
