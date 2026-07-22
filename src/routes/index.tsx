@@ -86,8 +86,7 @@ function Nav() {
             <a href="#community" className="hover:text-foreground transition">Community</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
-          <div className="flex shrink-0 items-center gap-2">
-            <AccountButton />
+          <div className="flex shrink-0 items-center gap-2>
             <a href="#cta" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
