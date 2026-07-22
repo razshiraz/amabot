@@ -113,10 +113,6 @@ function Hero() {
           Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
-        <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm text-muted-foreground/90 md:text-base">
-          amabot is a free Amazon auto checkout bot and product monitor. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
-        </p>
-
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
@@ -290,6 +286,11 @@ function Features() {
     <section id="features" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
+
+        <p className="mx-auto mt-8 max-w-3xl text-pretty text-center text-base leading-relaxed text-white px-2 md:text-lg">
+          amabot is a <span className="text-gradient-gold font-semibold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold font-semibold">product monitor</span>. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
+        </p>
+
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
