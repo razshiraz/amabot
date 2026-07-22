@@ -142,11 +142,9 @@ function Hero() {
             <div className="overflow-hidden rounded-2xl border border-white/5">
               <video
                 src={amabotDemo.url}
-                autoPlay
-                muted
-                loop
-                playsInline
                 controls
+                playsInline
+                preload="metadata"
                 className="w-full"
               />
             </div>
