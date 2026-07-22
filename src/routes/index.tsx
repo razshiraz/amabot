@@ -181,6 +181,9 @@ function DashboardShowcase() {
   return (
     <section className="relative overflow-x-clip py-12 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
+        <p className="mx-auto mb-10 max-w-3xl text-pretty text-center text-base leading-relaxed text-white px-2 md:mb-14 md:text-lg">
+          amabot is a <span className="text-gradient-gold font-semibold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold font-semibold">product monitor</span>. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
+        </p>
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
@@ -287,9 +290,7 @@ function Features() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
-        <p className="mx-auto mt-8 max-w-3xl text-pretty text-center text-base leading-relaxed text-white px-2 md:text-lg">
-          amabot is a <span className="text-gradient-gold font-semibold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold font-semibold">product monitor</span>. Track product availability and prices, receive restock alerts, or enable automatic purchasing when an offer matches your rules.
-        </p>
+
 
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
