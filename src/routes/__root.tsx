@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "AmaBot helps users track Amazon deals, limited drops, and fast-selling products with real-time alerts and ultra-fast auto buying. Never miss a restock again." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/84fb93bd-3670-45fd-8942-a3fd7108d474" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/84fb93bd-3670-45fd-8942-a3fd7108d474" },
+      { name: "google-site-verification", content: "k_tyBEdTYrmKZo7TcRss49FtGVitDxg_FtyoPQuSb48" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
