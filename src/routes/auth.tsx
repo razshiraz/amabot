@@ -13,8 +13,11 @@ export const Route = createFileRoute("/auth")({
   }),
   head: () => ({
     meta: [
-      { title: "Sign in — AmaBot" },
-      { name: "description", content: "Sign in to your AmaBot account to manage tracked drops and connect external tools." },
+      { title: "Sign in — amabot" },
+      { name: "description", content: "Sign in to your amabot account to manage tracked drops and connect external tools." },
+      { property: "og:title", content: "Sign in — amabot" },
+      { property: "og:description", content: "Sign in to your amabot account to manage tracked drops and connect external tools." },
+      { name: "robots", content: "noindex,nofollow" },
     ],
   }),
   component: AuthPage,
