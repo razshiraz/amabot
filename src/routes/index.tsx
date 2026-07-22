@@ -189,7 +189,7 @@ function DashboardShowcase() {
           amabot is a <span className="text-gradient-gold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
         </h2>
 
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-5xl mt-9 lg:mt-0">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="overflow-hidden rounded-2xl border border-white/5">
