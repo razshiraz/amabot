@@ -156,8 +156,8 @@ function Hero() {
     </section>
   );
 }
-  );
-}
+
+
 
 function DashboardShowcase() {
   return (
