@@ -118,7 +118,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative py-12 md:py-10 md:py-20">
+    <section className="relative py-12 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
