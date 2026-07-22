@@ -184,26 +184,34 @@ function Features() {
 }
 
 const steps = [
-  { n: "01", title: "Track Pokémon products", desc: "Pick the booster boxes, ETBs, and tins you want. Add as many as you like." },
-  { n: "02", title: "Receive instant alerts", desc: "We watch Amazon 24/7. The moment something drops, you get pinged." },
-  { n: "03", title: "AmaBot secures the drop", desc: "Auto-checkout fires in milliseconds — before it sells out." },
+  { n: "01", title: "Create your amabot account", desc: "Sign up for amabot to access your dashboard and begin the quick setup process." },
+  { n: "02", title: "Connect your Amazon account", desc: "Securely connect your Amazon account and register a passkey for a reliable, persistent connection with fewer interruptions." },
+  { n: "03", title: "Confirm shipping and payment", desc: "Make sure your default Amazon shipping address and payment method are the ones you want amabot to use." },
+  { n: "04", title: "Add your product", desc: "Paste the Amazon link for the product you want amabot to monitor or purchase." },
+  { n: "05", title: "Set your buying rules", desc: "Choose your target price, quantity, and whether amabot should notify you or purchase automatically." },
+  { n: "06", title: "Press Start", desc: "Start the engine and you're done. amabot will monitor the product and act when all your rules are met." },
 ];
 
 function HowItWorks() {
   return (
     <section id="how" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="How it works" title={<>Three steps from <span className="text-gradient-gold">tracked</span> to <span className="text-gradient-gold">secured</span></>} sub="No spreadsheets. No refresh-spamming. No FOMO." />
+        <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">amabot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
-        <div className="relative mt-14 grid gap-6 md:grid-cols-3">
-          <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block" />
+        <div className="relative mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Desktop row connectors */}
+          <div className="pointer-events-none absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
+          <div className="pointer-events-none absolute left-0 right-0 bottom-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" style={{ top: "auto", bottom: "calc(50% - 8rem)" }} />
+          {/* Mobile vertical timeline */}
+          <div className="pointer-events-none absolute left-10 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent md:hidden" />
           {steps.map((s) => (
-            <div key={s.n} className="glass relative rounded-2xl p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-lg font-bold text-primary-foreground shadow-glow-sm">
+            <div key={s.n} className="glass group relative flex h-full flex-col rounded-2xl p-6 transition hover:border-primary/40 hover:shadow-glow-sm">
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-lg font-bold text-primary-foreground shadow-glow-sm">
                 {s.n}
               </div>
-              <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <h3 className="relative mt-5 text-lg font-semibold">{s.title}</h3>
+              <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
             </div>
           ))}
         </div>
