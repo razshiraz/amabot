@@ -365,41 +365,6 @@ function FAQ() {
   );
 }
 
-function CTA() {
-  return (
-    <section id="cta" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-4xl px-4">
-        <div className="glass-gold relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
-          <div className="absolute inset-0 -z-10 bg-gradient-radial-glow" style={{ background: "var(--gradient-radial-glow)" }} />
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 opacity-[0.08]" />
-          <img src={amabotIcon} alt="AmaBot" className="mx-auto h-20 w-20 drop-shadow-[0_0_30px_oklch(0.85_0.17_88/0.6)]" />
-          <h2 className="mt-6 text-balance text-3xl font-bold md:text-5xl">
-            The next drop is <span className="text-gradient-gold">already loading</span>.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Join early access. Lock in founding-member pricing. Catch every Pokémon drop before it sells out.
-          </p>
-          <form className="mx-auto mt-8 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              required
-              placeholder="trainer@email.com"
-              className="flex-1 rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none ring-primary/30 backdrop-blur transition focus:ring-2"
-            />
-            <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
-              Free Download <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
-            </button>
-          </form>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-success" /> No card required</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-success" /> Cancel anytime</span>
-            <span className="inline-flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-success" /> Secure checkout</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
