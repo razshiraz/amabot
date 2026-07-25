@@ -100,7 +100,7 @@ function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
-      <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       {/* Mobile: stretched to fill full hero+video area so glow is visible top-to-bottom */}
       <div
         aria-hidden
