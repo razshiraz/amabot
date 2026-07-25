@@ -105,7 +105,7 @@ function Hero() {
         src={heroGlow}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[1700px] w-full object-cover object-top opacity-30 mix-blend-screen md:h-[1500px] [mask-image:linear-gradient(to_bottom,black_0%,black_78%,transparent_98%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_78%,transparent_98%)] md:[mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] md:[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-full max-h-[2200px] w-full object-cover object-top opacity-30 mix-blend-screen md:h-[1500px] md:max-h-none [mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] md:[mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] md:[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
       />
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
