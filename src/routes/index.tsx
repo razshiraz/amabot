@@ -101,11 +101,23 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      {/* Mobile: stretched to fill full hero+video area so glow is visible top-to-bottom */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)]"
+        style={{
+          backgroundImage: `url(${heroGlow})`,
+          backgroundSize: "100% 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top center",
+        }}
+      />
+      {/* Desktop: original image treatment, untouched */}
       <img
         src={heroGlow}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-full max-h-[2200px] w-full object-cover object-top opacity-30 mix-blend-screen md:h-[1500px] md:max-h-none [mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] md:[mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] md:[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
       />
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
