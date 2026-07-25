@@ -12,7 +12,6 @@ import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
-import supportsAsset from "@/assets/supports.png.asset.json";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -115,13 +114,7 @@ function Hero() {
           Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
-        <img
-          src={supportsAsset.url}
-          alt="Supports Windows and macOS"
-          className="mx-auto mt-7 h-auto w-[240px] sm:w-[320px] md:mt-8 md:w-[380px] lg:w-[400px]"
-        />
-
-        <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
+        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
