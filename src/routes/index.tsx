@@ -107,7 +107,7 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)]"
         style={{
-          backgroundImage: `url(${heroGlow})`,
+          backgroundImage: `url(${heroGlowMobile})`,
           backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top center",
