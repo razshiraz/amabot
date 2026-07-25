@@ -228,14 +228,26 @@
   100% { transform: translateX(-50%); }
 }
 
-@keyframes mobile-lightning-drift-left {
-  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.86; }
-  50% { transform: translate3d(3px, -8px, 0); opacity: 1; }
+@keyframes mobile-lightning-flicker-a {
+  0%, 100% { opacity: 0.9; transform: translate3d(0, 0, 0); }
+  22% { opacity: 0.55; }
+  38% { opacity: 1; transform: translate3d(1px, -2px, 0); }
+  60% { opacity: 0.7; }
+  82% { opacity: 0.95; transform: translate3d(-1px, 1px, 0); }
 }
 
-@keyframes mobile-lightning-drift-right {
-  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.8; }
-  50% { transform: translate3d(-3px, 9px, 0); opacity: 0.96; }
+@keyframes mobile-lightning-flicker-b {
+  0%, 100% { opacity: 0.85; transform: translate3d(0, 0, 0); }
+  18% { opacity: 1; transform: translate3d(-1px, 2px, 0); }
+  44% { opacity: 0.6; }
+  70% { opacity: 0.92; transform: translate3d(1px, -1px, 0); }
+}
+
+@keyframes mobile-lightning-flicker-c {
+  0%, 100% { opacity: 0.75; }
+  30% { opacity: 1; transform: translate3d(1px, -1px, 0); }
+  55% { opacity: 0.5; }
+  80% { opacity: 0.9; transform: translate3d(-1px, 2px, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -243,8 +255,9 @@
   .animate-pulse-glow,
   .animate-marquee,
   .animate-pop-in,
-  .mobile-lightning-drift-left,
-  .mobile-lightning-drift-right {
+  .mobile-lightning-drift-a,
+  .mobile-lightning-drift-b,
+  .mobile-lightning-drift-c {
     animation: none !important;
   }
 }
