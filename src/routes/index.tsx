@@ -8,7 +8,6 @@ import {
 import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
 const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
-import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
@@ -102,17 +101,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-      {/* Mobile: stretched to fill full hero+video area so glow is visible top-to-bottom */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_92%,transparent_100%)]"
-        style={{
-          backgroundImage: `url(${heroGlowMobile})`,
-          backgroundSize: "100% 100%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top center",
-        }}
-      />
+      <MobileLightningBackground />
       {/* Desktop: original image treatment, untouched */}
       <img
         src={heroGlow}
@@ -198,6 +187,43 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function MobileLightningBackground() {
+  return (
+    <div aria-hidden className="mobile-lightning-background md:hidden">
+      <svg
+        className="mobile-lightning-svg"
+        viewBox="0 0 390 980"
+        preserveAspectRatio="none"
+        focusable="false"
+      >
+        <defs>
+          <filter id="mobile-lightning-soft-blur" x="-80%" y="-20%" width="260%" height="140%">
+            <feGaussianBlur stdDeviation="12" />
+          </filter>
+        </defs>
+        <path
+          className="mobile-lightning-halo mobile-lightning-drift-left"
+          filter="url(#mobile-lightning-soft-blur)"
+          d="M19 8 C7 96 49 168 31 252 C15 331 60 414 43 500 C27 584 58 675 36 764 C24 817 39 891 27 972"
+        />
+        <path
+          className="mobile-lightning-core mobile-lightning-drift-left"
+          d="M19 8 C7 96 49 168 31 252 C15 331 60 414 43 500 C27 584 58 675 36 764 C24 817 39 891 27 972"
+        />
+        <path
+          className="mobile-lightning-halo mobile-lightning-drift-right"
+          filter="url(#mobile-lightning-soft-blur)"
+          d="M368 0 C383 92 337 177 357 272 C374 350 329 432 348 518 C366 600 331 690 354 782 C371 850 345 914 363 980"
+        />
+        <path
+          className="mobile-lightning-core mobile-lightning-drift-right"
+          d="M368 0 C383 92 337 177 357 272 C374 350 329 432 348 518 C366 600 331 690 354 782 C371 850 345 914 363 980"
+        />
+      </svg>
+    </div>
   );
 }
 
