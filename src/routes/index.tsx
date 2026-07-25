@@ -193,7 +193,7 @@ function DashboardShowcase() {
           className="mx-auto text-balance text-center text-white px-2 mb-7 md:mb-12"
           style={{ maxWidth: "950px", fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.2, fontWeight: 700 }}
         >
-          amabot is a <span className="text-gradient-gold">free Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
+          Amabot is a <span className="text-gradient-gold uppercase">FREE</span> <span className="text-gradient-gold">Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
         </h2>
 
         <div className="relative mx-auto max-w-5xl mt-9 lg:mt-0">
