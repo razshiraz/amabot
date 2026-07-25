@@ -106,8 +106,9 @@ function Hero() {
         src={heroGlow}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1400px] w-full object-cover object-top opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 -z-10 block h-full w-full object-fill opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]"
       />
+
       {/* Desktop: original image treatment, untouched */}
       <img
         src={heroGlow}
