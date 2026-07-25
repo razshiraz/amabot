@@ -195,13 +195,14 @@ function DashboardShowcase() {
     <section className="relative overflow-x-clip pt-6 pb-12 md:pt-10 md:pb-20">
       <div className="mx-auto max-w-6xl px-4">
         <h2
-          className="mx-auto text-balance text-center text-white px-2 mb-7 md:mb-12"
+          className="mx-auto text-balance text-center text-white px-2 mb-12 md:mb-16 lg:mb-24"
           style={{ maxWidth: "950px", fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.2, fontWeight: 700 }}
         >
           Amabot is a <span className="text-gradient-gold uppercase">FREE</span> <span className="text-gradient-gold">Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
         </h2>
 
-        <div className="relative mx-auto max-w-5xl mt-9 lg:mt-0">
+        <div className="relative mx-auto max-w-5xl">
+
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="overflow-hidden rounded-2xl border border-white/5">
