@@ -106,8 +106,9 @@ function Hero() {
         src={heroGlow}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1400px] w-full object-cover object-top opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 -z-10 block h-full w-full object-fill opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]"
       />
+
       {/* Desktop: original image treatment, untouched */}
       <img
         src={heroGlow}
@@ -197,56 +198,8 @@ function Hero() {
   );
 }
 
-function MobileLightningBackground() {
-  // Jagged polyline bolts with tiny secondary branches.
-  // Bolt A: upper-left edge, drops down and hooks slightly inward.
-  const boltA = "M22 -10 L34 88 L14 132 L40 214 L18 276 L36 352 L22 430";
-  const branchA1 = "M18 276 L4 300";
-  const branchA2 = "M40 214 L58 226";
 
-  // Bolt B: right edge, starts mid, jags down toward bottom-right.
-  const boltB = "M372 210 L352 288 L378 344 L346 430 L370 512 L342 604 L364 700 L338 812";
-  const branchB1 = "M378 344 L394 360";
-  const branchB2 = "M342 604 L322 616";
 
-  // Bolt C: short accent, lower-left, angled outward.
-  const boltC = "M-6 720 L46 782 L18 848 L60 940";
-  const branchC1 = "M46 782 L62 776";
-
-  return (
-    <div aria-hidden className="mobile-lightning-background md:hidden">
-      <svg
-        className="mobile-lightning-svg"
-        viewBox="0 0 390 980"
-        preserveAspectRatio="none"
-        focusable="false"
-      >
-        <defs>
-          <filter id="mobile-lightning-soft-blur" x="-80%" y="-20%" width="260%" height="140%">
-            <feGaussianBlur stdDeviation="10" />
-          </filter>
-        </defs>
-
-        {/* Bolt A */}
-        <path className="mobile-lightning-halo mobile-lightning-drift-a" filter="url(#mobile-lightning-soft-blur)" d={boltA} />
-        <path className="mobile-lightning-core mobile-lightning-drift-a" d={boltA} />
-        <path className="mobile-lightning-branch mobile-lightning-drift-a" d={branchA1} />
-        <path className="mobile-lightning-branch mobile-lightning-drift-a" d={branchA2} />
-
-        {/* Bolt B */}
-        <path className="mobile-lightning-halo mobile-lightning-drift-b" filter="url(#mobile-lightning-soft-blur)" d={boltB} />
-        <path className="mobile-lightning-core mobile-lightning-drift-b" d={boltB} />
-        <path className="mobile-lightning-branch mobile-lightning-drift-b" d={branchB1} />
-        <path className="mobile-lightning-branch mobile-lightning-drift-b" d={branchB2} />
-
-        {/* Bolt C */}
-        <path className="mobile-lightning-halo mobile-lightning-drift-c" filter="url(#mobile-lightning-soft-blur)" d={boltC} />
-        <path className="mobile-lightning-core mobile-lightning-drift-c" d={boltC} />
-        <path className="mobile-lightning-branch mobile-lightning-drift-c" d={branchC1} />
-      </svg>
-    </div>
-  );
-}
 
 
 
