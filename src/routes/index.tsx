@@ -101,13 +101,32 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-      {/* Mobile: same lightning image, scaled up and cover-cropped so it flows behind hero + video */}
-      <img
-        src={heroGlow}
-        alt=""
+      {/* Mobile: layered crops of the desktop lightning art so it frames the hero and video like the reference */}
+      <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1400px] w-full scale-150 object-cover object-top opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_60%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_60%,transparent_92%)]"
-      />
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] overflow-hidden mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_84%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_84%,transparent_100%)]"
+      >
+        <img
+          src={heroGlow}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.24] [object-position:24%_top]"
+        />
+        <img
+          src={heroGlow}
+          alt=""
+          className="absolute -left-[62%] top-2 h-[760px] w-[155%] object-cover opacity-[0.36] [object-position:0%_top]"
+        />
+        <img
+          src={heroGlow}
+          alt=""
+          className="absolute -right-[56%] top-[130px] h-[760px] w-[155%] object-cover opacity-[0.34] [object-position:100%_top]"
+        />
+        <img
+          src={heroGlow}
+          alt=""
+          className="absolute -left-[38%] top-[500px] h-[650px] w-[150%] object-cover opacity-[0.36] [object-position:0%_bottom]"
+        />
+      </div>
 
       {/* Desktop: original image treatment, untouched */}
       <img
