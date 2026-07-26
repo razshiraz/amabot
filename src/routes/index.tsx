@@ -101,12 +101,12 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-      {/* Mobile: same desktop lightning image, sized/masked to flow through hero + top of video */}
+      {/* Mobile: same lightning image, scaled up and cover-cropped so it flows behind hero + video */}
       <img
         src={heroGlow}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 block h-full w-full object-fill opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1400px] w-full scale-150 object-cover object-top opacity-30 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_60%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_60%,transparent_92%)]"
       />
 
       {/* Desktop: original image treatment, untouched */}
@@ -116,6 +116,7 @@ function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
       />
+
 
 
       <div className="relative mx-auto max-w-6xl px-4 text-center">
