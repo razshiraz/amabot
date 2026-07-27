@@ -75,8 +75,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "amabot" },
       { property: "og:site_name", content: "amabot" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/84fb93bd-3670-45fd-8942-a3fd7108d474" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/84fb93bd-3670-45fd-8942-a3fd7108d474" },
+      { property: "og:image", content: "https://amabot.app/og-image.jpg" },
+      { name: "twitter:image", content: "https://amabot.app/og-image.jpg" },
       { name: "google-site-verification", content: "k_tyBEdTYrmKZo7TcRss49FtGVitDxg_FtyoPQuSb48" },
     ],
     links: [
