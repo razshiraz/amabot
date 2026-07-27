@@ -45,10 +45,10 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
-      { name: "description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
-      { property: "og:title", content: "Free Amazon Auto Checkout Bot & Restock Monitor | amabot" },
-      { property: "og:description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let amabot automatically purchase matching offers - completely free." },
+      { title: "Free Amazon Auto Checkout Bot & Monitor | Amabot" },
+      { name: "description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let Amabot automatically purchase matching offers - Completely Free!" },
+      { property: "og:title", content: "Free Amazon Auto Checkout Bot & Monitor | Amabot" },
+      { property: "og:description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let Amabot automatically purchase matching offers - Completely Free!" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
