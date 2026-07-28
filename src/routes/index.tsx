@@ -186,7 +186,7 @@ function Hero() {
               <video
                 ref={videoRef}
                 src={amabotDemo.url}
-                poster={OG_IMAGE}
+                poster={demoPoster.url}
                 controls
                 playsInline
                 preload="metadata"
@@ -197,14 +197,7 @@ function Hero() {
               />
               {!playing && (
                 <>
-                  <img
-                    src={OG_IMAGE}
-                    alt="AmaBot Amazon auto-buy and restock monitor"
-                    width={1200}
-                    height={630}
-                    onClick={startPlayback}
-                    className="absolute inset-0 h-full w-full cursor-pointer object-cover"
-                  />
+
 
                   <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
                     <button
