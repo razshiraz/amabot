@@ -159,7 +159,7 @@ function Hero() {
               <video
                 ref={videoRef}
                 src={amabotDemo.url}
-                poster={amabotDemoPoster.url}
+                poster={OG_IMAGE}
                 controls
                 playsInline
                 preload="metadata"
@@ -171,12 +171,14 @@ function Hero() {
               {!playing && (
                 <>
                   <img
-                    src={amabotDemoPoster.url}
-                    alt="Free Amazon auto checkout bot demo showing amabot dashboard, restock alerts, and buying rules"
-                    aria-hidden
+                    src={OG_IMAGE}
+                    alt="AmaBot Amazon auto-buy and restock monitor"
+                    width={1200}
+                    height={630}
                     onClick={startPlayback}
                     className="absolute inset-0 h-full w-full cursor-pointer object-cover"
                   />
+
                   <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
                     <button
                       type="button"
