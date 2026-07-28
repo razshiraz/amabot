@@ -10,10 +10,35 @@ const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
-import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
 import supportsBadge from "@/assets/supports-windows-macos.png.asset.json";
+
+const OG_IMAGE = "https://amabot.app/og-image.jpg";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://amabot.app/#webpage",
+  url: "https://amabot.app/",
+  name: "Free Amazon Auto Checkout Bot & Monitor | Amabot",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: OG_IMAGE,
+    contentUrl: OG_IMAGE,
+  },
+};
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Amabot demo - Amazon auto checkout bot and restock monitor",
+  description: "Demo of amabot monitoring Amazon products, sending restock alerts, and automatically purchasing offers that match your buying rules.",
+  thumbnailUrl: [OG_IMAGE],
+  uploadDate: "2026-07-01",
+  contentUrl: amabotDemo.url,
+  embedUrl: "https://amabot.app/",
+};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -54,6 +79,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "https://amabot.app/" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(webPageSchema) },
+      { type: "application/ld+json", children: JSON.stringify(videoSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
     ],
   }),
@@ -159,7 +186,7 @@ function Hero() {
               <video
                 ref={videoRef}
                 src={amabotDemo.url}
-                poster={amabotDemoPoster.url}
+                poster={OG_IMAGE}
                 controls
                 playsInline
                 preload="metadata"
@@ -171,12 +198,14 @@ function Hero() {
               {!playing && (
                 <>
                   <img
-                    src={amabotDemoPoster.url}
-                    alt="Free Amazon auto checkout bot demo showing amabot dashboard, restock alerts, and buying rules"
-                    aria-hidden
+                    src={OG_IMAGE}
+                    alt="AmaBot Amazon auto-buy and restock monitor"
+                    width={1200}
+                    height={630}
                     onClick={startPlayback}
                     className="absolute inset-0 h-full w-full cursor-pointer object-cover"
                   />
+
                   <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
                     <button
                       type="button"
