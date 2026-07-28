@@ -80,6 +80,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "https://amabot.app/" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(webPageSchema) },
+      { type: "application/ld+json", children: JSON.stringify(videoSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
     ],
   }),
