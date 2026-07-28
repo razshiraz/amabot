@@ -197,25 +197,22 @@ function Hero() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
               {!playing && (
-                <>
-
-
-                  <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
-                    <button
-                      type="button"
-                      onClick={startPlayback}
-                      aria-label="Play amabot demo video"
-                      style={{ aspectRatio: "1 / 1", boxSizing: "border-box", padding: 0, lineHeight: 0, flexShrink: 0 }}
-                      className="pointer-events-auto group grid h-[60px] w-[60px] place-items-center rounded-full border border-primary/40 bg-black/50 text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[74px] md:w-[74px]"
-                    >
-                      <span
-                        aria-hidden
-                        className="block h-0 w-0 translate-x-[2px] border-y-[9px] border-l-[14px] border-y-transparent border-l-white md:border-y-[11px] md:border-l-[17px]"
-                      />
-                    </button>
-                  </div>
-                </>
+                <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
+                  <button
+                    type="button"
+                    onClick={startPlayback}
+                    aria-label="Play amabot demo video"
+                    style={{ aspectRatio: "1 / 1", boxSizing: "border-box", padding: 0, lineHeight: 0, flexShrink: 0 }}
+                    className="pointer-events-auto group grid h-[60px] w-[60px] place-items-center rounded-full border border-primary/40 bg-black/50 text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[74px] md:w-[74px]"
+                  >
+                    <span
+                      aria-hidden
+                      className="block h-0 w-0 translate-x-[2px] border-y-[9px] border-l-[14px] border-y-transparent border-l-white md:border-y-[11px] md:border-l-[17px]"
+                    />
+                  </button>
+                </div>
               )}
+
             </div>
           </div>
         </div>
