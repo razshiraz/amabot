@@ -15,6 +15,32 @@ import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
 import supportsBadge from "@/assets/supports-windows-macos.png.asset.json";
 
+const OG_IMAGE = "https://amabot.app/og-image.jpg";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://amabot.app/#webpage",
+  url: "https://amabot.app/",
+  name: "Free Amazon Auto Checkout Bot & Monitor | Amabot",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: OG_IMAGE,
+    contentUrl: OG_IMAGE,
+  },
+};
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Amabot demo - Amazon auto checkout bot and restock monitor",
+  description: "Demo of amabot monitoring Amazon products, sending restock alerts, and automatically purchasing offers that match your buying rules.",
+  thumbnailUrl: [OG_IMAGE],
+  uploadDate: "2026-07-01",
+  contentUrl: amabotDemo.url,
+  embedUrl: "https://amabot.app/",
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
