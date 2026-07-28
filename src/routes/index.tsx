@@ -10,7 +10,6 @@ const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
 import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
-import amabotDemoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import amabotIcon from "@/assets/amabot-icon.png";
 import supportsBadge from "@/assets/supports-windows-macos.png.asset.json";
