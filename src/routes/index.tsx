@@ -10,10 +10,11 @@ import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import { OptImage } from "@/components/opt-image";
-import { dashImg, posterImg, supportsImg, srcSet } from "@/lib/optimized-images";
+import { dashImg, iconImg, posterImg, supportsImg, srcSet } from "@/lib/optimized-images";
 
 
 const OG_IMAGE = "https://amabot.app/og-image.jpg";
+const POSTER_SIZES = "(min-width: 1024px) 1024px, 100vw";
 
 const webPageSchema = {
   "@context": "https://schema.org",
@@ -77,7 +78,17 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://amabot.app/" }],
+    links: [
+      { rel: "canonical", href: "https://amabot.app/" },
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/avif",
+        imageSrcSet: srcSet(posterImg.avif),
+        imageSizes: POSTER_SIZES,
+        fetchPriority: "high",
+      },
+    ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(webPageSchema) },
       { type: "application/ld+json", children: JSON.stringify(videoSchema) },
@@ -304,7 +315,14 @@ function DashboardShowcase() {
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="overflow-hidden rounded-2xl border border-white/5">
-              <img src={dashboardImg} alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts" width={1600} height={1100} fetchPriority="high" decoding="async" className="w-full" />
+              <OptImage
+                variants={dashImg}
+                alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts"
+                width={1280}
+                height={720}
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="w-full"
+              />
             </div>
           </div>
           <FloatingAlert
@@ -477,8 +495,8 @@ function SocialProof() {
     <section className="relative py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
+          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
+          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
           <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.l} className="text-center">
@@ -680,7 +698,7 @@ function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.
   return (
     <div className="mx-auto max-w-2xl text-center">
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
-        <img src={amabotIcon} alt="amabot brand icon" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
+        <OptImage variants={iconImg} alt="amabot brand icon" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
         {eyebrow}
       </div>
       <h2 className="mt-5 text-balance text-4xl font-bold md:text-5xl">{title}</h2>
