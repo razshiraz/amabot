@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import amabotIcon from "@/assets/amabot-icon.png";
-import amabotWordmark from "@/assets/amabot-wordmark.png";
+import { OptImage } from "@/components/opt-image";
+import { iconImg, wordmarkImg } from "@/lib/optimized-images";
+
 
 // Discord brand icon
 function DiscordIcon({ className }: { className?: string }) {
