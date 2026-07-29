@@ -36,7 +36,8 @@ const videoSchema = {
   name: "Amabot demo - Amazon auto checkout bot and restock monitor",
   description: "Demo of amabot monitoring Amazon products, sending restock alerts, and automatically purchasing offers that match your buying rules.",
   thumbnailUrl: [OG_IMAGE],
-  uploadDate: "2026-07-01",
+  uploadDate: "2026-07-22T20:27:44Z",
+  duration: "PT1M30S",
   contentUrl: amabotDemo.url,
   embedUrl: "https://amabot.app/",
 };
