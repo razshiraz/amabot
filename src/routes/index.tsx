@@ -117,15 +117,25 @@ function Nav() {
 
 function Hero() {
   const [playing, setPlaying] = useState(false);
+  const [activated, setActivated] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const startPlayback = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.play().catch(() => {
-      /* ignore autoplay rejections */
-    });
+    setFailed(false);
+    setActivated(true);
+    setLoading(true);
+    if (!v.getAttribute("src")) {
+      v.setAttribute("src", amabotDemo.url);
+      v.load();
+    }
+    const attempt = v.play();
+    if (attempt) attempt.catch(() => setLoading(false));
   };
+
 
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
