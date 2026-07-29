@@ -117,15 +117,25 @@ function Nav() {
 
 function Hero() {
   const [playing, setPlaying] = useState(false);
+  const [activated, setActivated] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const startPlayback = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.play().catch(() => {
-      /* ignore autoplay rejections */
-    });
+    setFailed(false);
+    setActivated(true);
+    setLoading(true);
+    if (!v.getAttribute("src")) {
+      v.setAttribute("src", amabotDemo.url);
+      v.load();
+    }
+    const attempt = v.play();
+    if (attempt) attempt.catch(() => setLoading(false));
   };
+
 
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
@@ -186,18 +196,35 @@ function Hero() {
             <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
                 ref={videoRef}
-                src={amabotDemo.url}
                 poster={demoPoster.url}
-                controls
+                controls={activated}
                 playsInline
-                preload="metadata"
+                preload="none"
+                onPlaying={() => {
+                  setPlaying(true);
+                  setLoading(false);
+                }}
                 onPlay={() => setPlaying(true)}
+                onWaiting={() => setLoading(true)}
+                onError={() => {
+                  if (activated) {
+                    setLoading(false);
+                    setFailed(true);
+                  }
+                }}
                 onPause={() => setPlaying(false)}
                 onEnded={() => setPlaying(false)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              {!playing && (
+              {!playing && !failed && (
                 <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
+                  {loading ? (
+                    <span
+                      aria-label="Loading video"
+                      role="status"
+                      className="block h-[52px] w-[52px] animate-spin rounded-full border-2 border-white/20 border-t-primary md:h-[64px] md:w-[64px]"
+                    />
+                  ) : (
                   <button
                     type="button"
                     onClick={startPlayback}
@@ -210,6 +237,18 @@ function Hero() {
                       className="block h-0 w-0 translate-x-[2px] border-y-[9px] border-l-[14px] border-y-transparent border-l-white md:border-y-[11px] md:border-l-[17px]"
                     />
                   </button>
+                  )}
+                </div>
+              )}
+              {failed && (
+                <div className="absolute inset-0 z-10 grid place-items-center">
+                  <button
+                    type="button"
+                    onClick={startPlayback}
+                    className="rounded-xl border border-primary/40 bg-black/60 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-black/80"
+                  >
+                    Retry
+                  </button>
                 </div>
               )}
 
@@ -220,6 +259,7 @@ function Hero() {
     </section>
   );
 }
+
 
 
 
