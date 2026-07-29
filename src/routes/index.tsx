@@ -200,7 +200,6 @@ function Hero() {
             <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
                 ref={videoRef}
-                poster={demoPoster.url}
                 controls={activated}
                 playsInline
                 preload="none"
@@ -220,7 +219,26 @@ function Hero() {
                 onEnded={() => setPlaying(false)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
+              {!activated && (
+                <picture>
+                  <source type="image/avif" srcSet={srcSet(posterImg.avif)} sizes={POSTER_SIZES} />
+                  <source type="image/webp" srcSet={srcSet(posterImg.webp)} sizes={POSTER_SIZES} />
+                  <img
+                    src={posterImg.fallback.url}
+                    alt=""
+                    aria-hidden
+                    width={1280}
+                    height={853}
+                    sizes={POSTER_SIZES}
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                  />
+                </picture>
+              )}
               {!playing && !failed && (
+
                 <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
                   {loading ? (
                     <span
