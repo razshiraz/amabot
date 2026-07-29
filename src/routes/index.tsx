@@ -6,7 +6,13 @@ import {
   ChevronDown, Download,
 } from "lucide-react";
 import heroGlow from "@/assets/hero-glow.jpg";
+import heroGlowAvif from "@/assets/hero-glow.avif";
+import heroGlowWebp from "@/assets/hero-glow.webp";
 import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
+import heroGlowMobileAvif from "@/assets/hero-glow-mobile.avif";
+import heroGlowMobileWebp from "@/assets/hero-glow-mobile.webp";
+
+const BLANK_PX = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import { OptImage } from "@/components/opt-image";
@@ -151,21 +157,33 @@ function Hero() {
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       {/* Mobile: dedicated lightning art matching the reference, spans hero + video */}
-      <img
-        src={heroGlowMobile}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] w-full object-cover object-top opacity-70 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]"
-      />
+      <picture className="contents">
+        <source media="(max-width: 767px)" type="image/avif" srcSet={heroGlowMobileAvif} />
+        <source media="(max-width: 767px)" type="image/webp" srcSet={heroGlowMobileWebp} />
+        <source media="(max-width: 767px)" srcSet={heroGlowMobile} />
+        <img
+          src={BLANK_PX}
+          alt=""
+          aria-hidden
+          decoding="async"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] w-full object-cover object-top opacity-70 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]"
+        />
+      </picture>
 
 
       {/* Desktop: original image treatment, untouched */}
-      <img
-        src={heroGlow}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
-      />
+      <picture className="contents">
+        <source media="(min-width: 768px)" type="image/avif" srcSet={heroGlowAvif} />
+        <source media="(min-width: 768px)" type="image/webp" srcSet={heroGlowWebp} />
+        <source media="(min-width: 768px)" srcSet={heroGlow} />
+        <img
+          src={BLANK_PX}
+          alt=""
+          aria-hidden
+          decoding="async"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
+        />
+      </picture>
 
 
 
@@ -230,7 +248,7 @@ function Hero() {
                 onEnded={() => setPlaying(false)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              {!activated && (
+              {!playing && (
                 <picture>
                   <source type="image/avif" srcSet={srcSet(posterImg.avif)} sizes={POSTER_SIZES} />
                   <source type="image/webp" srcSet={srcSet(posterImg.webp)} sizes={POSTER_SIZES} />
