@@ -5,17 +5,22 @@ import {
   ArrowRight, Sparkles, MessageCircle, Send,
   ChevronDown, Download,
 } from "lucide-react";
-import dashboardAsset from "@/assets/amabot-dashboard-3d.png.asset.json";
-const dashboardImg = dashboardAsset.url;
 import heroGlow from "@/assets/hero-glow.jpg";
+import heroGlowAvif from "@/assets/hero-glow.avif";
+import heroGlowWebp from "@/assets/hero-glow.webp";
 import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
+import heroGlowMobileAvif from "@/assets/hero-glow-mobile.avif";
+import heroGlowMobileWebp from "@/assets/hero-glow-mobile.webp";
+
+const BLANK_PX = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
-import demoPoster from "@/assets/amabot-demo-poster.jpg.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
-import amabotIcon from "@/assets/amabot-icon.png";
-import supportsBadge from "@/assets/supports-windows-macos.png.asset.json";
+import { OptImage } from "@/components/opt-image";
+import { dashImg, iconImg, posterImg, supportsImg, srcSet } from "@/lib/optimized-images";
+
 
 const OG_IMAGE = "https://amabot.app/og-image.jpg";
+const POSTER_SIZES = "(min-width: 1024px) 1024px, 100vw";
 
 const webPageSchema = {
   "@context": "https://schema.org",
@@ -79,7 +84,17 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://amabot.app/" }],
+    links: [
+      { rel: "canonical", href: "https://amabot.app/" },
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/avif",
+        imageSrcSet: srcSet(posterImg.avif),
+        imageSizes: POSTER_SIZES,
+        fetchPriority: "high",
+      },
+    ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(webPageSchema) },
       { type: "application/ld+json", children: JSON.stringify(videoSchema) },
@@ -142,21 +157,33 @@ function Hero() {
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
       <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       {/* Mobile: dedicated lightning art matching the reference, spans hero + video */}
-      <img
-        src={heroGlowMobile}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] w-full object-cover object-top opacity-70 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]"
-      />
+      <picture className="contents">
+        <source media="(max-width: 767px)" type="image/avif" srcSet={heroGlowMobileAvif} />
+        <source media="(max-width: 767px)" type="image/webp" srcSet={heroGlowMobileWebp} />
+        <source media="(max-width: 767px)" srcSet={heroGlowMobile} />
+        <img
+          src={BLANK_PX}
+          alt=""
+          aria-hidden
+          decoding="async"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] w-full object-cover object-top opacity-70 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]"
+        />
+      </picture>
 
 
       {/* Desktop: original image treatment, untouched */}
-      <img
-        src={heroGlow}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
-      />
+      <picture className="contents">
+        <source media="(min-width: 768px)" type="image/avif" srcSet={heroGlowAvif} />
+        <source media="(min-width: 768px)" type="image/webp" srcSet={heroGlowWebp} />
+        <source media="(min-width: 768px)" srcSet={heroGlow} />
+        <img
+          src={BLANK_PX}
+          alt=""
+          aria-hidden
+          decoding="async"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
+        />
+      </picture>
 
 
 
@@ -172,11 +199,16 @@ function Hero() {
           Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
-        <img
-          src={supportsBadge.url}
+        <OptImage
+          variants={supportsImg}
           alt="Supports Windows and macOS"
+          width={720}
+          height={62}
+          priority
+          sizes="(min-width: 768px) 360px, 280px"
           className="mx-auto mt-7 h-auto w-auto max-w-[280px] md:max-w-[360px]"
         />
+
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
           <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
@@ -197,7 +229,6 @@ function Hero() {
             <div className="relative w-full overflow-hidden rounded-2xl border border-white/5" style={{ aspectRatio: "16 / 9" }}>
               <video
                 ref={videoRef}
-                poster={demoPoster.url}
                 controls={activated}
                 playsInline
                 preload="none"
@@ -217,7 +248,26 @@ function Hero() {
                 onEnded={() => setPlaying(false)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
+              {!playing && (
+                <picture>
+                  <source type="image/avif" srcSet={srcSet(posterImg.avif)} sizes={POSTER_SIZES} />
+                  <source type="image/webp" srcSet={srcSet(posterImg.webp)} sizes={POSTER_SIZES} />
+                  <img
+                    src={posterImg.fallback.url}
+                    alt=""
+                    aria-hidden
+                    width={1280}
+                    height={853}
+                    sizes={POSTER_SIZES}
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                  />
+                </picture>
+              )}
               {!playing && !failed && (
+
                 <div className="pointer-events-none absolute inset-0 z-10 grid place-items-center">
                   {loading ? (
                     <span
@@ -283,7 +333,14 @@ function DashboardShowcase() {
           <div className="absolute -inset-x-10 -inset-y-10 -z-10 rounded-[3rem] bg-primary/10 blur-3xl" />
           <div className="glass overflow-hidden rounded-3xl p-2 shadow-card">
             <div className="overflow-hidden rounded-2xl border border-white/5">
-              <img src={dashboardImg} alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts" width={1600} height={1100} fetchPriority="high" decoding="async" className="w-full" />
+              <OptImage
+                variants={dashImg}
+                alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts"
+                width={1280}
+                height={720}
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="w-full"
+              />
             </div>
           </div>
           <FloatingAlert
@@ -456,8 +513,8 @@ function SocialProof() {
     <section className="relative py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
-          <img src={amabotIcon} alt="" aria-hidden className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
+          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
+          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
           <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.l} className="text-center">
@@ -659,7 +716,7 @@ function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.
   return (
     <div className="mx-auto max-w-2xl text-center">
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
-        <img src={amabotIcon} alt="amabot brand icon" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
+        <OptImage variants={iconImg} alt="amabot brand icon" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
         {eyebrow}
       </div>
       <h2 className="mt-5 text-balance text-4xl font-bold md:text-5xl">{title}</h2>
