@@ -26,7 +26,7 @@ export function OptImage({
   style?: React.CSSProperties;
 }) {
   return (
-    <picture>
+    <picture className="contents">
       <source type="image/avif" srcSet={srcSet(variants.avif)} sizes={sizes} />
       <source type="image/webp" srcSet={srcSet(variants.webp)} sizes={sizes} />
       <img
