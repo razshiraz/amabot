@@ -170,11 +170,16 @@ function Hero() {
           Track any product, set your target price, and choose between alerts or automatic purchasing.
         </p>
 
-        <img
-          src={supportsBadge.url}
+        <OptImage
+          variants={supportsImg}
           alt="Supports Windows and macOS"
+          width={720}
+          height={62}
+          priority
+          sizes="(min-width: 768px) 360px, 280px"
           className="mx-auto mt-7 h-auto w-auto max-w-[280px] md:max-w-[360px]"
         />
+
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
           <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
