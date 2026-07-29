@@ -26,11 +26,28 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
   return (
     <Link to="/" className="flex items-center gap-2 md:gap-3" aria-label="amabot home">
-      <img src={amabotIcon} alt="" className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`} />
-      <img src={amabotWordmark} alt="amabot wordmark" className={wordCls} />
+      <OptImage
+        variants={iconImg}
+        alt=""
+        width={384}
+        height={384}
+        priority
+        sizes={size === "lg" ? "(min-width: 768px) 96px, 44px" : "56px"}
+        className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`}
+      />
+      <OptImage
+        variants={wordmarkImg}
+        alt="amabot wordmark"
+        width={400}
+        height={120}
+        priority
+        sizes={size === "lg" ? "(min-width: 768px) 200px, 100px" : "140px"}
+        className={wordCls}
+      />
     </Link>
   );
 }
+
 
 export function SiteFooter() {
   return (
