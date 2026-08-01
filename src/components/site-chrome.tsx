@@ -25,7 +25,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   const iconCls = size === "lg" ? "h-11 w-11 md:h-24 md:w-24" : "h-14 w-14";
   const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
   return (
-    <Link to="/" className="flex items-center gap-2 md:gap-3" aria-label="amabot home">
+    <Link to="/" className="flex items-center gap-0" aria-label="amabot home">
       <OptImage
         variants={iconImg}
         alt=""
