@@ -15,6 +15,7 @@ import heroGlowMobileWebp from "@/assets/hero-glow-mobile.webp";
 const BLANK_PX = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
+import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
 import { OptImage } from "@/components/opt-image";
 import { dashImg, iconImg, posterImg, supportsImg, srcSet } from "@/lib/optimized-images";
 
@@ -107,6 +108,7 @@ export const Route = createFileRoute("/")({
 
 
 function Nav() {
+  const { open: openModal } = useComingSoon();
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
@@ -120,10 +122,10 @@ function Nav() {
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
-            <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
+            <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -132,6 +134,7 @@ function Nav() {
 }
 
 function Hero() {
+  const { open: openModal } = useComingSoon();
   const [playing, setPlaying] = useState(false);
   const [activated, setActivated] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -211,10 +214,10 @@ function Hero() {
 
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
-          <a href="#cta" aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
+          <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
-          </a>
+          </button>
           <a href="#how" className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/10">
             See How It Works
           </a>
@@ -727,6 +730,7 @@ function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.
 
 function Landing() {
   return (
+    <ComingSoonProvider>
     <main className="relative min-h-screen overflow-x-hidden">
       <Nav />
       <Hero />
@@ -739,5 +743,6 @@ function Landing() {
       
       <Footer />
     </main>
+    </ComingSoonProvider>
   );
 }
