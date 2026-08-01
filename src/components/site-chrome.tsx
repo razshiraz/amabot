@@ -42,7 +42,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         height={120}
         priority
         sizes={size === "lg" ? "(min-width: 768px) 200px, 100px" : "140px"}
-        className={`${wordCls} -ml-[6px] md:-ml-[10px]`}
+        className={`${wordCls} -ml-0 md:-ml-[4px]`}
       />
     </Link>
   );
