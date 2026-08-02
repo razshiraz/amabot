@@ -81,7 +81,6 @@ function MarketingHeader() {
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-border/60 p-2 text-muted-foreground transition hover:border-primary/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:hidden"
               >
-                {menuOpen ? <Menu aria-hidden className="hidden h-5 w-5" /> : null}
                 {menuOpen ? <X aria-hidden className="h-5 w-5" /> : <Menu aria-hidden className="h-5 w-5" />}
               </button>
             </div>
