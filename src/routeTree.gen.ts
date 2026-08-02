@@ -13,6 +13,7 @@ import { Route as WhatIsAmabotRouteImport } from './routes/what-is-amabot'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PokemonRestockAlertsRouteImport } from './routes/pokemon-restock-alerts'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AmazonRestockAlertsRouteImport } from './routes/amazon-restock-alerts'
@@ -42,6 +43,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PokemonRestockAlertsRoute = PokemonRestockAlertsRouteImport.update({
+  id: '/pokemon-restock-alerts',
+  path: '/pokemon-restock-alerts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -205,6 +217,7 @@ export interface RootRouteChildren {
   AmazonRestockAlertsRoute: typeof AmazonRestockAlertsRoute
   AuthRoute: typeof AuthRoute
   McpRoute: typeof McpRoute
+  PokemonRestockAlertsRoute: typeof PokemonRestockAlertsRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
@@ -243,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pokemon-restock-alerts': {
+      id: '/pokemon-restock-alerts'
+      path: '/pokemon-restock-alerts'
+      fullPath: '/pokemon-restock-alerts'
+      preLoaderRoute: typeof PokemonRestockAlertsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -325,6 +345,7 @@ const rootRouteChildren: RootRouteChildren = {
   AmazonRestockAlertsRoute: AmazonRestockAlertsRoute,
   AuthRoute: AuthRoute,
   McpRoute: McpRoute,
+  PokemonRestockAlertsRoute: PokemonRestockAlertsRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
