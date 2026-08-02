@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AmazonRestockAlertsRouteImport } from './routes/amazon-restock-alerts'
 import { Route as AmazonPriceTrackerRouteImport } from './routes/amazon-price-tracker'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as IndexRouteImport } from './routes/index'
@@ -51,6 +52,11 @@ const McpRoute = McpRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmazonRestockAlertsRoute = AmazonRestockAlertsRouteImport.update({
+  id: '/amazon-restock-alerts',
+  path: '/amazon-restock-alerts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AmazonPriceTrackerRoute = AmazonPriceTrackerRouteImport.update({
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
   '/privacy': typeof PrivacyRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
   '/privacy': typeof PrivacyRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
   '/privacy': typeof PrivacyRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/'
     | '/affiliate-disclosure'
     | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
     | '/privacy'
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
     | '/'
     | '/affiliate-disclosure'
     | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
     | '/privacy'
@@ -174,6 +185,7 @@ export interface FileRouteTypes {
     | '/'
     | '/affiliate-disclosure'
     | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
     | '/privacy'
@@ -190,6 +202,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   AmazonPriceTrackerRoute: typeof AmazonPriceTrackerRoute
+  AmazonRestockAlertsRoute: typeof AmazonRestockAlertsRoute
   AuthRoute: typeof AuthRoute
   McpRoute: typeof McpRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -244,6 +257,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amazon-restock-alerts': {
+      id: '/amazon-restock-alerts'
+      path: '/amazon-restock-alerts'
+      fullPath: '/amazon-restock-alerts'
+      preLoaderRoute: typeof AmazonRestockAlertsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/amazon-price-tracker': {
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   AmazonPriceTrackerRoute: AmazonPriceTrackerRoute,
+  AmazonRestockAlertsRoute: AmazonRestockAlertsRoute,
   AuthRoute: AuthRoute,
   McpRoute: McpRoute,
   PrivacyRoute: PrivacyRoute,
@@ -317,3 +338,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

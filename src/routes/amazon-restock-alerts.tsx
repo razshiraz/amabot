@@ -63,7 +63,7 @@ export const Route = createFileRoute("/amazon-restock-alerts")({
       children: JSON.stringify(d),
     })),
   }),
-  component: RestockAlerts;
+  component: RestockAlerts,
 });
 
 function RestockAlerts() {
