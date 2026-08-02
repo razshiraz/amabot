@@ -9,11 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhatIsAmabotRouteImport } from './routes/what-is-amabot'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PokemonRestockAlertsRouteImport } from './routes/pokemon-restock-alerts'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AmazonRestockAlertsRouteImport } from './routes/amazon-restock-alerts'
+import { Route as AmazonPriceTrackerRouteImport } from './routes/amazon-price-tracker'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
@@ -21,6 +25,11 @@ import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 
+const WhatIsAmabotRoute = WhatIsAmabotRouteImport.update({
+  id: '/what-is-amabot',
+  path: '/what-is-amabot',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -36,6 +45,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PokemonRestockAlertsRoute = PokemonRestockAlertsRouteImport.update({
+  id: '/pokemon-restock-alerts',
+  path: '/pokemon-restock-alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
@@ -44,6 +58,16 @@ const McpRoute = McpRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmazonRestockAlertsRoute = AmazonRestockAlertsRouteImport.update({
+  id: '/amazon-restock-alerts',
+  path: '/amazon-restock-alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmazonPriceTrackerRoute = AmazonPriceTrackerRouteImport.update({
+  id: '/amazon-price-tracker',
+  path: '/amazon-price-tracker',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
@@ -83,11 +107,15 @@ const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/what-is-amabot': typeof WhatIsAmabotRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
@@ -96,11 +124,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/what-is-amabot': typeof WhatIsAmabotRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
@@ -110,11 +142,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
+  '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
   '/mcp': typeof McpRoute
+  '/pokemon-restock-alerts': typeof PokemonRestockAlertsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/what-is-amabot': typeof WhatIsAmabotRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
@@ -125,11 +161,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/what-is-amabot'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.lovable/oauth/consent'
@@ -138,11 +178,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/what-is-amabot'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.lovable/oauth/consent'
@@ -151,11 +195,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-price-tracker'
+    | '/amazon-restock-alerts'
     | '/auth'
     | '/mcp'
+    | '/pokemon-restock-alerts'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/what-is-amabot'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.lovable/oauth/consent'
@@ -165,11 +213,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
+  AmazonPriceTrackerRoute: typeof AmazonPriceTrackerRoute
+  AmazonRestockAlertsRoute: typeof AmazonRestockAlertsRoute
   AuthRoute: typeof AuthRoute
   McpRoute: typeof McpRoute
+  PokemonRestockAlertsRoute: typeof PokemonRestockAlertsRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  WhatIsAmabotRoute: typeof WhatIsAmabotRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
@@ -178,6 +230,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/what-is-amabot': {
+      id: '/what-is-amabot'
+      path: '/what-is-amabot'
+      fullPath: '/what-is-amabot'
+      preLoaderRoute: typeof WhatIsAmabotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -199,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pokemon-restock-alerts': {
+      id: '/pokemon-restock-alerts'
+      path: '/pokemon-restock-alerts'
+      fullPath: '/pokemon-restock-alerts'
+      preLoaderRoute: typeof PokemonRestockAlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mcp': {
       id: '/mcp'
       path: '/mcp'
@@ -211,6 +277,20 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amazon-restock-alerts': {
+      id: '/amazon-restock-alerts'
+      path: '/amazon-restock-alerts'
+      fullPath: '/amazon-restock-alerts'
+      preLoaderRoute: typeof AmazonRestockAlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amazon-price-tracker': {
+      id: '/amazon-price-tracker'
+      path: '/amazon-price-tracker'
+      fullPath: '/amazon-price-tracker'
+      preLoaderRoute: typeof AmazonPriceTrackerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/affiliate-disclosure': {
@@ -261,11 +341,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
+  AmazonPriceTrackerRoute: AmazonPriceTrackerRoute,
+  AmazonRestockAlertsRoute: AmazonRestockAlertsRoute,
   AuthRoute: AuthRoute,
   McpRoute: McpRoute,
+  PokemonRestockAlertsRoute: PokemonRestockAlertsRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  WhatIsAmabotRoute: WhatIsAmabotRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
