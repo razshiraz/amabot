@@ -122,7 +122,7 @@ function Nav() {
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
-            <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
+            <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </button>
@@ -214,7 +214,7 @@ function Hero() {
 
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
-          <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
+          <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </button>

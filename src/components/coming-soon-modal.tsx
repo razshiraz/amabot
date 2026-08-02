@@ -85,9 +85,9 @@ export function ComingSoonProvider({ children }: { children: React.ReactNode }) 
               type="button"
               onClick={close}
               aria-label="Close dialog"
-              className="absolute right-3 top-3 rounded-lg p-2 text-muted-foreground transition hover:bg-white/10 hover:text-foreground"
+              className="absolute right-3 top-3 cursor-pointer rounded-lg p-2 text-muted-foreground transition hover:bg-white/10 hover:text-foreground"
             >
-              <X aria-hidden className="h-4 w-4" />
+              <X aria-hidden className="pointer-events-none h-4 w-4" />
             </button>
 
             <OptImage
@@ -110,14 +110,14 @@ export function ComingSoonProvider({ children }: { children: React.ReactNode }) 
               href="https://x.com/amabot_app"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-gold px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow"
+              className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-gold px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow"
             >
               Follow us on X
             </a>
             <button
               type="button"
               onClick={close}
-              className="mt-2 w-full rounded-xl px-5 py-2.5 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              className="mt-2 w-full cursor-pointer rounded-xl px-5 py-2.5 text-sm font-medium text-muted-foreground transition hover:text-foreground"
             >
               Close
             </button>
