@@ -8,50 +8,50 @@ import {
   FaqList, CtaBlock, jsonLd, headMeta, type Faq,
 } from "@/components/marketing/ui";
 
-const TITLE = "Free Amazon Price Tracker With Target Price Alerts | AmaBot";
+const TITLE = "Amazon Price Tracker and Price Drop Alerts | AmaBot";
 const DESCRIPTION =
-  "Track Amazon prices for free. Set a maximum price per product, filter sellers, get alerts when an offer matches, or let AmaBot buy automatically.";
+  "Use the AmaBot Amazon price tracker to monitor product prices, set a target price and receive an Amazon price alert when selected conditions are met.";
 
 const faqs: Faq[] = [
   {
-    q: "Is AmaBot a free Amazon price tracker?",
-    a: "Yes. AmaBot is free to download and use on Windows and macOS, and price tracking is part of the core product rather than a paid upgrade.",
+    q: "What is an Amazon price tracker?",
+    a: "An Amazon price tracker is a tool that checks the current price of selected Amazon listings for you instead of requiring manual refreshing. AmaBot is a free Amazon price tracker for Windows and macOS: you add product links, set a maximum price, and it reports the offers it observes while monitoring runs.",
   },
   {
-    q: "How do I track an Amazon product price?",
-    a: "Paste the Amazon product link into AmaBot, set the maximum price you are willing to pay, choose your seller preference, and start monitoring. AmaBot then checks that listing in rotation and reports the prices it finds.",
+    q: "Can AmaBot send an Amazon price alert?",
+    a: "Yes. When an offer matches the rules you saved for a product, AmaBot raises an Amazon price alert in the activity dashboard so you can complete the purchase yourself on Amazon.",
   },
   {
-    q: "Can I set a target price on Amazon?",
-    a: "Yes. Each product you add has its own maximum price. An offer is only treated as eligible when the complete price, including shipping, stays within that limit.",
+    q: "Can I use AmaBot as an Amazon price monitor?",
+    a: "Yes. Used as an Amazon price monitor, AmaBot checks the current listing price of each product in rotation while the app is running, so you do not have to keep reloading Amazon product pages yourself.",
   },
   {
-    q: "Does AmaBot include shipping in the price?",
-    a: "Yes. AmaBot evaluates the complete price including shipping against your maximum, so a cheap item with expensive delivery does not slip past your limit.",
+    q: "How does Amazon price tracking work?",
+    a: "Amazon price tracking in AmaBot works per product: you paste the Amazon link, set a maximum price and a seller preference, and the app compares the complete price including shipping against that limit each time it checks the listing.",
   },
   {
-    q: "Can I track prices from specific sellers only?",
-    a: "Yes. You can restrict monitoring to offers sold by Amazon, or allow any eligible seller when you care more about getting the item than about who ships it.",
+    q: "Can AmaBot send an Amazon price drop alert?",
+    a: "Yes. If the listed price falls to or below the maximum price you set, that counts as a match and AmaBot raises an Amazon price drop alert. AmaBot reports the price it observes and does not claim that every change is a genuine discount.",
   },
   {
-    q: "Does AmaBot show Amazon price history?",
-    a: "AmaBot focuses on the prices it observes live while monitoring is running, shown in the activity dashboard. It is a real-time tracker rather than a historical price-chart service.",
+    q: "Does AmaBot provide Amazon deal alerts?",
+    a: "AmaBot provides an Amazon deal alert only for the products you added and only against your own target price. It does not publish a general feed of deals for products you are not tracking.",
   },
   {
-    q: "Will AmaBot buy the product when the price drops?",
-    a: "Only if you enable Auto-buy for that product. In Monitor Only mode AmaBot alerts you and never places an order.",
+    q: "How does Amazon product price tracking work with different sellers?",
+    a: "Amazon product price tracking evaluates the buyable offer on the listing, which may come from Amazon or from a third-party seller. You can restrict monitoring to Amazon-sold offers or allow any eligible seller, and your maximum price applies either way.",
   },
   {
-    q: "How often does AmaBot check prices?",
-    a: "Each product receives roughly five seconds of attention per rotation, so a single product is revisited about every five seconds and the interval grows as you add more products.",
+    q: "Can AmaBot automatically purchase a product after a price change?",
+    a: "Only if you enable Auto-buy for that product. In Monitor Only mode AmaBot alerts you and never places an order; with Auto-buy it attempts checkout through your own Amazon session when an eligible offer matches.",
   },
   {
-    q: "Do I need to keep my computer on?",
-    a: "Yes. AmaBot runs locally on Windows or macOS, so your computer, your internet connection and the AmaBot session must stay active while tracking is enabled.",
+    q: "Does AmaBot guarantee a successful order?",
+    a: "No. Inventory can sell out during checkout, prices can change, quantity limits can apply, payment can be declined and Amazon may request verification. AmaBot improves your chances but cannot guarantee a completed order.",
   },
   {
-    q: "Does a price match guarantee a successful purchase?",
-    a: "No. Prices, offers and availability can change during checkout, and Amazon restrictions or competition from other buyers can prevent an order from completing.",
+    q: "Does AmaBot provide historical price charts?",
+    a: "No. AmaBot shows the prices it observes live while monitoring is running. It is a real-time Amazon price tracker rather than a historical price-chart service.",
   },
 ];
 
@@ -72,180 +72,203 @@ function PriceTracker() {
       <PageHero
         eyebrow="Price tracking"
         breadcrumb="Amazon Price Tracker"
-        h1={<>Free <span className="text-gradient-gold">Amazon Price Tracker</span> With Target Price Rules</>}
+        h1={<><span className="text-gradient-gold">Amazon Price Tracker</span> and Instant Price Alerts</>}
         intro={
           <p>
-            AmaBot tracks the Amazon products you choose, compares every offer against the maximum price you
-            set, and tells you the moment something matches. When you want more than an alert, the same rules
-            can trigger an automatic purchase instead.
+            AmaBot is an Amazon price tracker that monitors the product listings you select and checks whether
+            the current price matches the conditions you set. Set a maximum price per product, receive an
+            Amazon price alert when an eligible offer appears, or allow AmaBot to attempt an automatic purchase
+            when your selected conditions are met. It is free on Windows and macOS.
           </p>
         }
         secondary={{ to: "/what-is-amabot", label: "What is AmaBot?" }}
       />
 
-      <Section title="Why Price Tracking on Amazon Is Hard by Hand">
+      <Section title="Why Tracking Amazon Prices by Hand Rarely Works">
         <p>
-          An Amazon product page looks like a single price, but it rarely behaves like one. The offer shown in
-          the buy box can switch between Amazon and third-party sellers, shipping costs can differ per seller,
-          and a listing that was fairly priced in the morning can be resold at a markup by the afternoon. For
-          high-demand items the interesting price often exists for minutes.
+          An Amazon product page looks like a single price, but it rarely behaves like one. The buy box can
+          switch between Amazon and third-party sellers, shipping costs differ per seller, and a listing that
+          was fairly priced in the morning can be resold at a markup by the afternoon. For high-demand items
+          the interesting price sometimes exists for only a few minutes.
         </p>
         <p>
-          Refreshing the page manually is not a plan. You either miss the window because you were not looking,
-          or you check so often that tracking a handful of products becomes a part-time job. A price tracker
-          exists to remove exactly that problem: you describe once what a good deal looks like, and something
-          else does the watching.
+          Refreshing pages manually is not a plan. You either miss the window because you were not looking, or
+          you check so often that following a handful of products becomes a part-time job. That is the gap a
+          tracker fills: you describe once what an acceptable purchase looks like, and software does the
+          watching.
         </p>
       </Section>
 
-      <Section title="How AmaBot Tracks Amazon Prices">
+      <Section title="How the AmaBot Amazon Price Tracker Works">
         <p>
-          AmaBot is a desktop application for Windows and macOS. You add products by pasting their Amazon
-          links, and each product carries its own set of rules. When monitoring is running, AmaBot works
-          through your list in rotation and reports what it observes in a live activity dashboard.
+          The AmaBot Amazon price tracker is a desktop application for Windows and macOS. You add products by
+          pasting their Amazon links, and each product carries its own rules. Once product monitoring is
+          running, AmaBot works through your list in rotation and reports every observation in a live activity
+          dashboard.
+        </p>
+        <p>
+          Amazon price tracking here is rule-based rather than open-ended. Your target price defines what you
+          consider acceptable, the maximum price is the hard ceiling that an offer may not exceed, and the
+          seller preference decides whose offers count. Product monitoring continues quietly until one of your
+          products satisfies all of those conditions at the same time.
         </p>
         <CardGrid>
-          <InfoCard icon={Tag} title="Maximum price per product">
-            Set the highest price you would accept for each listing. Anything above it is simply not treated
-            as a match.
+          <InfoCard icon={Tag} title="Target price and maximum price">
+            Set the highest total you would accept for each listing. Anything above that maximum price is not
+            treated as a match.
           </InfoCard>
           <InfoCard icon={Filter} title="Complete price including shipping">
-            The evaluation uses the full cost of the offer, so delivery charges cannot push a "matching" deal
-            over your real budget.
+            Evaluation uses the full cost of the offer, so delivery charges cannot push a matching deal over
+            your real budget.
           </InfoCard>
           <InfoCard icon={ListChecks} title="Seller preference">
-            Restrict tracking to Amazon-sold offers, or open it up to any eligible seller when availability
-            matters more than the source.
+            Restrict tracking to Amazon-sold offers, or allow any eligible seller when availability matters
+            more than the source.
           </InfoCard>
           <InfoCard icon={LineChart} title="Live activity dashboard">
-            Watch prices, offers, eligibility decisions and check counts as they happen instead of trusting a
-            silent background process.
+            Watch prices, offers and eligibility decisions as they happen instead of trusting a silent
+            background process.
           </InfoCard>
-          <InfoCard icon={Bell} title="Alerts when a price matches">
+          <InfoCard icon={Bell} title="Alerts when conditions are met">
             In Monitor Only mode AmaBot notifies you and leaves the purchase decision entirely to you.
           </InfoCard>
           <InfoCard icon={ShoppingCart} title="Optional automatic purchase">
-            With Auto-buy enabled, a matching price can trigger a checkout attempt immediately, faster than a
-            manual reaction.
+            With Auto-buy enabled, a matching offer can trigger a checkout attempt immediately.
           </InfoCard>
         </CardGrid>
       </Section>
 
-      <Section title="Setting a Target Price That Actually Works">
+      <Section title="Set an Amazon Price Alert for Any Product">
         <p>
-          A target price is a decision, not a wish. The number you enter tells AmaBot where the line between
-          "worth buying" and "not worth buying" sits for that specific product, and it is the only thing
-          standing between you and an unwanted purchase during a chaotic restock.
+          Creating an Amazon price alert takes one product link and one number. Paste the Amazon URL, enter the
+          target price you are willing to pay in total, and choose Monitor Only so that AmaBot alerts you
+          rather than buying. From that point the product sits in your list and the alert waits for a
+          qualifying offer.
         </p>
-        <SubHeading>Price it against the total, not the sticker</SubHeading>
+        <SubHeading>Price against the total, not the sticker</SubHeading>
         <p>
-          Because AmaBot compares the complete price including shipping, your maximum should reflect what you
-          are prepared to pay in total. If a product is worth 45 to you delivered, set 45 — not the item price
-          you saw once without delivery.
+          Because the complete price including shipping is compared with your maximum, the number you enter
+          should reflect what you are prepared to pay delivered. If an item is worth 45 to you at your door,
+          set 45 rather than the item-only price you saw once.
         </p>
-        <SubHeading>Decide how strict you want to be</SubHeading>
+        <SubHeading>Choose your alert mode per product</SubHeading>
         <p>
-          A tight maximum protects you from resellers but may mean fewer matches. A looser maximum increases
-          your chances of getting the item at the cost of paying more. Neither is wrong; what matters is that
-          the number is deliberate.
+          Every product runs in either Monitor Only or Auto-buy, and you can mix both across your list. An
+          Amazon price alert in Monitor Only never results in an order by itself; it hands the decision back
+          to you with the offer details in front of you.
         </p>
-        <SubHeading>Set quantity and order limits too</SubHeading>
+      </Section>
+
+      <Section title="Use AmaBot as an Amazon Price Monitor">
         <p>
-          Price is only half the rule. Quantity defines how many units a matching order should include, and
-          the order target defines how many orders AmaBot may place before it stops for that product. Together
-          they cap the worst case of an unattended session.
+          As an Amazon price monitor, AmaBot keeps checking the current listing price of each product for as
+          long as the session stays open, which removes the constant manual refreshing that makes watching a
+          drop exhausting. Products are checked in rotation, so a short focused list is revisited far more
+          often than a long wish list.
         </p>
-        <Callout title="Review your rules before enabling Auto-buy">
-          Auto-buy acts on the rules exactly as written. Confirm the maximum price, the quantity, the order
-          target and the seller preference for each product before you leave it running unattended.
+        <p>
+          The monitor reports what it actually sees: the current price, whether a buyable offer exists and
+          whether that offer satisfies your rules. Nothing is inferred or predicted, and no historical chart is
+          reconstructed — an Amazon price monitor of this kind answers the question "is it acceptable right
+          now?" rather than "what was it last spring?"
+        </p>
+      </Section>
+
+      <Section title="Get an Amazon Price Drop Alert">
+        <p>
+          When the listed price of a monitored product falls to or below your maximum, AmaBot treats it as a
+          match and raises an Amazon price drop alert. The same mechanism produces an Amazon deal alert for
+          products you are actively tracking, because a "deal" here is defined by your own ceiling rather than
+          by a marketing label.
+        </p>
+        <p>
+          It is worth being precise about what a drop means. The listed price can change for many reasons: a
+          different seller takes the buy box, a seller adjusts pricing, shipping costs differ, or a temporary
+          promotion applies. A lower observed price is not automatically a genuine discount against long-term
+          value, and AmaBot does not claim otherwise. The Amazon price drop alert simply tells you that the
+          current offer satisfies the conditions you defined.
+        </p>
+        <Callout title="Your ceiling defines the deal">
+          Because an Amazon deal alert is triggered by your maximum price, a realistic ceiling produces useful
+          alerts while an optimistic one may stay silent for a long time.
         </Callout>
       </Section>
 
-      <Section title="Monitor Only vs Auto-Buy">
+      <Section title="Amazon Product Price Tracking and Seller Changes">
         <p>
-          Both modes track prices identically. The difference is what happens at the moment of a match.
+          Amazon product price tracking has to account for who is selling. The same listing can be fulfilled by
+          Amazon at one moment and by a third-party seller the next, and those sellers price independently.
+          When a sought-after product returns, it frequently returns through a marketplace seller at a higher
+          price than the Amazon offer that sold out.
+        </p>
+        <p>
+          Amazon price tracking in AmaBot handles this in two ways. First, the seller preference lets you
+          restrict monitoring to offers sold by Amazon, or open it to any eligible seller when securing the
+          item matters more. Second, maximum-price protection applies regardless of who the seller is, so a
+          seller change cannot quietly raise what you pay.
+        </p>
+        <p>
+          Availability is evaluated together with price. A listing without a buyable offer is never a match,
+          no matter how attractive the number on the page looks, which is why the same rules cover both a
+          gradual price decline and a sudden return to stock. If availability is your main concern, the{" "}
+          <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon restock alert
+          </Link>{" "}
+          page covers that scenario in detail, and collectors can read how the{" "}
+          <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Pokemon restock tracker
+          </Link>{" "}
+          applies the same rules to sealed card products.
+        </p>
+      </Section>
+
+      <Section title="Price Alerts vs Optional Automatic Purchasing">
+        <p>
+          Both modes track prices identically. The difference is only what happens at the moment your
+          conditions are met.
         </p>
         <CompareTable
-          caption="Comparison of Monitor Only and Auto-buy modes in AmaBot"
-          head={["", "Monitor Only", "Auto-buy"]}
+          caption="Amazon price alerts compared with optional automatic purchasing"
+          head={["", "Price alert (Monitor Only)", "Auto-buy"]}
           rows={[
-            ["Price tracking", "Yes", "Yes"],
-            ["Target price rules", "Yes", "Yes"],
+            ["Amazon price tracking", "Yes", "Yes"],
+            ["Target and maximum price", "Yes", "Yes"],
             ["Seller filtering", "Yes", "Yes"],
-            ["Alerts on a match", "Yes", "Yes"],
+            ["Amazon price alert on a match", "Yes", "Yes"],
             ["Places an order", "Never", "Attempts checkout automatically"],
             ["Who decides", "You", "Your saved rules"],
-            ["Best for", "Watching prices and deciding yourself", "Fast-moving drops you cannot sit and watch"],
+            ["Reaction speed", "Depends on you", "Immediate on match"],
+            ["Best for", "Watching prices and deciding yourself", "Fast drops you cannot sit and watch"],
           ]}
         />
         <p>
-          Many people start in Monitor Only to see how their products behave in practice, then switch selected
-          items to Auto-buy once the rules feel right. You can mix both modes across different products at the
-          same time.
-        </p>
-      </Section>
-
-      <Section title="How Often Prices Are Checked">
-        <p>
-          AmaBot checks products in rotation, giving each product roughly five seconds per cycle. One product
-          is therefore revisited about every five seconds, two products about every ten seconds, and a list of
-          twenty products means a longer gap between visits to any single item.
-        </p>
-        <p>
-          The practical advice that follows is simple: keep the list focused. Tracking the five products you
-          genuinely intend to buy will react faster than tracking fifty products you are curious about.
-        </p>
-      </Section>
-
-      <Section title="What Happens When a Price Matches">
-        <p>
-          In Monitor Only mode, AmaBot alerts you and stops there. You open Amazon and complete the purchase
-          yourself with the full context in front of you.
-        </p>
-        <p>
-          In Auto-buy mode, AmaBot attempts checkout through your own Amazon session, using the default
-          shipping address and default payment method configured in your Amazon account. If an Amazon Gift
-          Card balance is available, Amazon may apply it before charging your default method. AmaBot does not
-          store your Amazon credentials or payment information on its servers; the Amazon session runs locally
-          on your computer.
+          Many people start in Monitor Only to see how their products behave in practice, then move selected
+          items to Auto-buy once the rules feel right. In Auto-buy mode AmaBot attempts checkout through your
+          own Amazon session, using the default shipping address and default payment method configured in your
+          Amazon account; an available Amazon Gift Card balance may be applied by Amazon first. Your
+          credentials and payment details are not stored on AmaBot servers, because the Amazon session runs
+          locally on your computer.
         </p>
         <Callout title="A match is not a guaranteed order">
           Inventory can disappear mid-checkout, prices can change, quantity limits can apply, payment can be
-          declined, and Amazon may request verification. AmaBot improves your chances but cannot promise a
-          completed purchase.
+          declined, and Amazon may request verification. Any automated interaction with Amazon also carries a
+          general risk that the platform requests verification or restricts certain activity.
         </Callout>
-      </Section>
-
-      <Section title="Price Tracking and Restocks Are the Same Problem">
-        <p>
-          For products that are permanently in stock, a price tracker is about waiting for a discount. For
-          products that sell out, price and availability are inseparable: the price only matters when there is
-          a buyable offer at all, and the offer only matters when the price is sane.
-        </p>
-        <p>
-          AmaBot treats both as one rule set, which is why the same configuration covers a slow price drop and
-          a sudden restock. If availability is your main concern, read more about{" "}
-          <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Amazon restock alerts
-          </Link>{" "}
-          or the{" "}
-          <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Pokémon restock tracker
-          </Link>{" "}
-          use case.
-        </p>
       </Section>
 
       <Section title="Requirements and Limitations">
         <p>
-          AmaBot runs on Windows and macOS and needs your computer, your internet connection and the app
-          session to stay active while tracking. Updates install automatically in the background.
+          AmaBot runs locally on Windows and macOS, so your computer, your internet connection and the app
+          session must stay active while tracking is enabled. Product links and buying rules may be saved
+          locally on your device.
         </p>
         <p>
           The tracker reports what it observes live rather than reconstructing historical price charts, and no
-          automated tool can guarantee a purchase. There is also a general risk attached to any automated
-          interaction with Amazon: the platform may occasionally request verification or restrict certain
-          activity.
+          automated tool can promise an outcome on a competitive listing. For a full overview of the app, start
+          with{" "}
+          <Link to="/what-is-amabot" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            What is AmaBot?
+          </Link>
         </p>
       </Section>
 

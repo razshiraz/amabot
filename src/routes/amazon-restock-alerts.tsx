@@ -8,46 +8,46 @@ import {
   FaqList, CtaBlock, jsonLd, headMeta, type Faq,
 } from "@/components/marketing/ui";
 
-const TITLE = "Amazon Restock Alerts and In-Stock Notifications | AmaBot";
+const TITLE = "Amazon Restock Alert and Restock Tracker | AmaBot";
 const DESCRIPTION =
-  "Get Amazon restock alerts for sold-out products. AmaBot monitors availability, applies your price and seller rules, and can auto-buy on restock.";
+  "Use AmaBot as an Amazon restock alert and Amazon restock tracker to monitor unavailable products and react when inventory returns.";
 
 const faqs: Faq[] = [
   {
-    q: "How do I get Amazon restock alerts?",
-    a: "Add the sold-out product's Amazon link to AmaBot, set your maximum price and seller preference, and start monitoring in Monitor Only mode. AmaBot notifies you when a buyable offer appears that matches your rules.",
+    q: "What is an Amazon restock alert?",
+    a: "An Amazon restock alert tells you when a product that was unavailable has a buyable offer again. AmaBot raises that alert once a monitored listing becomes purchasable and the offer matches the price and seller rules you saved.",
   },
   {
-    q: "Are AmaBot restock alerts free?",
-    a: "Yes. AmaBot is free to download and use on Windows and macOS, and restock monitoring is part of the core product.",
+    q: "How does an Amazon restock tracker work?",
+    a: "An Amazon restock tracker checks selected listings in rotation instead of relying on manual refreshing. In AmaBot you add the product link, set a maximum price and quantity, choose a seller preference, and the tracker keeps checking availability while the session runs.",
   },
   {
-    q: "How fast are Amazon restock notifications?",
-    a: "AmaBot checks products in rotation with roughly five seconds per product, so a short focused list is revisited within seconds. Larger lists increase the interval between checks of any single item.",
+    q: "Is AmaBot an Amazon restock bot?",
+    a: "AmaBot can be used as an Amazon restock bot: it automates the checking of product availability and, if you enable Auto-buy, attempts checkout through your own Amazon session. It does not bypass Amazon restrictions or verification.",
   },
   {
-    q: "Can AmaBot buy an item automatically when it restocks?",
-    a: "Yes, if you enable Auto-buy for that product. AmaBot then attempts checkout as soon as an eligible offer matches your rules instead of only alerting you.",
+    q: "Can AmaBot monitor an out-of-stock Amazon product?",
+    a: "Yes. Sold-out listings are exactly the case restock monitoring is built for. AmaBot keeps checking the listing and reports when a buyable offer appears.",
   },
   {
-    q: "Can I get restock alerts only from Amazon as the seller?",
-    a: "Yes. You can restrict monitoring to offers sold by Amazon, or allow any eligible seller when you care more about securing the item.",
+    q: "Can AmaBot automatically purchase a restocked product?",
+    a: "Yes, if Auto-buy is enabled for that product. AmaBot then attempts an order as soon as an eligible offer matches your rules instead of only sending an Amazon restock alert.",
   },
   {
-    q: "Does a restock alert include the price?",
-    a: "Availability and price are evaluated together. An offer only counts as a match when the complete price, including shipping, stays within the maximum you set for that product.",
+    q: "Can I set a maximum price?",
+    a: "Yes. Each product has its own maximum price, and the complete price including shipping must stay within it for the offer to count as a match.",
   },
   {
-    q: "Do I need to keep the app open for restock alerts?",
-    a: "Yes. AmaBot runs locally on your computer, so your machine, your internet connection and the AmaBot session must stay active while monitoring is enabled.",
+    q: "Can I select a quantity?",
+    a: "Yes. You set the quantity per order and how many orders AmaBot may place for that product before it stops.",
   },
   {
-    q: "How many products can I monitor for restocks?",
-    a: "You can add multiple products, but because checks happen in rotation, a longer list means a longer gap between checks of each individual product.",
+    q: "How quickly does AmaBot detect a restock?",
+    a: "AmaBot checks products in rotation while monitoring runs, so a short focused list is revisited more frequently than a long one. Detection speed depends on your list length, your connection and Amazon itself, and no fixed reaction time can be promised.",
   },
   {
-    q: "Will I definitely get the item if I receive a restock alert?",
-    a: "No. Inventory can sell out during checkout, prices can change, quantity limits can apply and Amazon may request verification. A restock alert improves your chances, it does not guarantee an order.",
+    q: "Does every Amazon restock alert result in an order?",
+    a: "No. Inventory can sell out during checkout, prices can change, the seller can change, quantity limits can apply and Amazon may request verification. An Amazon restock alert improves your chances; it does not guarantee an order.",
   },
   {
     q: "Is AmaBot affiliated with Amazon?",
@@ -58,7 +58,7 @@ const faqs: Faq[] = [
 export const Route = createFileRoute("/amazon-restock-alerts")({
   head: () => ({
     ...headMeta({ slug: "amazon-restock-alerts", title: TITLE, description: DESCRIPTION }),
-    scripts: jsonLd("amazon-restock-alerts", DESCRIPTION, faqs, "Amazon Restock Alerts").map((d) => ({
+    scripts: jsonLd("amazon-restock-alerts", DESCRIPTION, faqs, "Amazon Restock Alert").map((d) => ({
       type: "application/ld+json",
       children: JSON.stringify(d),
     })),
@@ -72,12 +72,13 @@ function RestockAlerts() {
       <PageHero
         eyebrow="Restock monitoring"
         breadcrumb="Amazon Restock Alerts"
-        h1={<><span className="text-gradient-gold">Amazon Restock Alerts</span> For Sold-Out Products</>}
+        h1={<>Get an Instant <span className="text-gradient-gold">Amazon Restock Alert</span></>}
         intro={
           <p>
-            Sold-out listings come back without warning. AmaBot watches the products you choose, checks whether
-            a buyable offer has appeared, applies your price and seller rules, and alerts you — or buys
-            automatically if you asked it to.
+            AmaBot provides an Amazon restock alert when a monitored product becomes available again. It also
+            works as an Amazon restock tracker, checking the listings you select so you do not need to refresh
+            Amazon pages manually throughout the day. Add a product, set your price and seller rules, and
+            choose whether AmaBot only notifies you or attempts the purchase for you.
           </p>
         }
         secondary={{ to: "/what-is-amabot", label: "What is AmaBot?" }}
@@ -86,40 +87,41 @@ function RestockAlerts() {
       <Section title="Why Amazon Restocks Are So Easy to Miss">
         <p>
           Amazon does not announce restocks. A product that has been unavailable for weeks can quietly gain a
-          buyable offer at any hour of the day, stay purchasable for a few minutes, and go back to sold out
-          before most people notice anything happened.
+          buyable offer at any hour, stay purchasable for a few minutes, and go back to sold out before most
+          people notice anything happened.
         </p>
         <p>
-          That is why manual checking rarely works for high-demand items. The window is short, it is
-          unpredictable, and it frequently opens while you are asleep, at work or simply looking at something
-          else. Monitoring solves the problem by making the check continuous instead of occasional.
+          That is why manual checking rarely works for high-demand items. The window is short, unpredictable,
+          and frequently opens while you are asleep, at work or simply looking at something else. Continuous
+          monitoring replaces occasional luck with a check that never stops while your session is open.
         </p>
       </Section>
 
-      <Section title="How AmaBot Monitors Availability">
+      <Section title="How an Amazon Restock Alert Works">
         <p>
-          AmaBot is a free desktop application for Windows and macOS. You paste the Amazon link of a sold-out
-          product, define what an acceptable purchase looks like, and start monitoring. From that point on
-          AmaBot works through your list in rotation and reports everything it sees in a live dashboard.
+          The sequence is straightforward. A product you want goes out of stock or has no buyable offer.
+          You add its Amazon link to AmaBot and monitoring continues in the background. When availability
+          changes and a purchasable offer appears, AmaBot evaluates it against your rules, and if it fits you
+          receive an Amazon restock alert — or the automatic action you selected begins immediately.
         </p>
         <CardGrid>
           <InfoCard icon={PackageSearch} title="Buyable offer detection">
-            AmaBot looks for an actual purchasable offer on the listing, which is what distinguishes a real
-            restock from a page that merely exists.
+            AmaBot looks for an actual purchasable offer, which is what distinguishes a real restock from a
+            page that merely exists.
           </InfoCard>
           <InfoCard icon={Filter} title="Price and seller rules applied">
             An offer counts only when the complete price including shipping fits your maximum and the seller
             matches your preference.
           </InfoCard>
-          <InfoCard icon={Bell} title="Alerts in Monitor Only mode">
-            Get notified when a match appears and complete the purchase yourself on Amazon.
+          <InfoCard icon={Bell} title="Alert in Monitor Only mode">
+            Get an Amazon restock alert and complete the purchase yourself on Amazon.
           </InfoCard>
           <InfoCard icon={ShoppingCart} title="Auto-buy on restock">
             Let AmaBot attempt checkout the instant an eligible offer appears, without waiting for you to
             react.
           </InfoCard>
           <InfoCard icon={Repeat} title="Continuous rotation">
-            Roughly five seconds per product per cycle, running for as long as monitoring stays on.
+            Products are checked one after another for as long as monitoring stays on.
           </InfoCard>
           <InfoCard icon={Timer} title="Runs while you do other things">
             The app keeps watching in the background so the restock window does not depend on your attention.
@@ -127,117 +129,115 @@ function RestockAlerts() {
         </CardGrid>
       </Section>
 
-      <Section title="Availability and Price Are One Rule">
+      <Section title="Track Products with an Amazon Restock Tracker">
         <p>
-          A restock alert that ignores price is only half useful. When a sought-after product returns, it often
-          returns through a third-party seller at a markup, and being first in line for an overpriced offer is
-          not a win.
+          Setting up the Amazon restock tracker takes a minute per product. You paste the Amazon link, set the
+          maximum price you are willing to pay in total, select the quantity per order and how many orders are
+          allowed, and choose whether only Amazon-sold offers count or any eligible seller does. Then you
+          decide between alerts and optional automatic purchasing and start monitoring.
         </p>
         <p>
-          AmaBot therefore evaluates both at once. The product must have a buyable offer, the complete price
-          including shipping must stay within the maximum you set, and the seller must match your preference —
-          Amazon only, or any eligible seller. If any of those fail, monitoring simply continues.
+          From there the Amazon restock tracker takes over product availability monitoring. Each product in
+          your list is checked in rotation, and the live dashboard shows what was observed on each pass:
+          whether an offer exists, what it costs and whether it satisfied your rules. Because checks happen in
+          rotation, a short deliberate list is revisited more often than a long wish list — which matters when
+          a restock lasts only minutes.
         </p>
         <SubHeading>Choosing your seller preference</SubHeading>
         <p>
           Restricting to Amazon as the seller usually means more predictable pricing and fewer surprises, but
           fewer opportunities. Allowing any eligible seller widens the window considerably, which matters most
-          for products that Amazon itself rarely restocks. Your maximum price is what keeps that flexibility
-          safe.
+          for products Amazon itself rarely restocks. Your maximum price is what keeps that flexibility safe.
         </p>
       </Section>
 
-      <Section title="Alerts or Automatic Purchase on Restock">
+      <Section title="How the AmaBot Amazon Restock Bot Works">
         <p>
-          Every product you monitor runs in one of two modes, and you can mix them freely across your list.
+          Used as an Amazon restock bot, AmaBot removes two human bottlenecks: the refreshing and the reaction.
+          Instead of reloading a product page hoping to catch the moment, the app performs the check for you;
+          instead of noticing an alert and typing your details, Auto-buy can start checkout the moment an
+          eligible offer appears.
         </p>
-        <CompareTable
-          caption="Restock alerts compared with automatic purchasing"
-          head={["", "Monitor Only", "Auto-buy"]}
-          rows={[
-            ["Detects restocks", "Yes", "Yes"],
-            ["Applies price limit", "Yes", "Yes"],
-            ["Applies seller filter", "Yes", "Yes"],
-            ["Notifies you", "Yes", "Yes"],
-            ["Places the order", "No, you buy manually", "Attempts checkout automatically"],
-            ["Reaction speed", "Depends on you", "Immediate on match"],
-            ["Stops when", "You stop monitoring", "Your order target is reached"],
-          ]}
-        />
+        <p>
+          The Amazon restock bot works entirely through your own Amazon session on your own computer. It uses
+          the default shipping address and default payment method configured in your Amazon account, and an
+          available Amazon Gift Card balance may be applied by Amazon before that method is charged. It does
+          not bypass Amazon restrictions, quantity limits or verification requests, and any automated
+          interaction with Amazon carries a general risk that the platform requests verification or restricts
+          certain activity.
+        </p>
         <Callout title="Auto-buy runs on the rules you saved">
           Before leaving Auto-buy unattended, confirm the maximum price, the quantity per order, the number of
           orders allowed and the seller preference for each product.
         </Callout>
       </Section>
 
-      <Section title="Response Time and How Many Products to Watch">
+      <Section title="Amazon Restock Alerts vs Manual Refreshing">
         <p>
-          AmaBot gives each product roughly five seconds of attention per rotation. One product is revisited
-          about every five seconds; ten products stretch that gap to roughly fifty seconds. For a restock that
-          lasts only a couple of minutes, that difference is the difference between catching it and reading
-          about it later.
+          The comparison below shows what changes when an Amazon restock tracker replaces a browser tab and
+          your patience.
         </p>
+        <CompareTable
+          caption="Amazon restock alert and restock tracker compared with manual refreshing"
+          head={["", "Manual refreshing", "AmaBot restock tracker"]}
+          rows={[
+            ["Checks while you sleep", "No", "Yes, while the session runs"],
+            ["Amazon restock alert on availability", "Only if you happen to look", "Yes"],
+            ["Applies a maximum price", "You judge each time", "Automatic"],
+            ["Applies a seller filter", "Manual", "Automatic"],
+            ["Reaction speed", "However fast you are", "Immediate on match with Auto-buy"],
+            ["Effort per product", "Constant", "One-time setup"],
+          ]}
+        />
         <p>
-          The practical rule is to keep the monitored list close to what you actually intend to buy. A short,
-          deliberate list reacts faster than a long wish list.
-        </p>
-      </Section>
-
-      <Section title="What Happens After a Match">
-        <p>
-          In Monitor Only mode you receive the alert and take it from there on Amazon. In Auto-buy mode AmaBot
-          attempts the order through your own Amazon session, using the default shipping address and default
-          payment method configured in your Amazon account. An available Amazon Gift Card balance may be
-          applied by Amazon before your default payment method is charged.
-        </p>
-        <p>
-          Your Amazon credentials and payment details are not stored on AmaBot servers. The Amazon session runs
-          locally on your machine, while product links and buying rules may be saved locally on your device.
-          Once an order exists it belongs to your Amazon account, and changes, cancellations, returns and
-          refunds are handled through Amazon under Amazon's policies.
-        </p>
-      </Section>
-
-      <Section title="Why a Restock Attempt Can Still Fail">
-        <p>
-          Detection is fast, but checkout happens in a competitive environment. Orders can fail because:
-        </p>
-        <ul className="ml-5 list-disc space-y-2">
-          <li>The inventory sells out during checkout.</li>
-          <li>The price changes while the order is being placed.</li>
-          <li>Amazon applies a quantity restriction to the item.</li>
-          <li>A payment method is declined or unavailable.</li>
-          <li>Shipping restrictions apply to the product or address.</li>
-          <li>Amazon requests additional account verification.</li>
-          <li>The seller behind the buyable offer changes.</li>
-        </ul>
-        <p>
-          There is also a general risk attached to any automated interaction with Amazon: the platform may
-          occasionally request verification or restrict certain activity. AmaBot follows safer automation
-          practices, but no tool can guarantee an outcome.
-        </p>
-      </Section>
-
-      <Section title="Related Use Cases">
-        <p>
-          If your priority is the price rather than the scarcity, the{" "}
+          Price and availability are one problem, not two. If your priority is the number rather than the
+          scarcity, the{" "}
           <Link to="/amazon-price-tracker" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon price tracker
           </Link>{" "}
-          page covers target-price rules in more depth. If you are chasing sealed collectibles specifically,
-          the{" "}
+          page explains target-price rules in more depth, and collectors chasing sealed cards can read about{" "}
           <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Pokémon restock tracker
+            Pokemon restock alerts
           </Link>{" "}
-          page walks through that scenario. For a full overview of the tool, start with{" "}
-          <Link to="/what-is-amabot" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            what AmaBot is
-          </Link>
-          .
+          for that specific scenario.
         </p>
       </Section>
 
-      <FaqList items={faqs} heading="Amazon Restock Alerts FAQ" />
+      <Section title="Maximum Price and Quantity Controls">
+        <p>
+          A restocked product does not always come back the way it left. It can return at a different price
+          than the one you remember, through a different seller than before, or with a quantity restriction
+          applied by Amazon to limit how many units one account can buy.
+        </p>
+        <p>
+          Your maximum price is the protection against the first two. Because the complete price including
+          shipping is compared with your ceiling, a marked-up return through a third-party seller simply does
+          not register as a match. Quantity settings cover the third: you define how many units belong in an
+          order and how many orders AmaBot may place, so an unattended session has a predictable worst case.
+        </p>
+      </Section>
+
+      <Section title="Why a Restock Does Not Guarantee an Order">
+        <p>
+          Detection is one thing; checkout happens in a competitive environment. An attempt can fail because:
+        </p>
+        <ul className="ml-5 list-disc space-y-2">
+          <li>The inventory disappears while the order is being placed.</li>
+          <li>The price changes between detection and checkout.</li>
+          <li>The seller behind the buyable offer changes.</li>
+          <li>A payment method is declined or unavailable.</li>
+          <li>Shipping eligibility changes for the product or address.</li>
+          <li>Amazon requests additional account verification.</li>
+          <li>Amazon limits the quantity, or an order is cancelled after being placed.</li>
+        </ul>
+        <p>
+          Once an order exists it belongs to your Amazon account, and changes, cancellations, returns and
+          refunds are handled through Amazon under Amazon's policies. AmaBot improves your odds; it cannot
+          promise the outcome.
+        </p>
+      </Section>
+
+      <FaqList items={faqs} heading="Amazon Restock Alert FAQ" />
 
       <CtaBlock
         title="Never refresh a sold-out listing again"
