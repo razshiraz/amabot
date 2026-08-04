@@ -57,7 +57,7 @@ export function SiteFooter() {
           <div>
             <Logo />
             <p className="mt-3 max-w-md text-xs text-muted-foreground">
-              amabot is an independent tool and is not affiliated with, endorsed by, or sponsored by Amazon.
+              amabot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially connected to Amazon.
             </p>
             <p className="mt-2 max-w-md text-xs text-foreground/80">
               As an Amazon Associate I earn from qualifying purchases.
