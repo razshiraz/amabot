@@ -53,6 +53,10 @@ const faqSchema = {
   "@type": "FAQPage",
   mainEntity: [
     ["What is amabot?", "amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
+    ["What is an Amazon bot?", "An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. amabot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."],
+    ["Is amabot an Amazon auto checkout bot?", "Yes. amabot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."],
+    ["How does Amazon auto buy work with amabot?", "Amazon auto buy allows amabot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."],
+    ["What does Amazon auto purchase mean?", "Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."],
     ["Why is amabot free?", "amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
     ["Do you store my personal information?", "amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
     ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
@@ -78,10 +82,10 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free Amazon Auto Checkout Bot & Monitor | Amabot" },
-      { name: "description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let Amabot automatically purchase matching offers - Completely Free!" },
-      { property: "og:title", content: "Free Amazon Auto Checkout Bot & Monitor | Amabot" },
-      { property: "og:description", content: "Never miss an Amazon drop again. Set your price, quantity, and buying rules, then let Amabot automatically purchase matching offers - Completely Free!" },
+      { title: "AmaBot | Free Amazon Auto Buy & Auto Checkout Bot" },
+      { name: "description", content: "AmaBot is a free Amazon bot that monitors products, prices and restocks. Get alerts or use optional Amazon auto buy and auto purchase features based on your settings." },
+      { property: "og:title", content: "AmaBot | Free Amazon Auto Buy & Auto Checkout Bot" },
+      { property: "og:description", content: "AmaBot is a free Amazon bot that monitors products, prices and restocks. Get alerts or use optional Amazon auto buy and auto purchase features based on your settings." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
     ],
@@ -199,7 +203,7 @@ function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          Track any product, set your target price, and choose between alerts or automatic purchasing.
+          amabot is a free Amazon bot that monitors products, prices and restocks. Set your target price and choose between instant alerts or optional automatic purchasing.
         </p>
 
         <OptImage
@@ -433,7 +437,7 @@ function FloatingAlert({
 const features = [
   { icon: Activity, title: "Always-On Monitoring", desc: "Add your Amazon products and amabot continuously checks their latest prices and available offers." },
   { icon: SlidersHorizontal, title: "Custom Buying Rules", desc: "Set a maximum price, quantity, purchase limit, and buying preferences for every product." },
-  { icon: ShoppingCart, title: "Automatic Purchasing", desc: "When an eligible offer matches all your rules, amabot can automatically place the order for you." },
+  { icon: ShoppingCart, title: "Optional Amazon Auto Buy", desc: "Choose alert mode or allow amabot to attempt an Amazon auto purchase when the product matches your selected maximum price, quantity and availability conditions." },
   { icon: Bell, title: "Monitor-Only Alerts", desc: "Prefer to stay in control? Receive an update when a matching opportunity appears without making a purchase." },
   { icon: Filter, title: "Seller & Price Filters", desc: "Choose Amazon-only or any eligible seller while checking the complete price, including shipping." },
   { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, and purchase status from one clear dashboard." },
@@ -447,6 +451,15 @@ function Features() {
 
 
 
+
+        <div className="glass mx-auto mt-10 max-w-3xl rounded-2xl p-6 text-left">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            amabot combines product monitoring with optional <span className="font-semibold text-primary">Amazon auto buy</span> functionality. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or let the Amazon auto checkout bot attempt the purchase when the selected conditions are met.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            An Amazon auto purchase is only attempted when the product matches the user's settings. Availability, pricing and successful checkout are not guaranteed.
+          </p>
+        </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
@@ -600,6 +613,22 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
     a: { paragraphs: ["amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
   },
   {
+    q: "What is an Amazon bot?",
+    a: { paragraphs: ["An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. amabot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."] },
+  },
+  {
+    q: "Is amabot an Amazon auto checkout bot?",
+    a: { paragraphs: ["Yes. amabot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."] },
+  },
+  {
+    q: "How does Amazon auto buy work with amabot?",
+    a: { paragraphs: ["Amazon auto buy allows amabot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."] },
+  },
+  {
+    q: "What does Amazon auto purchase mean?",
+    a: { paragraphs: ["Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."] },
+  },
+  {
     q: "Why is amabot free?",
     a: { paragraphs: ["amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
   },
@@ -690,18 +719,20 @@ function FAQ() {
                     <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition ${isOpen ? "rotate-180 text-primary" : ""}`} />
                   </div>
                 </button>
-                {isOpen && (
-                  <div
-                    id={panelId}
-                    role="region"
-                    aria-labelledby={btnId}
-                    className="px-6 pb-5 space-y-3 text-sm leading-relaxed text-muted-foreground animate-fade-in"
-                  >
-                    {f.a.paragraphs.map((p, idx) => (
-                      <p key={idx}>{p}</p>
-                    ))}
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={btnId}
+                  className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                      {f.a.paragraphs.map((p, idx) => (
+                        <p key={idx}>{p}</p>
+                      ))}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
