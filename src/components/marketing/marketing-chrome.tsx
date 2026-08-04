@@ -57,6 +57,14 @@ function MarketingHeader() {
             <Logo size="lg" />
 
             <nav aria-label="Main" className="hidden items-center gap-6 text-sm text-muted-foreground lg:flex">
+              <Link
+                to="/"
+                activeOptions={{ exact: true }}
+                className="cursor-pointer transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
+                activeProps={{ className: "text-primary" }}
+              >
+                Home
+              </Link>
               {MARKETING_LINKS.map((l) => (
                 <Link
                   key={l.to}
