@@ -53,7 +53,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border/50 py-12">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
           <div>
             <Logo />
             <p className="mt-3 max-w-md text-xs text-muted-foreground">
@@ -63,7 +63,14 @@ export function SiteFooter() {
               As an Amazon Associate I earn from qualifying purchases.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-6 text-sm">
+          <nav aria-label="Resources" className="flex flex-col gap-3 text-sm">
+            <h2 className="text-sm font-semibold text-foreground">Resources</h2>
+            <Link to="/what-is-amabot" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">What Is AmaBot?</Link>
+            <Link to="/amazon-price-tracker" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Amazon Price Tracker</Link>
+            <Link to="/amazon-restock-alerts" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Amazon Restock Alerts</Link>
+            <Link to="/pokemon-restock-alerts" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Pokémon Restock Alerts</Link>
+          </nav>
+          <div className="flex flex-wrap items-center gap-6 text-sm md:items-start">
             <Link to="/terms" className="text-muted-foreground transition hover:text-foreground">Terms</Link>
             <Link to="/privacy" className="text-muted-foreground transition hover:text-foreground">Privacy Policy</Link>
             <Link to="/affiliate-disclosure" className="text-muted-foreground transition hover:text-foreground">Affiliate Disclosure</Link>
