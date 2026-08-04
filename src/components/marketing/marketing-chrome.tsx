@@ -100,6 +100,15 @@ function MarketingHeader() {
               aria-label="Mobile"
               className="mt-3 flex flex-col gap-1 border-t border-border/50 pt-3 lg:hidden"
             >
+              <Link
+                to="/"
+                activeOptions={{ exact: true }}
+                onClick={() => setMenuOpen(false)}
+                className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                activeProps={{ className: "text-primary" }}
+              >
+                Home
+              </Link>
               {MARKETING_LINKS.map((l) => (
                 <Link
                   key={l.to}
