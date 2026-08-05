@@ -4,10 +4,10 @@ import { LegalLayout, LegalSection } from "@/components/legal-layout";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy | amabot" },
-      { name: "description", content: "Learn how amabot handles account information, local Amazon sessions, product settings, and technical data." },
-      { property: "og:title", content: "Privacy Policy | amabot" },
-      { property: "og:description", content: "Learn how amabot handles account information, local Amazon sessions, product settings, and technical data." },
+      { title: "Privacy Policy | AmaBot" },
+      { name: "description", content: "Learn how AmaBot handles account information, local Amazon sessions, product settings, and technical data." },
+      { property: "og:title", content: "Privacy Policy | AmaBot" },
+      { property: "og:description", content: "Learn how AmaBot handles account information, local Amazon sessions, product settings, and technical data." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://amabot.app/privacy" },
     ],
@@ -20,12 +20,12 @@ function PrivacyPage() {
   return (
     <LegalLayout title="Privacy Policy">
       <LegalSection title="1. Introduction">
-        <p>This Privacy Policy explains how amabot handles information when you visit the website, create an amabot account, or use the desktop application.</p>
-        <p>amabot is designed to keep sensitive Amazon account activity inside a separate browser session running locally on your computer.</p>
+        <p>This Privacy Policy explains how AmaBot handles information when you visit the website, create an AmaBot account, or use the desktop application.</p>
+        <p>AmaBot is designed to keep sensitive Amazon account activity inside a separate browser session running locally on your computer.</p>
       </LegalSection>
 
-      <LegalSection title="2. Information associated with your amabot account">
-        <p>When you register for amabot, we may process information you provide during registration, such as your email address, account identifier, and authentication information.</p>
+      <LegalSection title="2. Information associated with your AmaBot account">
+        <p>When you register for AmaBot, we may process information you provide during registration, such as your email address, account identifier, and authentication information.</p>
         <p>We use this information to create and secure your account, provide access to the service, communicate important updates, and prevent misuse.</p>
       </LegalSection>
 
@@ -46,7 +46,7 @@ function PrivacyPage() {
       </LegalSection>
 
       <LegalSection title="4. Amazon credentials and payment information">
-        <p>amabot does not store your Amazon password, full payment-card information, or Amazon authentication credentials on amabot servers.</p>
+        <p>AmaBot does not store your Amazon password, full payment-card information, or Amazon authentication credentials on AmaBot servers.</p>
         <p>Your Amazon sign-in and checkout session operate through a separate local browser session.</p>
         <p>Payment processing, gift-card balances, shipping addresses, and order fulfillment are handled by Amazon.</p>
       </LegalSection>
@@ -65,7 +65,7 @@ function PrivacyPage() {
       </LegalSection>
 
       <LegalSection title="6. Support communications">
-        <p>If you contact amabot through Discord, Telegram, or another support channel, we may process the information you choose to provide.</p>
+        <p>If you contact AmaBot through Discord, Telegram, or another support channel, we may process the information you choose to provide.</p>
         <p>Do not send Amazon passwords, payment-card details, passkeys, or other sensitive credentials through support channels.</p>
       </LegalSection>
 
@@ -91,17 +91,17 @@ function PrivacyPage() {
       <LegalSection title="9. Affiliate links and Amazon">
         <p>Some links may be Amazon affiliate links.</p>
         <p>When you follow an affiliate link, Amazon may collect information according to Amazon's own privacy notices, cookie policies, and account settings.</p>
-        <p>amabot does not control Amazon's privacy practices.</p>
+        <p>AmaBot does not control Amazon's privacy practices.</p>
       </LegalSection>
 
       <LegalSection title="10. Sharing of information">
-        <p>amabot does not sell personal information.</p>
+        <p>AmaBot does not sell personal information.</p>
         <p>Information may be shared only when reasonably necessary:</p>
         <ul className="ml-5 list-disc space-y-2">
           <li>With service providers that help operate amabot.</li>
           <li>To comply with law, legal process, or valid government requests.</li>
           <li>To investigate fraud, abuse, or security incidents.</li>
-          <li>To protect users, amabot, or the public.</li>
+          <li>To protect users, AmaBot, or the public.</li>
           <li>As part of a merger, acquisition, financing, or transfer of the service.</li>
           <li>With your consent or at your direction.</li>
         </ul>
@@ -114,9 +114,9 @@ function PrivacyPage() {
       </LegalSection>
 
       <LegalSection title="12. Security">
-        <p>amabot uses reasonable technical and organizational measures intended to protect information.</p>
+        <p>AmaBot uses reasonable technical and organizational measures intended to protect information.</p>
         <p>No storage, transmission, browser session, or online service can be guaranteed to be completely secure.</p>
-        <p>You are responsible for protecting access to your computer, Amazon account, amabot account, email account, and passkeys.</p>
+        <p>You are responsible for protecting access to your computer, Amazon account, AmaBot account, email account, and passkeys.</p>
       </LegalSection>
 
       <LegalSection title="13. Your choices and rights">
@@ -131,13 +131,13 @@ function PrivacyPage() {
       </LegalSection>
 
       <LegalSection title="15. Children's privacy">
-        <p>amabot is intended only for users who are at least 18 years old.</p>
+        <p>AmaBot is intended only for users who are at least 18 years old.</p>
         <p>We do not knowingly offer the service to children or knowingly collect personal information from children.</p>
       </LegalSection>
 
       <LegalSection title="16. Third-party services">
         <p>The website and application may link to Amazon, Discord, Telegram, and other third-party services.</p>
-        <p>Those services operate under their own terms and privacy policies. amabot is not responsible for their privacy or security practices.</p>
+        <p>Those services operate under their own terms and privacy policies. AmaBot is not responsible for their privacy or security practices.</p>
       </LegalSection>
 
       <LegalSection title="17. Changes to this policy">
@@ -146,7 +146,7 @@ function PrivacyPage() {
       </LegalSection>
 
       <LegalSection title="18. Contact">
-        <p>For privacy questions or requests, contact amabot through the official Discord or Telegram channels linked in the website footer.</p>
+        <p>For privacy questions or requests, contact AmaBot through the official Discord or Telegram channels linked in the website footer.</p>
       </LegalSection>
     </LegalLayout>
   );

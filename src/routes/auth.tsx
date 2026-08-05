@@ -13,10 +13,10 @@ export const Route = createFileRoute("/auth")({
   }),
   head: () => ({
     meta: [
-      { title: "Sign in — amabot" },
-      { name: "description", content: "Sign in to your amabot account to manage tracked drops and connect external tools." },
-      { property: "og:title", content: "Sign in — amabot" },
-      { property: "og:description", content: "Sign in to your amabot account to manage tracked drops and connect external tools." },
+      { title: "Sign in — AmaBot" },
+      { name: "description", content: "Sign in to your AmaBot account to manage tracked drops and connect external tools." },
+      { property: "og:title", content: "Sign in — AmaBot" },
+      { property: "og:description", content: "Sign in to your AmaBot account to manage tracked drops and connect external tools." },
       { property: "og:url", content: "https://amabot.app/auth" },
       { name: "robots", content: "noindex,nofollow" },
     ],
@@ -100,8 +100,8 @@ function AuthPage() {
       <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="relative mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-4 py-16">
         <a href="/" className="mb-8 flex items-center gap-3">
-          <img src={amabotIcon} alt="amabot brand icon" className="h-14 w-14 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]" />
-          <span className="text-2xl font-bold">amabot</span>
+          <img src={amabotIcon} alt="AmaBot brand icon" className="h-14 w-14 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]" />
+          <span className="text-2xl font-bold">AmaBot</span>
         </a>
 
         <div className="glass w-full rounded-3xl p-8">

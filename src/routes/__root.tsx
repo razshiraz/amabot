@@ -72,8 +72,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "amabot" },
-      { property: "og:site_name", content: "amabot" },
+      { name: "author", content: "AmaBot" },
+      { property: "og:site_name", content: "AmaBot" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: "https://amabot.app/og-image.jpg" },
       { property: "og:image:secure_url", content: "https://amabot.app/og-image.jpg" },
@@ -94,10 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "amabot",
+          name: "AmaBot",
           url: "https://amabot.app",
           logo: "https://amabot.app/favicon.png",
-          description: "amabot is a free Amazon auto checkout bot, Amazon restock bot, and Amazon price tracker that monitors product availability and can automatically purchase eligible offers.",
+          description: "AmaBot is a free Amazon auto checkout bot, Amazon restock bot, and Amazon price tracker that monitors product availability and can automatically purchase eligible offers.",
           sameAs: [
             "https://discord.gg/amabot",
             "https://t.me/amabot",
@@ -109,9 +109,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "amabot",
+          name: "AmaBot",
           url: "https://amabot.app",
-          description: "Free Amazon auto checkout bot and restock monitor. Set your rules and let amabot handle Amazon auto buy and restock alerts.",
+          description: "Free Amazon auto checkout bot and restock monitor. Set your rules and let AmaBot handle Amazon auto buy and restock alerts.",
         }),
       },
       {
@@ -119,11 +119,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          name: "amabot",
+          name: "AmaBot",
           url: "https://amabot.app",
           applicationCategory: "UtilitiesApplication",
           operatingSystem: "Windows, macOS",
-          description: "amabot is a free Amazon auto checkout bot and Amazon automatic purchasing tool. It works as an Amazon restock bot and Amazon price tracker, sending Amazon restock alerts and enabling Amazon auto buy when an offer matches your rules.",
+          description: "AmaBot is a free Amazon auto checkout bot and Amazon automatic purchasing tool. It works as an Amazon restock bot and Amazon price tracker, sending Amazon restock alerts and enabling Amazon auto buy when an offer matches your rules.",
           featureList: [
             "Always-on Amazon product monitoring",
             "Custom buying rules with price and quantity limits",

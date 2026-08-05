@@ -25,7 +25,7 @@ export function PageHero({
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
           <OptImage
             variants={iconImg}
-            alt="amabot brand icon"
+            alt="AmaBot brand icon"
             width={128}
             height={128}
             sizes="20px"

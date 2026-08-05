@@ -28,7 +28,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "@id": "https://amabot.app/#webpage",
   url: "https://amabot.app/",
-  name: "Free Amazon Auto Checkout Bot & Monitor | Amabot",
+  name: "Free Amazon Auto Checkout Bot & Monitor | AmaBot",
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: OG_IMAGE,
@@ -39,8 +39,8 @@ const webPageSchema = {
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  name: "Amabot demo - Amazon auto checkout bot and restock monitor",
-  description: "Demo of amabot monitoring Amazon products, sending restock alerts, and automatically purchasing offers that match your buying rules.",
+  name: "AmaBot demo - Amazon auto checkout bot and restock monitor",
+  description: "Demo of AmaBot monitoring Amazon products, sending restock alerts, and automatically purchasing offers that match your buying rules.",
   thumbnailUrl: [OG_IMAGE],
   uploadDate: "2026-07-22T20:27:44Z",
   duration: "PT1M30S",
@@ -52,26 +52,26 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    ["What is amabot?", "amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
-    ["What is an Amazon bot?", "An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. amabot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."],
-    ["Is amabot an Amazon auto checkout bot?", "Yes. amabot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."],
-    ["How does Amazon auto buy work with amabot?", "Amazon auto buy allows amabot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."],
+    ["What is AmaBot?", "AmaBot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."],
+    ["What is an Amazon bot?", "An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."],
+    ["Is AmaBot an Amazon auto checkout bot?", "Yes. AmaBot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."],
+    ["How does Amazon auto buy work with AmaBot?", "Amazon auto buy allows AmaBot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."],
     ["What does Amazon auto purchase mean?", "Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."],
-    ["Why is amabot free?", "amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
-    ["Do you store my personal information?", "amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
-    ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
-    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. As an Amazon price tracker, amabot checks products in rotation, allowing approximately five seconds per product."],
+    ["Why is AmaBot free?", "AmaBot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
+    ["Do you store my personal information?", "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
+    ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside AmaBot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
+    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. As an Amazon price tracker, AmaBot checks products in rotation, allowing approximately five seconds per product."],
     ["What's the difference between Monitor Only and Auto-buy?", "Monitor Only sends Amazon restock alerts when a product meets your conditions and never places orders. Auto-buy works as an Amazon auto buy tool that automatically places an order when an eligible offer matches your rules, continuing until your configured order target has been reached."],
 
-    ["Which shipping address will amabot use?", "By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."],
-    ["Which payment method will amabot use?", "amabot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."],
+    ["Which shipping address will AmaBot use?", "By default, AmaBot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."],
+    ["Which payment method will AmaBot use?", "AmaBot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."],
     ["Can I switch Amazon accounts?", "Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."],
-    ["Is my Amazon account at risk?", "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. amabot follows safer automation practices but no tool can guarantee that an account will never be affected."],
-    ["How do I update amabot?", "amabot updates automatically in the background. To verify that you are running the latest version, use the \"Check for Updates\" button on the Settings page."],
-    ["Does amabot guarantee successful purchases?", "No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. amabot can improve your chances but cannot guarantee a successful purchase."],
-    ["Do I need to keep my computer running?", "Yes. Because amabot runs locally, your computer, internet connection, and amabot session must remain active while monitoring or automatic purchasing is enabled."],
+    ["Is my Amazon account at risk?", "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot follows safer automation practices but no tool can guarantee that an account will never be affected."],
+    ["How do I update AmaBot?", "AmaBot updates automatically in the background. To verify that you are running the latest version, use the \"Check for Updates\" button on the Settings page."],
+    ["Does AmaBot guarantee successful purchases?", "No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. AmaBot can improve your chances but cannot guarantee a successful purchase."],
+    ["Do I need to keep my computer running?", "Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled."],
     ["What happens after an order is placed?", "The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."],
-    ["Is amabot affiliated with Amazon?", "No. amabot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."],
+    ["Is AmaBot affiliated with Amazon?", "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."],
   ].map(([q, a]) => ({
     "@type": "Question",
     name: q,
@@ -128,7 +128,7 @@ function Nav() {
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
-            <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
+            <button type="button" onClick={openModal} aria-label="Download AmaBot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </button>
@@ -220,7 +220,7 @@ function Hero() {
 
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
-          <button type="button" onClick={openModal} aria-label="Download amabot desktop application (free)" className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
+          <button type="button" onClick={openModal} aria-label="Download AmaBot desktop application (free)" className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </button>
@@ -288,7 +288,7 @@ function Hero() {
                   <button
                     type="button"
                     onClick={startPlayback}
-                    aria-label="Play amabot demo video"
+                    aria-label="Play AmaBot demo video"
                     style={{ aspectRatio: "1 / 1", boxSizing: "border-box", padding: 0, lineHeight: 0, flexShrink: 0 }}
                     className="pointer-events-auto group grid h-[60px] w-[60px] place-items-center rounded-full border border-primary/40 bg-black/50 text-white shadow-[0_0_30px_oklch(0.85_0.17_88_/_0.35)] backdrop-blur-md transition-transform duration-200 hover:scale-110 hover:shadow-[0_0_50px_oklch(0.85_0.17_88_/_0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:animate-pulse-glow md:h-[74px] md:w-[74px]"
                   >
@@ -334,7 +334,7 @@ function DashboardShowcase() {
           className="mx-auto text-balance text-center text-white px-2 mb-12 md:mb-16 lg:mb-24"
           style={{ maxWidth: "950px", fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.2, fontWeight: 700 }}
         >
-          Amabot is a <span className="text-gradient-gold uppercase">FREE</span> <span className="text-gradient-gold">Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
+          AmaBot is a <span className="text-gradient-gold uppercase">FREE</span> <span className="text-gradient-gold">Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
         </h2>
 
         <div className="relative mx-auto max-w-5xl">
@@ -344,7 +344,7 @@ function DashboardShowcase() {
             <div className="overflow-hidden rounded-2xl border border-white/5">
               <OptImage
                 variants={dashImg}
-                alt="amabot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts"
+                alt="AmaBot Amazon auto checkout bot and product monitoring dashboard tracking Pokémon prices and restock alerts"
                 width={1280}
                 height={720}
                 sizes="(min-width: 1024px) 1024px, 100vw"
@@ -437,9 +437,9 @@ function FloatingAlert({
 }
 
 const features = [
-  { icon: Activity, title: "Always-On Monitoring", desc: "Add your Amazon products and amabot continuously checks their latest prices and available offers." },
+  { icon: Activity, title: "Always-On Monitoring", desc: "Add your Amazon products and AmaBot continuously checks their latest prices and available offers." },
   { icon: SlidersHorizontal, title: "Custom Buying Rules", desc: "Set a maximum price, quantity, purchase limit, and buying preferences for every product." },
-  { icon: ShoppingCart, title: "Optional Amazon Auto Buy", desc: "Choose alert mode or allow amabot to attempt an Amazon auto purchase when the product matches your selected maximum price, quantity and availability conditions." },
+  { icon: ShoppingCart, title: "Optional Amazon Auto Buy", desc: "Choose alert mode or allow AmaBot to attempt an Amazon auto purchase when the product matches your selected maximum price, quantity and availability conditions." },
   { icon: Bell, title: "Monitor-Only Alerts", desc: "Prefer to stay in control? Receive an update when a matching opportunity appears without making a purchase." },
   { icon: Filter, title: "Seller & Price Filters", desc: "Choose Amazon-only or any eligible seller while checking the complete price, including shipping." },
   { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, and purchase status from one clear dashboard." },
@@ -449,7 +449,7 @@ function Features() {
   return (
     <section id="features" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />AmaBot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
+        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />AmaBot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let AmaBot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
 
 
@@ -483,19 +483,19 @@ function Features() {
 }
 
 const steps = [
-  { n: "01", title: "Create your amabot account", desc: "Sign up for amabot to access your dashboard and begin the quick setup process." },
+  { n: "01", title: "Create your AmaBot account", desc: "Sign up for AmaBot to access your dashboard and begin the quick setup process." },
   { n: "02", title: "Connect your Amazon account", desc: "Securely connect your Amazon account and register a passkey for a reliable, persistent connection with fewer interruptions." },
-  { n: "03", title: "Confirm shipping and payment", desc: "Make sure your default Amazon shipping address and payment method are the ones you want amabot to use." },
-  { n: "04", title: "Add your product", desc: "Paste the Amazon link for the product you want amabot to monitor or purchase." },
-  { n: "05", title: "Set your buying rules", desc: "Choose your target price, quantity, and whether amabot should notify you or purchase automatically." },
-  { n: "06", title: "Press Start", desc: "Start the engine and you're done. amabot will monitor the product and act when all your rules are met." },
+  { n: "03", title: "Confirm shipping and payment", desc: "Make sure your default Amazon shipping address and payment method are the ones you want AmaBot to use." },
+  { n: "04", title: "Add your product", desc: "Paste the Amazon link for the product you want AmaBot to monitor or purchase." },
+  { n: "05", title: "Set your buying rules", desc: "Choose your target price, quantity, and whether AmaBot should notify you or purchase automatically." },
+  { n: "06", title: "Press Start", desc: "Start the engine and you're done. AmaBot will monitor the product and act when all your rules are met." },
 ];
 
 function HowItWorks() {
   return (
     <section id="how" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">amabot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
+        <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">AmaBot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
         <div className="relative mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Desktop row connectors */}
@@ -552,14 +552,14 @@ function Community() {
   return (
     <section id="community" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the amabot community, get help, and stay up to date through Discord and Telegram." />
+        <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the AmaBot community, get help, and stay up to date through Discord and Telegram." />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <CommunityCard
             icon={<MessageCircle className="h-6 w-6" />}
             name="Discord"
             label="Community & Support"
-            desc="Ask questions, get setup help, share feedback, and connect with other amabot users."
+            desc="Ask questions, get setup help, share feedback, and connect with other AmaBot users."
             cta="Join Discord"
             href="https://discord.gg/CT9F6ZYxhx"
           />
@@ -567,7 +567,7 @@ function Community() {
             icon={<Send className="h-6 w-6" />}
             name="Telegram"
             label="News & Updates"
-            desc="Follow amabot for product updates, announcements, and important news delivered directly to Telegram."
+            desc="Follow AmaBot for product updates, announcements, and important news delivered directly to Telegram."
             cta="Join Telegram"
             href="https://t.me/amabot_app"
           />
@@ -611,59 +611,59 @@ function CommunityCard({ icon, name, label, desc, cta, href }: { icon: React.Rea
 type FaqAnswer = { paragraphs: Array<string | React.ReactNode> };
 const faqs: Array<{ q: string; a: FaqAnswer }> = [
   {
-    q: "What is amabot?",
-    a: { paragraphs: ["amabot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
+    q: "What is AmaBot?",
+    a: { paragraphs: ["AmaBot is a free Amazon auto checkout bot and Amazon restock bot designed to help users secure high-demand products as quickly as possible. It continuously checks product availability and pricing according to your settings and can either notify you or automatically place an order when an eligible offer matches your rules."] },
   },
   {
     q: "What is an Amazon bot?",
-    a: { paragraphs: ["An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. amabot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."] },
+    a: { paragraphs: ["An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."] },
   },
   {
-    q: "Is amabot an Amazon auto checkout bot?",
-    a: { paragraphs: ["Yes. amabot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."] },
+    q: "Is AmaBot an Amazon auto checkout bot?",
+    a: { paragraphs: ["Yes. AmaBot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."] },
   },
   {
-    q: "How does Amazon auto buy work with amabot?",
-    a: { paragraphs: ["Amazon auto buy allows amabot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."] },
+    q: "How does Amazon auto buy work with AmaBot?",
+    a: { paragraphs: ["Amazon auto buy allows AmaBot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."] },
   },
   {
     q: "What does Amazon auto purchase mean?",
     a: { paragraphs: ["Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."] },
   },
   {
-    q: "Why is amabot free?",
-    a: { paragraphs: ["amabot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
+    q: "Why is AmaBot free?",
+    a: { paragraphs: ["AmaBot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."] },
   },
   {
     q: "Do you store my personal information?",
-    a: { paragraphs: ["amabot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."] },
+    a: { paragraphs: ["AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."] },
   },
   {
     q: "What is Register Passkey?",
-    a: { paragraphs: ["Register Passkey helps maintain a secure, persistent Amazon session inside amabot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."] },
+    a: { paragraphs: ["Register Passkey helps maintain a secure, persistent Amazon session inside AmaBot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."] },
   },
   {
     q: "Can I monitor multiple products?",
     a: { paragraphs: [
       "Yes. You can add multiple Amazon products and configure different buying rules for each one.",
-      "As an Amazon price tracker, amabot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
+      "As an Amazon price tracker, AmaBot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
     ] },
   },
   {
     q: "What's the difference between Monitor Only and Auto-buy?",
     a: { paragraphs: [
-      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Monitor Only</span><span className="mt-2 block">amabot checks for matching offers and sends Amazon restock alerts when a product meets your configured conditions. Purchases are never made automatically.</span></>,
-      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Auto-buy</span><span className="mt-2 block">Working as an Amazon auto buy tool, amabot automatically places an order when an eligible offer matches your configured conditions. It continues purchasing until your configured order target has been reached.</span></>,
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Monitor Only</span><span className="mt-2 block">AmaBot checks for matching offers and sends Amazon restock alerts when a product meets your configured conditions. Purchases are never made automatically.</span></>,
+      <><span className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Auto-buy</span><span className="mt-2 block">Working as an Amazon auto buy tool, AmaBot automatically places an order when an eligible offer matches your configured conditions. It continues purchasing until your configured order target has been reached.</span></>,
     ] },
   },
 
   {
-    q: "Which shipping address will amabot use?",
-    a: { paragraphs: ["By default, amabot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."] },
+    q: "Which shipping address will AmaBot use?",
+    a: { paragraphs: ["By default, AmaBot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."] },
   },
   {
-    q: "Which payment method will amabot use?",
-    a: { paragraphs: ["amabot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."] },
+    q: "Which payment method will AmaBot use?",
+    a: { paragraphs: ["AmaBot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."] },
   },
   {
     q: "Can I switch Amazon accounts?",
@@ -671,27 +671,27 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "Is my Amazon account at risk?",
-    a: { paragraphs: ["Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. amabot is designed with account safety as a priority and follows safer automation practices to reduce unnecessary activity, but no tool can guarantee that an account will never be affected."] },
+    a: { paragraphs: ["Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot is designed with account safety as a priority and follows safer automation practices to reduce unnecessary activity, but no tool can guarantee that an account will never be affected."] },
   },
   {
-    q: "How do I update amabot?",
-    a: { paragraphs: ["amabot updates automatically in the background. To verify that you are running the latest version, use the \u201CCheck for Updates\u201D button on the Settings page."] },
+    q: "How do I update AmaBot?",
+    a: { paragraphs: ["AmaBot updates automatically in the background. To verify that you are running the latest version, use the \u201CCheck for Updates\u201D button on the Settings page."] },
   },
   {
-    q: "Does amabot guarantee successful purchases?",
-    a: { paragraphs: ["No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. amabot can improve your chances of securing a product but cannot guarantee a successful purchase."] },
+    q: "Does AmaBot guarantee successful purchases?",
+    a: { paragraphs: ["No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. AmaBot can improve your chances of securing a product but cannot guarantee a successful purchase."] },
   },
   {
     q: "Do I need to keep my computer running?",
-    a: { paragraphs: ["Yes. Because amabot runs locally, your computer, internet connection, and amabot session must remain active while monitoring or automatic purchasing is enabled."] },
+    a: { paragraphs: ["Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled."] },
   },
   {
     q: "What happens after an order is placed?",
     a: { paragraphs: ["The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."] },
   },
   {
-    q: "Is amabot affiliated with Amazon?",
-    a: { paragraphs: ["No. amabot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."] },
+    q: "Is AmaBot affiliated with Amazon?",
+    a: { paragraphs: ["No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."] },
   },
 ];
 
@@ -752,7 +752,7 @@ function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.
   return (
     <div className="mx-auto max-w-2xl text-center">
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
-        <OptImage variants={iconImg} alt="amabot brand icon" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
+        <OptImage variants={iconImg} alt="AmaBot brand icon" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
         {eyebrow}
       </div>
       <h2 className="mt-5 text-balance text-4xl font-bold md:text-5xl">{title}</h2>
