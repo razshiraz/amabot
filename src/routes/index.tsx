@@ -205,7 +205,7 @@ function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          amabot is a free Amazon bot that monitors products, prices and restocks. Set your target price and choose between instant alerts or optional automatic purchasing.
+          AmaBot is a free Amazon bot that automatically purchase products based on your selected conditions while monitoring prices and restocks.
         </p>
 
         <OptImage
@@ -449,17 +449,17 @@ function Features() {
   return (
     <section id="features" className="relative py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />amabot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
+        <SectionHeader eyebrow="Features" title={<>Set your rules.<br />AmaBot acts <span className="text-gradient-gold">when the price is right.</span></>} sub="Choose the products you want, define your buying rules, and let amabot monitor Amazon continuously. Get notified or buy automatically when the right offer appears." />
 
 
 
 
         <div className="glass mx-auto mt-10 max-w-3xl rounded-2xl p-6 text-left">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            amabot combines product monitoring with optional <span className="font-semibold text-primary">Amazon auto buy</span> functionality. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or let the Amazon auto checkout bot attempt the purchase when the selected conditions are met.
+            AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy functionality</span>&nbsp;with product price monitoring. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            An Amazon auto purchase is only attempted when the product matches the user's settings. Availability, pricing and successful checkout are not guaranteed.
+            An Amazon auto purchase is only attempted when the product matches the user's settings.
           </p>
         </div>
 
