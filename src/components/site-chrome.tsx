@@ -25,7 +25,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   const iconCls = size === "lg" ? "h-11 w-11 md:h-24 md:w-24" : "h-14 w-14";
   const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
   return (
-    <Link to="/" className="flex items-center gap-0" aria-label="amabot home">
+    <Link to="/" className="flex items-center gap-0" aria-label="AmaBot home">
       <OptImage
         variants={iconImg}
         alt=""
@@ -37,7 +37,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
       />
       <OptImage
         variants={wordmarkImg}
-        alt="amabot wordmark"
+        alt="AmaBot wordmark"
         width={400}
         height={120}
         priority
@@ -57,7 +57,7 @@ export function SiteFooter() {
           <div>
             <Logo />
             <p className="mt-3 max-w-md text-xs text-muted-foreground">
-              amabot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially connected to Amazon.
+              AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially connected to Amazon.
             </p>
             <p className="mt-2 max-w-md text-xs text-foreground/80">
               As an Amazon Associate I earn from qualifying purchases.
@@ -78,7 +78,7 @@ export function SiteFooter() {
               href="https://discord.gg/CT9F6ZYxhx"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Join amabot on Discord"
+              aria-label="Join AmaBot on Discord"
               title="Discord"
               className="text-muted-foreground transition hover:text-primary"
             >
@@ -88,7 +88,7 @@ export function SiteFooter() {
               href="https://t.me/amabot_app"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Join amabot on Telegram"
+              aria-label="Join AmaBot on Telegram"
               title="Telegram"
               className="text-muted-foreground transition hover:text-primary"
             >

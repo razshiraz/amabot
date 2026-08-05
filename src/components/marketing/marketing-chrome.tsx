@@ -28,7 +28,7 @@ export function DownloadButton({
     <button
       type="button"
       onClick={open}
-      aria-label="Download amabot desktop application (free)"
+      aria-label="Download AmaBot desktop application (free)"
       className={`group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${sizes[size]} ${className}`}
     >
       Free Download
