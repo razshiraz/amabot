@@ -204,7 +204,7 @@ function Hero() {
           <span className="text-gradient-gold">Amazon Drop</span> Again
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-neutral-300 md:text-lg">
           AmaBot is a free Amazon bot that automatically purchase products based on your selected conditions while monitoring prices and restocks.
         </p>
 
@@ -229,7 +229,7 @@ function Hero() {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-muted-foreground">Always free • No credit card required</p>
+        <p className="mt-4 text-xs text-neutral-300">Always free • No credit card required</p>
 
         {/* Product demo video */}
         <div className="relative mx-auto mt-10 max-w-5xl md:mt-16">
