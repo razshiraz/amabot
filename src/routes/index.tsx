@@ -56,7 +56,7 @@ const faqSchema = {
     ["What is an Amazon bot?", "An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."],
     ["Is AmaBot an Amazon auto checkout bot?", "Yes. AmaBot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."],
     ["How does Amazon auto buy work with AmaBot?", "Amazon auto buy allows AmaBot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."],
-    ["What does Amazon auto purchase mean?", "Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."],
+    ["What does Amazon auto purchase mean?", "Amazon auto purchase refers to the process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."],
     ["Why is AmaBot free?", "AmaBot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
     ["Do you store my personal information?", "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
     ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside AmaBot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
@@ -628,7 +628,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "What does Amazon auto purchase mean?",
-    a: { paragraphs: ["Amazon auto purchase refers to the optional process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."] },
+    a: { paragraphs: ["Amazon auto purchase refers to the process of attempting to buy a monitored product automatically when it becomes available under the user's selected conditions. Users can also choose alert-only mode instead."] },
   },
   {
     q: "Why is AmaBot free?",
