@@ -331,7 +331,7 @@ function DashboardShowcase() {
     <section className="relative overflow-x-clip pt-6 pb-2 md:pt-10 md:pb-6">
       <div className="mx-auto max-w-6xl px-4">
         <h2
-          className="mx-auto text-balance text-center text-white px-2 mb-12 md:mb-16 lg:mb-24"
+          className="mx-auto text-balance text-center text-white px-2 mb-14 md:mb-16 lg:mb-24"
           style={{ maxWidth: "950px", fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.2, fontWeight: 700 }}
         >
           AmaBot is a <span className="text-gradient-gold uppercase">FREE</span> <span className="text-gradient-gold">Amazon auto checkout bot</span> and <span className="text-gradient-gold">product monitor.</span>
@@ -391,7 +391,7 @@ function DashboardShowcase() {
           />
         </div>
 
-        <div className="glass mx-auto mt-14 max-w-3xl rounded-2xl p-6 text-left md:mt-20">
+        <div className="glass mx-auto mt-[72px] max-w-3xl rounded-2xl p-6 text-left md:mt-20 lg:max-w-[940px] lg:px-9 lg:py-7">
           <p className="text-sm leading-relaxed text-muted-foreground">
             AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy functionality</span>&nbsp;with product price monitoring. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
           </p>
