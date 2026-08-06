@@ -439,7 +439,7 @@ function FloatingAlert({
 const features = [
   { icon: Activity, title: "Always-On Monitoring", desc: "Add your Amazon products and AmaBot continuously checks their latest prices and available offers." },
   { icon: SlidersHorizontal, title: "Custom Buying Rules", desc: "Set a maximum price, quantity, purchase limit, and buying preferences for every product." },
-  { icon: ShoppingCart, title: "Optional Amazon Auto Buy", desc: "Choose alert mode or allow AmaBot to attempt an Amazon auto purchase when the product matches your selected maximum price, quantity and availability conditions." },
+  { icon: ShoppingCart, title: "Amazon Auto Buy", desc: "AmaBot will attempt an Amazon auto purchase when the product matches your selected maximum price, quantity and availability conditions." },
   { icon: Bell, title: "Monitor-Only Alerts", desc: "Prefer to stay in control? Receive an update when a matching opportunity appears without making a purchase." },
   { icon: Filter, title: "Seller & Price Filters", desc: "Choose Amazon-only or any eligible seller while checking the complete price, including shipping." },
   { icon: LayoutDashboard, title: "Live Activity Dashboard", desc: "Follow prices, offers, eligibility, checks, and purchase status from one clear dashboard." },
