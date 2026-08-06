@@ -616,7 +616,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "What is an Amazon bot?",
-    a: { paragraphs: ["An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."] },
+    a: { paragraphs: ["An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or automatic purchasing without constantly refreshing product pages."] },
   },
   {
     q: "Is AmaBot an Amazon auto checkout bot?",
