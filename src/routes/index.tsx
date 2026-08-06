@@ -391,7 +391,7 @@ function DashboardShowcase() {
           />
         </div>
 
-        <div className="glass mx-auto mt-14 max-w-3xl rounded-2xl p-6 text-left md:mt-20">
+        <div className="glass mx-auto mt-[72px] max-w-3xl rounded-2xl p-6 text-left md:mt-20 lg:max-w-[940px] lg:px-9 lg:py-7">
           <p className="text-sm leading-relaxed text-muted-foreground">
             AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy functionality</span>&nbsp;with product price monitoring. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
           </p>
