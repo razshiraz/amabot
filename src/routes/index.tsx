@@ -464,14 +464,8 @@ function Features() {
 
 
 
-        <div className="glass mx-auto mt-10 max-w-3xl rounded-2xl p-6 text-left">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy functionality</span>&nbsp;with product price monitoring. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            An Amazon auto purchase is only attempted when the product matches the user's settings.
-          </p>
-        </div>
+
+
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
