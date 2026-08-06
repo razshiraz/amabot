@@ -328,7 +328,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative overflow-x-clip pt-6 pb-12 md:pt-10 md:pb-20">
+    <section className="relative overflow-x-clip pt-6 pb-2 md:pt-10 md:pb-6">
       <div className="mx-auto max-w-6xl px-4">
         <h2
           className="mx-auto text-balance text-center text-white px-2 mb-12 md:mb-16 lg:mb-24"
@@ -497,7 +497,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative py-14 md:py-24">
+    <section id="how" className="relative pt-14 pb-14 md:pt-20 md:pb-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">AmaBot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
