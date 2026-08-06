@@ -328,7 +328,7 @@ function Hero() {
 
 function DashboardShowcase() {
   return (
-    <section className="relative overflow-x-clip pt-6 pb-12 md:pt-10 md:pb-20">
+    <section className="relative overflow-x-clip pt-6 pb-2 md:pt-10 md:pb-6">
       <div className="mx-auto max-w-6xl px-4">
         <h2
           className="mx-auto text-balance text-center text-white px-2 mb-12 md:mb-16 lg:mb-24"
