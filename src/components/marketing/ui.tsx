@@ -20,9 +20,11 @@ export function PageHero({
 }) {
   return (
     <section className="relative pt-32 pb-10 md:pt-44 md:pb-16">
-      <div className="mx-auto max-w-4xl px-4">
-        <Breadcrumbs current={breadcrumb} />
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
+      <div className="mx-auto w-full max-w-4xl px-5 text-center md:px-4 md:text-left">
+        <div className="flex justify-center md:block">
+          <Breadcrumbs current={breadcrumb} />
+        </div>
+        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary md:mx-0">
           <OptImage
             variants={iconImg}
             alt="AmaBot brand icon"
@@ -34,10 +36,10 @@ export function PageHero({
           {eyebrow}
         </div>
         <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">{h1}</h1>
-        <div className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+        <div className="mx-auto mt-6 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:mx-0 md:text-lg">
           {intro}
         </div>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:items-center md:justify-start">
           <DownloadButton size="lg" />
           {"to" in secondary ? (
             <Link
@@ -61,8 +63,9 @@ export function PageHero({
   );
 }
 
+
 export function Prose({ children }: { children: ReactNode }) {
-  return <div className="mx-auto max-w-3xl px-4">{children}</div>;
+  return <div className="mx-auto w-full max-w-3xl px-5 md:px-4">{children}</div>;
 }
 
 export function Section({
@@ -76,8 +79,10 @@ export function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-32 py-8 md:py-12">
-      <div className="mx-auto max-w-3xl px-4">
-        <h2 className="text-balance text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
+        <h2 className="text-balance text-center text-2xl font-bold tracking-tight md:text-left md:text-3xl">
+          {title}
+        </h2>
         <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground md:text-base">
           {children}
         </div>
@@ -87,8 +92,11 @@ export function Section({
 }
 
 export function SubHeading({ children }: { children: ReactNode }) {
-  return <h3 className="pt-2 text-lg font-semibold text-foreground md:text-xl">{children}</h3>;
+  return (
+    <h3 className="pt-2 text-center text-lg font-semibold text-foreground md:text-left md:text-xl">{children}</h3>
+  );
 }
+
 
 export function Callout({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -105,8 +113,9 @@ export function Callout({ title, children }: { title: string; children: ReactNod
 }
 
 export function CardGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-4 sm:grid-cols-2">{children}</div>;
+  return <div className="mx-auto grid w-full gap-4 sm:grid-cols-2">{children}</div>;
 }
+
 
 export function InfoCard({
   icon: Icon,
@@ -118,7 +127,7 @@ export function InfoCard({
   children: ReactNode;
 }) {
   return (
-    <div className="group glass relative overflow-hidden rounded-2xl p-5 transition hover:border-primary/40">
+    <div className="group glass relative mx-auto w-full overflow-hidden rounded-2xl p-5 transition hover:border-primary/40">
       <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
       <div className="relative">
         <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
@@ -141,7 +150,7 @@ export function CompareTable({
   rows: string[][];
 }) {
   return (
-    <div className="glass overflow-hidden rounded-2xl">
+    <div className="glass mx-auto w-full overflow-hidden rounded-2xl">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[560px] border-collapse text-left text-sm">
           <caption className="sr-only">{caption}</caption>
@@ -179,8 +188,11 @@ export type Faq = { q: string; a: string };
 export function FaqList({ items, heading = "Frequently Asked Questions" }: { items: Faq[]; heading?: string }) {
   return (
     <section id="faq" className="scroll-mt-32 py-8 md:py-12">
-      <div className="mx-auto max-w-3xl px-4">
-        <h2 className="text-balance text-2xl font-bold tracking-tight md:text-3xl">{heading}</h2>
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
+        <h2 className="text-balance text-center text-2xl font-bold tracking-tight md:text-left md:text-3xl">
+          {heading}
+        </h2>
+
         <div className="mt-6 space-y-3">
           {items.map((f) => (
             <details key={f.q} className="glass group rounded-2xl transition hover:border-primary/30">
@@ -205,7 +217,7 @@ export function FaqList({ items, heading = "Frequently Asked Questions" }: { ite
 export function CtaBlock({ title, text }: { title: string; text: string }) {
   return (
     <section className="py-10 md:py-16">
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-8 text-center md:p-12">
           <OptImage
             variants={iconImg}
