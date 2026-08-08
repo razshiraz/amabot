@@ -113,8 +113,9 @@ export function Callout({ title, children }: { title: string; children: ReactNod
 }
 
 export function CardGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-4 sm:grid-cols-2">{children}</div>;
+  return <div className="mx-auto grid w-full gap-4 sm:grid-cols-2">{children}</div>;
 }
+
 
 export function InfoCard({
   icon: Icon,
