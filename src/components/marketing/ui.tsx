@@ -127,7 +127,7 @@ export function InfoCard({
   children: ReactNode;
 }) {
   return (
-    <div className="group glass relative overflow-hidden rounded-2xl p-5 transition hover:border-primary/40">
+    <div className="group glass relative mx-auto w-full overflow-hidden rounded-2xl p-5 transition hover:border-primary/40">
       <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
       <div className="relative">
         <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
