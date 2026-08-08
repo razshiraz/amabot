@@ -20,9 +20,11 @@ export function PageHero({
 }) {
   return (
     <section className="relative pt-32 pb-10 md:pt-44 md:pb-16">
-      <div className="mx-auto max-w-4xl px-4">
-        <Breadcrumbs current={breadcrumb} />
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
+      <div className="mx-auto w-full max-w-4xl px-5 text-center md:px-4 md:text-left">
+        <div className="flex justify-center md:block">
+          <Breadcrumbs current={breadcrumb} />
+        </div>
+        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary md:mx-0">
           <OptImage
             variants={iconImg}
             alt="AmaBot brand icon"
@@ -34,10 +36,10 @@ export function PageHero({
           {eyebrow}
         </div>
         <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">{h1}</h1>
-        <div className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+        <div className="mx-auto mt-6 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground md:mx-0 md:text-lg">
           {intro}
         </div>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:items-center md:justify-start">
           <DownloadButton size="lg" />
           {"to" in secondary ? (
             <Link
@@ -60,6 +62,7 @@ export function PageHero({
     </section>
   );
 }
+
 
 export function Prose({ children }: { children: ReactNode }) {
   return <div className="mx-auto max-w-3xl px-4">{children}</div>;
