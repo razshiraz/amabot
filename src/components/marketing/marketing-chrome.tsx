@@ -29,7 +29,7 @@ export function DownloadButton({
       type="button"
       onClick={open}
       aria-label="Download AmaBot desktop application (free)"
-      className={`group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${sizes[size]} ${className}`}
+      className={`group inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-gradient-gold text-center font-semibold leading-none text-primary-foreground shadow-glow-sm transition hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${sizes[size]} ${className}`}
     >
       Free Download
       <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
