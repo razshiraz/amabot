@@ -150,7 +150,7 @@ export function CompareTable({
   rows: string[][];
 }) {
   return (
-    <div className="glass overflow-hidden rounded-2xl">
+    <div className="glass mx-auto w-full overflow-hidden rounded-2xl">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[560px] border-collapse text-left text-sm">
           <caption className="sr-only">{caption}</caption>
