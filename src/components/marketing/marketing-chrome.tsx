@@ -134,9 +134,9 @@ function MarketingHeader() {
 function MarketingFooter() {
   return (
     <footer className="border-t border-border/50 py-12">
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
-          <div>
+      <div className="mx-auto w-full max-w-5xl px-5 md:px-4">
+        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-start md:justify-between md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <Logo />
             <p className="mt-3 max-w-md text-xs text-muted-foreground">
               AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or
@@ -146,7 +146,8 @@ function MarketingFooter() {
               As an Amazon Associate I earn from qualifying purchases.
             </p>
           </div>
-          <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm md:justify-start">
+
             <Link to="/" className="cursor-pointer text-muted-foreground transition hover:text-foreground">
               Home
             </Link>
