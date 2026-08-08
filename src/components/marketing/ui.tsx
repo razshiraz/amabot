@@ -65,7 +65,7 @@ export function PageHero({
 
 
 export function Prose({ children }: { children: ReactNode }) {
-  return <div className="mx-auto max-w-3xl px-4">{children}</div>;
+  return <div className="mx-auto w-full max-w-3xl px-5 md:px-4">{children}</div>;
 }
 
 export function Section({
@@ -79,8 +79,10 @@ export function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-32 py-8 md:py-12">
-      <div className="mx-auto max-w-3xl px-4">
-        <h2 className="text-balance text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
+        <h2 className="text-balance text-center text-2xl font-bold tracking-tight md:text-left md:text-3xl">
+          {title}
+        </h2>
         <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground md:text-base">
           {children}
         </div>
@@ -90,8 +92,11 @@ export function Section({
 }
 
 export function SubHeading({ children }: { children: ReactNode }) {
-  return <h3 className="pt-2 text-lg font-semibold text-foreground md:text-xl">{children}</h3>;
+  return (
+    <h3 className="pt-2 text-center text-lg font-semibold text-foreground md:text-left md:text-xl">{children}</h3>
+  );
 }
+
 
 export function Callout({ title, children }: { title: string; children: ReactNode }) {
   return (
