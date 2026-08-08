@@ -188,8 +188,11 @@ export type Faq = { q: string; a: string };
 export function FaqList({ items, heading = "Frequently Asked Questions" }: { items: Faq[]; heading?: string }) {
   return (
     <section id="faq" className="scroll-mt-32 py-8 md:py-12">
-      <div className="mx-auto max-w-3xl px-4">
-        <h2 className="text-balance text-2xl font-bold tracking-tight md:text-3xl">{heading}</h2>
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
+        <h2 className="text-balance text-center text-2xl font-bold tracking-tight md:text-left md:text-3xl">
+          {heading}
+        </h2>
+
         <div className="mt-6 space-y-3">
           {items.map((f) => (
             <details key={f.q} className="glass group rounded-2xl transition hover:border-primary/30">
