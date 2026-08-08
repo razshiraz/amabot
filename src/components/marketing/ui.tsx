@@ -217,7 +217,7 @@ export function FaqList({ items, heading = "Frequently Asked Questions" }: { ite
 export function CtaBlock({ title, text }: { title: string; text: string }) {
   return (
     <section className="py-10 md:py-16">
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto w-full max-w-3xl px-5 md:px-4">
         <div className="glass-gold relative overflow-hidden rounded-3xl p-8 text-center md:p-12">
           <OptImage
             variants={iconImg}
