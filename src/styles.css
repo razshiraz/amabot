@@ -264,3 +264,22 @@
     animation: none !important;
   }
 }
+
+/* Mobile-only centering for marketing (internal) pages */
+@media (max-width: 767px) {
+  .mobile-centered,
+  .mobile-centered * {
+    text-align: center;
+  }
+  .mobile-centered ul,
+  .mobile-centered ol {
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobile-centered table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
