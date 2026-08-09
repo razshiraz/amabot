@@ -469,10 +469,10 @@ function Features() {
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <div key={f.title} className="group glass relative overflow-hidden rounded-2xl p-6 transition hover:border-primary/40">
+            <div key={f.title} className="group glass relative overflow-hidden rounded-2xl p-6 text-center transition hover:border-primary/40">
               <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
-              <div className="relative">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
+              <div className="relative flex flex-col items-center">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
                   <f.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{f.title}</h3>
@@ -505,10 +505,8 @@ function HowItWorks() {
           {/* Desktop row connectors */}
           <div className="pointer-events-none absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
           <div className="pointer-events-none absolute left-0 right-0 bottom-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" style={{ top: "auto", bottom: "calc(50% - 8rem)" }} />
-          {/* Mobile vertical timeline */}
-          <div className="pointer-events-none absolute left-10 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent md:hidden" />
           {steps.map((s) => (
-            <div key={s.n} className="glass group relative flex h-full flex-col rounded-2xl p-6 transition hover:border-primary/40 hover:shadow-glow-sm">
+            <div key={s.n} className="glass group relative flex h-full flex-col items-center rounded-2xl p-6 text-center transition hover:border-primary/40 hover:shadow-glow-sm">
               <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
               <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-lg font-bold text-primary-foreground shadow-glow-sm">
                 {s.n}
