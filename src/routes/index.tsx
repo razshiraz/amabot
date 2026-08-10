@@ -504,7 +504,7 @@ function HowItWorks() {
         <div className="relative mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Desktop row connectors */}
           <div className="pointer-events-none absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
-          <div className="pointer-events-none absolute left-0 right-0 bottom-12 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" style={{ top: "auto", bottom: "calc(50% - 8rem)" }} />
+          <div className="pointer-events-none absolute left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" style={{ top: "calc(50% + 0.75rem + 3rem)" }} />
           {steps.map((s) => (
             <div key={s.n} className="glass group relative flex h-full flex-col items-center rounded-2xl p-6 text-center transition hover:border-primary/40 hover:shadow-glow-sm">
               <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition group-hover:opacity-100" />
