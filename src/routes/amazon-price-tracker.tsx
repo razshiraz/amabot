@@ -81,7 +81,7 @@ function PriceTracker() {
             when your selected conditions are met. It is free on Windows and macOS.
           </p>
         }
-        secondary={{ to: "/what-is-amabot", label: "What is AmaBot?" }}
+        secondary={{ href: "/#how-it-works", label: "See How It Works" }}
       />
 
       <Section title="Why Tracking Amazon Prices by Hand Rarely Works">
