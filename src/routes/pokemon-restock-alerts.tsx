@@ -84,7 +84,7 @@ function PokemonRestockAlerts() {
             </p>
           </>
         }
-        secondary={{ to: "/what-is-amabot", label: "What is AmaBot?" }}
+        secondary={{ href: "/#how-it-works", label: "See How It Works" }}
       />
 
       <Section title="Why Pokémon Drops Are Different">

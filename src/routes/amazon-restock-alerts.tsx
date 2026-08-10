@@ -81,7 +81,7 @@ function RestockAlerts() {
             choose whether AmaBot only notifies you or attempts the purchase for you.
           </p>
         }
-        secondary={{ to: "/what-is-amabot", label: "What is AmaBot?" }}
+        secondary={{ href: "/#how-it-works", label: "See How It Works" }}
       />
 
       <Section title="Why Amazon Restocks Are So Easy to Miss">

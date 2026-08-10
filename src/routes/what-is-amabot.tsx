@@ -114,7 +114,7 @@ function WhatIsAmabot() {
             users can also enable optional price monitoring and alerts.
           </p>
         }
-        secondary={{ href: "#what-it-does", label: "See how it works" }}
+        secondary={{ href: "/#how-it-works", label: "See How It Works" }}
       />
 
       <Section id="what-it-does" title="What Is an Amazon Auto Checkout Bot?">

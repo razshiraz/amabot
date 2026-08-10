@@ -123,7 +123,7 @@ function Nav() {
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#features" className="hover:text-foreground transition">Features</a>
-            <a href="#how" className="hover:text-foreground transition">How it works</a>
+            <a href="#how-it-works" className="hover:text-foreground transition">How it works</a>
             <a href="#community" className="hover:text-foreground transition">Community</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
@@ -224,7 +224,7 @@ function Hero() {
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </button>
-          <a href="#how" className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/10">
+          <a href="#how-it-works" className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/5 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/10">
             See How It Works
           </a>
         </div>
@@ -497,7 +497,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative pt-14 pb-14 md:pt-20 md:pb-24">
+    <section id="how-it-works" className="relative scroll-mt-24 pt-14 pb-14 md:scroll-mt-28 md:pt-20 md:pb-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">AmaBot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
