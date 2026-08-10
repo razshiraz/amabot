@@ -393,7 +393,7 @@ function DashboardShowcase() {
 
         <div className="glass mx-auto mt-[72px] w-full max-w-3xl rounded-2xl p-6 text-center md:mt-20 lg:max-w-[940px] lg:px-9 lg:py-7">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy functionality</span>&nbsp;with product price monitoring. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
+            AmaBot combines&nbsp;<span className="font-semibold text-primary">Amazon auto buy</span>&nbsp;functionality with <span className="font-semibold text-primary">product price monitoring</span>. After adding a product, users can set a maximum price and quantity, then choose whether to receive an alert or allow the Amazon auto checkout bot to attempt the purchase when the selected conditions are met.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             An Amazon auto purchase is only attempted when the product matches the user's settings.
