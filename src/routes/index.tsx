@@ -524,7 +524,7 @@ function HowItWorks() {
 
 function Community() {
   return (
-    <section id="community" className="relative py-14 md:py-24">
+    <section id="community" className="relative py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the AmaBot community, get help, and stay up to date through Discord and Telegram." />
 
