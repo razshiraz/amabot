@@ -744,7 +744,6 @@ function Landing() {
       <Features />
       <DashboardShowcase />
       <HowItWorks />
-      <SocialProof />
       <Community />
       <FAQ />
       
