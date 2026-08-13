@@ -497,7 +497,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative scroll-mt-24 pt-14 pb-14 md:scroll-mt-28 md:pt-20 md:pb-24">
+    <section id="how-it-works" className="relative scroll-mt-24 pt-14 pb-12 md:scroll-mt-28 md:pt-20 md:pb-16">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">AmaBot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
