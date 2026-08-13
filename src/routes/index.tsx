@@ -521,34 +521,6 @@ function HowItWorks() {
   );
 }
 
-const stats = [
-  { n: "10,000+", l: "Alerts sent" },
-  { n: "2,500+", l: "Collectors joined" },
-  { n: "4,800+", l: "Drops caught" },
-  { n: "<800ms", l: "Avg checkout time" },
-];
-
-function SocialProof() {
-  return (
-    <section className="relative py-10 md:py-20">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
-          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
-          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
-          <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="text-3xl font-bold text-gradient-gold md:text-5xl">{s.n}</div>
-                <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Community() {
   return (
