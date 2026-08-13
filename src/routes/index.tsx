@@ -497,7 +497,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative scroll-mt-24 pt-14 pb-14 md:scroll-mt-28 md:pt-20 md:pb-24">
+    <section id="how-it-works" className="relative scroll-mt-24 pt-14 pb-12 md:scroll-mt-28 md:pt-20 md:pb-16">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="How it works" title={<>Six simple steps.<br /><span className="text-gradient-gold">AmaBot handles the rest.</span></>} sub="Connect your Amazon account, set your buying rules, and start monitoring in just a few minutes." />
 
@@ -521,38 +521,10 @@ function HowItWorks() {
   );
 }
 
-const stats = [
-  { n: "10,000+", l: "Alerts sent" },
-  { n: "2,500+", l: "Collectors joined" },
-  { n: "4,800+", l: "Drops caught" },
-  { n: "<800ms", l: "Avg checkout time" },
-];
-
-function SocialProof() {
-  return (
-    <section className="relative py-10 md:py-20">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="glass-gold relative overflow-hidden rounded-3xl p-10 md:p-14">
-          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 opacity-[0.07]" />
-          <OptImage variants={iconImg} alt="" width={384} height={384} sizes="192px" className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 opacity-[0.07]" />
-          <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="text-3xl font-bold text-gradient-gold md:text-5xl">{s.n}</div>
-                <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Community() {
   return (
-    <section id="community" className="relative py-14 md:py-24">
+    <section id="community" className="relative py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Community" title={<>Built By Collectors, <br /> <span className="text-gradient-gold">For Collectors</span></>} sub="Connect with the AmaBot community, get help, and stay up to date through Discord and Telegram." />
 
@@ -772,7 +744,6 @@ function Landing() {
       <Features />
       <DashboardShowcase />
       <HowItWorks />
-      <SocialProof />
       <Community />
       <FAQ />
       
