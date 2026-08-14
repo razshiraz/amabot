@@ -391,3 +391,12 @@
     margin-right: auto;
   }
 }
+
+@keyframes ambient-twinkle {
+  0%, 100% { opacity: 0.28; }
+  50% { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-particles { animation: none !important; }
+}
