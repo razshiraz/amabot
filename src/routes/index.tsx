@@ -164,35 +164,30 @@ function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-44 md:pb-20">
-      <div className="absolute inset-0 grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-      {/* Mobile: dedicated lightning art matching the reference, spans hero + video */}
-      <picture className="contents">
-        <source media="(max-width: 767px)" type="image/avif" srcSet={heroGlowMobileAvif} />
-        <source media="(max-width: 767px)" type="image/webp" srcSet={heroGlowMobileWebp} />
-        <source media="(max-width: 767px)" srcSet={heroGlowMobile} />
-        <img
-          src={BLANK_PX}
-          alt=""
-          aria-hidden
-          decoding="async"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 block h-[1120px] w-full object-cover object-top opacity-70 mix-blend-screen md:hidden [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]"
-        />
-      </picture>
+      {/* Premium ambient background: gold glow, faint tech lines, particles, grain, vignette */}
+      <div aria-hidden className="ambient-stage">
+        <div className="ambient-glow" />
+        <div className="ambient-grid" />
+        <div className="ambient-circuits hidden md:block">
+          <svg viewBox="0 0 1440 1200" preserveAspectRatio="none">
+            <path className="ambient-circuit-line" d="M0 210 H140 L200 270 V430 H120" />
+            <path className="ambient-circuit-line" d="M0 520 H90 L150 580 V760" />
+            <path className="ambient-circuit-line" d="M0 880 H190 L240 830" />
+            <path className="ambient-circuit-line" d="M1440 260 H1310 L1250 320 V500 H1340" />
+            <path className="ambient-circuit-line" d="M1440 620 H1360 L1300 680 V860" />
+            <path className="ambient-circuit-line" d="M1440 940 H1260 L1210 890" />
+            <circle className="ambient-circuit-dot" cx="200" cy="270" r="4" />
+            <circle className="ambient-circuit-dot" cx="150" cy="760" r="4" />
+            <circle className="ambient-circuit-dot" cx="1250" cy="320" r="4" />
+            <circle className="ambient-circuit-dot" cx="1300" cy="860" r="4" />
+          </svg>
+        </div>
+        <div className="ambient-particles" />
+        <div className="ambient-grain" />
+        <div className="ambient-vignette" />
+        <div className="ambient-fade-bottom" />
+      </div>
 
-
-      {/* Desktop: original image treatment, untouched */}
-      <picture className="contents">
-        <source media="(min-width: 768px)" type="image/avif" srcSet={heroGlowAvif} />
-        <source media="(min-width: 768px)" type="image/webp" srcSet={heroGlowWebp} />
-        <source media="(min-width: 768px)" srcSet={heroGlow} />
-        <img
-          src={BLANK_PX}
-          alt=""
-          aria-hidden
-          decoding="async"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[1500px] w-full object-cover object-top opacity-30 mix-blend-screen md:block [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_90%)]"
-        />
-      </picture>
 
 
 
