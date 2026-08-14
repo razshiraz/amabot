@@ -60,7 +60,7 @@ function MarketingHeader() {
               <Link
                 to="/"
                 activeOptions={{ exact: true }}
-                className="cursor-pointer transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
+                className="cursor-pointer transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
                 activeProps={{ className: "text-primary" }}
               >
                 Home
@@ -69,7 +69,7 @@ function MarketingHeader() {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="cursor-pointer transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
+                  className="cursor-pointer transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
                   activeProps={{ className: "text-primary" }}
                 >
                   {l.label}
