@@ -6,7 +6,6 @@ import {
   ChevronDown, Download,
 } from "lucide-react";
 
-const BLANK_PX = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
 import { Logo, SiteFooter } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
