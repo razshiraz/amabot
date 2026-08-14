@@ -52,7 +52,7 @@ function MarketingHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="rounded-2xl border border-white/10 bg-background/70 px-3 py-3 backdrop-blur-2xl md:px-5 md:py-4">
+        <div className="rounded-2xl border border-white/10 bg-background/25 px-3 py-3 backdrop-blur-2xl md:px-5 md:py-4">
           <div className="flex items-center justify-between gap-2">
             <Logo size="lg" />
 
@@ -60,7 +60,7 @@ function MarketingHeader() {
               <Link
                 to="/"
                 activeOptions={{ exact: true }}
-                className="cursor-pointer transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
+                className="cursor-pointer transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
                 activeProps={{ className: "text-primary" }}
               >
                 Home
@@ -69,7 +69,7 @@ function MarketingHeader() {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="cursor-pointer transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
+                  className="cursor-pointer transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
                   activeProps={{ className: "text-primary" }}
                 >
                   {l.label}
