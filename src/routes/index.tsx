@@ -5,12 +5,6 @@ import {
   ArrowRight, Sparkles, MessageCircle, Send,
   ChevronDown, Download,
 } from "lucide-react";
-import heroGlow from "@/assets/hero-glow.jpg";
-import heroGlowAvif from "@/assets/hero-glow.avif";
-import heroGlowWebp from "@/assets/hero-glow.webp";
-import heroGlowMobile from "@/assets/hero-glow-mobile.jpg";
-import heroGlowMobileAvif from "@/assets/hero-glow-mobile.avif";
-import heroGlowMobileWebp from "@/assets/hero-glow-mobile.webp";
 
 const BLANK_PX = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 import amabotDemo from "@/assets/amabot-demo.mp4.asset.json";
