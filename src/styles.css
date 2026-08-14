@@ -139,6 +139,114 @@
   .animate-marquee { animation: marquee 30s linear infinite; }
   .animate-pop-in { animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 
+  /* ===== Premium ambient hero background ===== */
+  .ambient-stage {
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Warm gold ambient glow behind hero content */
+  .ambient-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 42% at 50% 8%, oklch(0.85 0.17 88 / 0.16), transparent 70%),
+      radial-gradient(ellipse 45% 30% at 50% 46%, oklch(0.85 0.17 88 / 0.10), transparent 72%);
+  }
+  @media (min-width: 768px) {
+    .ambient-glow {
+      background:
+        radial-gradient(ellipse 62% 38% at 50% 6%, oklch(0.85 0.17 88 / 0.18), transparent 70%),
+        radial-gradient(ellipse 52% 30% at 50% 44%, oklch(0.85 0.17 88 / 0.11), transparent 72%),
+        radial-gradient(ellipse 30% 26% at 50% 72%, oklch(0.85 0.17 88 / 0.07), transparent 75%);
+    }
+  }
+
+  /* Extremely faint tech grid, stronger at the edges, clean in the center */
+  .ambient-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.02) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.02) 0.5px, transparent 0.5px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 55% 60% at 50% 30%, transparent 25%, black 85%);
+    -webkit-mask-image: radial-gradient(ellipse 55% 60% at 50% 30%, transparent 25%, black 85%);
+    opacity: 0.7;
+  }
+
+  /* Circuit-style lines toward the left/right edges (desktop emphasis) */
+  .ambient-circuits {
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+  }
+  .ambient-circuits svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ambient-circuit-line {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 1;
+    stroke-opacity: 0.14;
+    vector-effect: non-scaling-stroke;
+  }
+  .ambient-circuit-dot {
+    fill: var(--color-primary);
+    fill-opacity: 0.22;
+  }
+
+  /* Sparse gold particles */
+  .ambient-particles {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, oklch(0.92 0.12 92 / 0.55) 1px, transparent 1.4px),
+      radial-gradient(circle, oklch(0.92 0.12 92 / 0.30) 1px, transparent 1.4px);
+    background-size: 240px 240px, 380px 380px;
+    background-position: 30px 60px, 170px 220px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, black, transparent 80%);
+    animation: ambient-twinkle 9s ease-in-out infinite;
+  }
+  @media (min-width: 768px) {
+    .ambient-particles { opacity: 0.5; background-size: 190px 190px, 300px 300px; }
+  }
+
+  /* Fine grain so the black never feels flat */
+  .ambient-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* Strong vignette: center stays brighter than the sides */
+  .ambient-vignette {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 75% 70% at 50% 30%, transparent 40%, oklch(0.04 0 0 / 0.75) 100%),
+      linear-gradient(90deg, oklch(0.04 0 0 / 0.7), transparent 22%, transparent 78%, oklch(0.04 0 0 / 0.7));
+  }
+
+  .ambient-fade-bottom {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 22%;
+    background: linear-gradient(to bottom, transparent, var(--color-background));
+  }
+
   .mobile-lightning-background {
     position: absolute;
     inset: 0;
