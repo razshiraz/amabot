@@ -118,14 +118,14 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-background/70 px-3 py-3 backdrop-blur-2xl md:px-5 md:py-4">
+        <div className="flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-background/25 px-3 py-3 backdrop-blur-2xl md:px-5 md:py-4">
           <Logo size="lg" />
 
           <nav className="hidden items-center gap-7 text-base text-white md:text-lg md:font-medium md:flex">
-            <a href="#features" className="cursor-pointer transition hover:text-foreground">Features</a>
-            <a href="#how-it-works" className="cursor-pointer transition hover:text-foreground">How it works</a>
-            <a href="#community" className="cursor-pointer transition hover:text-foreground">Community</a>
-            <a href="#faq" className="cursor-pointer transition hover:text-foreground">FAQ</a>
+            <a href="#features" className="cursor-pointer transition-colors duration-200 hover:text-primary">Features</a>
+            <a href="#how-it-works" className="cursor-pointer transition-colors duration-200 hover:text-primary">How it works</a>
+            <a href="#community" className="cursor-pointer transition-colors duration-200 hover:text-primary">Community</a>
+            <a href="#faq" className="cursor-pointer transition-colors duration-200 hover:text-primary">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
             <button type="button" onClick={openModal} aria-label="Download AmaBot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
