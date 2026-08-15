@@ -190,17 +190,30 @@ function Hero() {
         </div>
         <div className="ambient-circuits ambient-circuits--mobile md:hidden">
           <svg viewBox="0 0 390 1400" preserveAspectRatio="none">
-            <path className="ambient-circuit-line" d="M0 180 H70 L110 220 V360" />
-            <path className="ambient-circuit-line" d="M390 300 H320 L280 340 V520" />
-            <path className="ambient-circuit-line" d="M0 700 H60 L100 740 H180" />
-            <path className="ambient-circuit-line" d="M390 900 H310 L270 940 V1100" />
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M40 1220 H150 L190 1180" />
-            <circle className="ambient-circuit-dot" cx="110" cy="220" r="3.5" />
-            <circle className="ambient-circuit-dot" cx="280" cy="340" r="3.5" />
-            <circle className="ambient-circuit-dot" cx="100" cy="740" r="3.5" />
-            <circle className="ambient-circuit-dot" cx="270" cy="940" r="3.5" />
+            {/* organic mix of short and long traces, varied directions */}
+            <path className="ambient-circuit-line" d="M0 150 H52 L96 194 V286 L132 322" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 236 H336 L302 270 V332" />
+            <path className="ambient-circuit-line" d="M390 430 H352 L318 464 V612 H262" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 486 H38 L74 522" />
+            <path className="ambient-circuit-line" d="M0 690 H66 L112 736 V824 L154 866 H228" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M240 604 V666 L286 712 H352" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 946 H344 L308 982" />
+            <path className="ambient-circuit-line" d="M390 1086 H326 L286 1126 V1246" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 1010 H44 L88 1054 V1148" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M56 1284 H164 L206 1242 H268" />
+            <circle className="ambient-circuit-dot" cx="96" cy="194" r="3.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="132" cy="322" r="2.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="302" cy="270" r="2.5" />
+            <circle className="ambient-circuit-dot" cx="318" cy="464" r="3.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="74" cy="522" r="2.5" />
+            <circle className="ambient-circuit-dot" cx="112" cy="736" r="3.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="286" cy="712" r="2.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="308" cy="982" r="2.5" />
+            <circle className="ambient-circuit-dot" cx="286" cy="1126" r="3.5" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="88" cy="1054" r="2.5" />
           </svg>
         </div>
+
         <div className="ambient-particles" />
         <div className="ambient-grain" />
         <div className="ambient-vignette" />
