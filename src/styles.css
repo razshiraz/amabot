@@ -153,11 +153,12 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 78% 34% at 50% 6%, oklch(0.85 0.13 88 / 0.10), transparent 74%),
-      radial-gradient(ellipse 72% 26% at 50% 44%, oklch(0.85 0.13 88 / 0.075), transparent 76%),
-      radial-gradient(ellipse 92% 30% at 50% 74%, oklch(0.85 0.13 88 / 0.065), transparent 78%),
-      radial-gradient(ellipse 84% 18% at 50% 94%, oklch(0.85 0.13 88 / 0.04), transparent 82%);
+      radial-gradient(ellipse 80% 32% at 50% 8%, oklch(0.82 0.09 88 / 0.065), transparent 76%),
+      radial-gradient(ellipse 76% 26% at 50% 42%, oklch(0.82 0.09 88 / 0.05), transparent 78%),
+      radial-gradient(ellipse 96% 28% at 50% 72%, oklch(0.82 0.09 88 / 0.045), transparent 80%),
+      radial-gradient(ellipse 96% 22% at 50% 98%, oklch(0.82 0.09 88 / 0.035), transparent 84%);
   }
+
 
 
   @media (min-width: 768px) {
@@ -194,7 +195,7 @@
     width: 100%;
     height: 100%;
   }
-  .ambient-circuits--mobile { opacity: 0.75; }
+  .ambient-circuits--mobile { opacity: 0.6; }
   .ambient-circuit-line {
     fill: none;
     stroke: var(--color-primary);
@@ -208,24 +209,6 @@
     fill-opacity: 0.35;
   }
   .ambient-circuit-dot--sm { fill-opacity: 0.22; }
-
-  /* Sparse gold particles */
-  .ambient-particles {
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle, oklch(0.92 0.12 92 / 0.55) 1px, transparent 1.4px),
-      radial-gradient(circle, oklch(0.92 0.12 92 / 0.30) 1px, transparent 1.4px);
-    background-size: 260px 260px, 400px 400px;
-    background-position: 30px 60px, 170px 220px;
-    opacity: 0.3;
-    mask-image: radial-gradient(ellipse 90% 85% at 50% 30%, black, transparent 92%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 30%, black, transparent 92%);
-    animation: ambient-twinkle 9s ease-in-out infinite;
-  }
-  @media (min-width: 768px) {
-    .ambient-particles { opacity: 0.5; background-size: 190px 190px, 300px 300px; }
-  }
 
   /* Fine grain so the black never feels flat */
   .ambient-grain {
@@ -257,7 +240,7 @@
     position: absolute;
     inset-inline: 0;
     bottom: 0;
-    height: 5%;
+    height: 2.5%;
     background: linear-gradient(to bottom, transparent, var(--color-background));
   }
   @media (min-width: 768px) {
@@ -411,11 +394,4 @@
   }
 }
 
-@keyframes ambient-twinkle {
-  0%, 100% { opacity: 0.28; }
-  50% { opacity: 0.55; }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .ambient-particles { animation: none !important; }
-}
