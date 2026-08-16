@@ -190,15 +190,22 @@ function Hero() {
         </div>
         <div className="ambient-circuits ambient-circuits--mobile md:hidden">
           <svg viewBox="0 0 390 1400" preserveAspectRatio="none">
-            {/* minimal, naturally distributed traces — distinct from desktop */}
-            <path className="ambient-circuit-line" d="M0 226 H74 L128 280 V368" />
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 512 H298 L246 564" />
-            <path className="ambient-circuit-line" d="M390 838 H330 L272 896 V1012 H196" />
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 1094 H58 L110 1146" />
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M164 662 V722 L214 772" />
-            <circle className="ambient-circuit-dot" cx="128" cy="280" r="3" />
-            <circle className="ambient-circuit-dot" cx="272" cy="896" r="3" />
-            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="214" cy="772" r="2.5" />
+            {/* Mobile: sparse, refined traces pushed to outer edges and empty areas — never behind text */}
+            {/* Top-left corner, above headline / in header margin */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 155 H60 L85 180" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="85" cy="180" r="2.5" />
+
+            {/* Left margin, along video area */}
+            <path className="ambient-circuit-line" d="M0 920 H52 L82 950 V1060" />
+            <circle className="ambient-circuit-dot" cx="82" cy="950" r="3" />
+
+            {/* Right margin, along video area */}
+            <path className="ambient-circuit-line" d="M390 1000 H338 L308 1030 V1140" />
+            <circle className="ambient-circuit-dot" cx="308" cy="1030" r="3" />
+
+            {/* Bottom-right corner, below video */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 1320 H330 L300 1290" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="300" cy="1290" r="2.5" />
           </svg>
         </div>
 
