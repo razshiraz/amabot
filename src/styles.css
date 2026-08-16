@@ -153,11 +153,12 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 78% 34% at 50% 6%, oklch(0.85 0.13 88 / 0.10), transparent 74%),
-      radial-gradient(ellipse 72% 26% at 50% 44%, oklch(0.85 0.13 88 / 0.075), transparent 76%),
-      radial-gradient(ellipse 92% 30% at 50% 74%, oklch(0.85 0.13 88 / 0.065), transparent 78%),
-      radial-gradient(ellipse 84% 18% at 50% 94%, oklch(0.85 0.13 88 / 0.04), transparent 82%);
+      radial-gradient(ellipse 80% 32% at 50% 8%, oklch(0.82 0.09 88 / 0.065), transparent 76%),
+      radial-gradient(ellipse 76% 26% at 50% 42%, oklch(0.82 0.09 88 / 0.05), transparent 78%),
+      radial-gradient(ellipse 96% 28% at 50% 72%, oklch(0.82 0.09 88 / 0.045), transparent 80%),
+      radial-gradient(ellipse 96% 22% at 50% 98%, oklch(0.82 0.09 88 / 0.035), transparent 84%);
   }
+
 
 
   @media (min-width: 768px) {
