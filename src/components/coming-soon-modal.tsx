@@ -92,7 +92,7 @@ export function ComingSoonProvider({ children }: { children: React.ReactNode }) 
 
             <OptImage
               variants={iconImg}
-              alt=""
+              alt="AmaBot"
               width={384}
               height={384}
               sizes="64px"
