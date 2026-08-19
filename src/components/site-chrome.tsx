@@ -28,7 +28,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
     <Link to="/" className="flex items-center gap-0" aria-label="AmaBot home">
       <OptImage
         variants={iconImg}
-        alt=""
+        alt="AmaBot"
         width={384}
         height={384}
         priority
@@ -37,7 +37,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
       />
       <OptImage
         variants={wordmarkImg}
-        alt="AmaBot wordmark"
+        alt="AmaBot"
         width={400}
         height={120}
         priority
