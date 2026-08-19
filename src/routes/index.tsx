@@ -286,8 +286,7 @@ function Hero() {
                   <source type="image/webp" srcSet={srcSet(posterImg.webp)} sizes={POSTER_SIZES} />
                   <img
                     src={posterImg.fallback.url}
-                    alt=""
-                    aria-hidden
+                    alt="AmaBot Amazon auto checkout bot and product monitoring software"
                     width={1280}
                     height={853}
                     sizes={POSTER_SIZES}
