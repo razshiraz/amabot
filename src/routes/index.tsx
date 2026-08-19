@@ -748,7 +748,7 @@ function SectionHeader({ eyebrow, title, sub }: { eyebrow: string; title: React.
   return (
     <div className="mx-auto max-w-2xl text-center">
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 py-1 pl-1 pr-3 text-[11px] font-medium uppercase tracking-wider text-primary">
-        <OptImage variants={iconImg} alt="AmaBot brand icon" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
+        <OptImage variants={iconImg} alt="AmaBot" width={128} height={128} sizes="20px" className="h-5 w-5 drop-shadow-[0_0_8px_oklch(0.85_0.17_88/0.6)]" />
         {eyebrow}
       </div>
       <h2 className="mt-5 text-balance text-4xl font-bold md:text-5xl">{title}</h2>
