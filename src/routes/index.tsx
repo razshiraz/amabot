@@ -21,7 +21,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "@id": "https://amabot.app/#webpage",
   url: "https://amabot.app/",
-  name: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor",
+  name: "AmaBot | Free Amazon Bot - Auto Checkout & Price Monitor",
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: OG_IMAGE,
