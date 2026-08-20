@@ -21,7 +21,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "@id": "https://amabot.app/#webpage",
   url: "https://amabot.app/",
-  name: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor",
+  name: "AmaBot | Free Amazon Bot - Auto Checkout & Price Monitor",
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: OG_IMAGE,
@@ -75,13 +75,13 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { title: "AmaBot | Free Amazon Bot - Auto Checkout & Price Monitor" },
       { name: "description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
-      { property: "og:title", content: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { property: "og:title", content: "AmaBot | Free Amazon Bot - Auto Checkout & Price Monitor" },
       { property: "og:description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
-      { name: "twitter:title", content: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { name: "twitter:title", content: "AmaBot | Free Amazon Bot - Auto Checkout & Price Monitor" },
       { name: "twitter:description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
     ],
     links: [
@@ -228,7 +228,7 @@ function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-neutral-300 md:text-lg">
-          AmaBot is a free Amazon bot that automatically purchase products based on your selected conditions while monitoring prices and restocks.
+          AmaBot is a free Amazon bot for automatic purchasing, price monitoring and restock tracking.
         </p>
 
         <OptImage
