@@ -75,14 +75,14 @@ const faqSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AmaBot | Amazon Auto Checkout Bot & Price Monitor" },
-      { name: "description", content: "AmaBot is a free Amazon auto purchase bot with price monitoring and restock alerts." },
-      { property: "og:title", content: "AmaBot | Amazon Auto Checkout Bot & Price Monitor" },
-      { property: "og:description", content: "AmaBot is a free Amazon auto purchase bot with price monitoring and restock alerts." },
+      { title: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { name: "description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
+      { property: "og:title", content: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { property: "og:description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://amabot.app/" },
-      { name: "twitter:title", content: "AmaBot | Amazon Auto Checkout Bot & Price Monitor" },
-      { name: "twitter:description", content: "AmaBot is a free Amazon auto purchase bot with price monitoring and restock alerts." },
+      { name: "twitter:title", content: "AmaBot | Free Amazon Auto Checkout Bot & Price Monitor" },
+      { name: "twitter:description", content: "AmaBot is a free Amazon bot for automatic purchases, price monitoring, restock alerts, and tracking high-demand Amazon products." },
     ],
     links: [
       { rel: "canonical", href: "https://amabot.app/" },
