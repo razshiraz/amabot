@@ -228,7 +228,7 @@ function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-neutral-300 md:text-lg">
-          AmaBot is a free Amazon bot that automatically purchase products based on your selected conditions while monitoring prices and restocks.
+          AmaBot is a free Amazon bot for automatic purchasing, price monitoring and restock tracking.
         </p>
 
         <OptImage
