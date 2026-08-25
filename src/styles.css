@@ -159,6 +159,15 @@
       radial-gradient(ellipse 96% 22% at 50% 98%, oklch(0.82 0.09 88 / 0.035), transparent 84%);
   }
 
+  /* Mobile-only: very soft gold radial glow behind the central hero area */
+  .ambient-glow-mobile {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 90% 42% at 50% 26%, oklch(0.82 0.09 88 / 0.07), transparent 72%),
+      radial-gradient(ellipse 80% 30% at 50% 40%, oklch(0.82 0.09 88 / 0.045), transparent 78%);
+    pointer-events: none;
+  }
 
 
   @media (min-width: 768px) {

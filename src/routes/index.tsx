@@ -161,6 +161,8 @@ function Hero() {
       {/* Premium ambient background: gold glow, faint tech lines, particles, grain, vignette */}
       <div aria-hidden className="ambient-stage">
         <div className="ambient-glow" />
+        {/* Mobile-only soft gold glow behind the central hero content area */}
+        <div className="ambient-glow-mobile md:hidden" aria-hidden />
         <div className="ambient-grid" />
         <div className="ambient-circuits hidden md:block">
           <svg viewBox="0 0 1440 1200" preserveAspectRatio="none">
@@ -195,6 +197,20 @@ function Hero() {
             {/* Top-left corner, above headline / in header margin */}
             <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 155 H60 L85 180" />
             <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="85" cy="180" r="2.5" />
+
+            {/* Left edge, near headline area — kept at the margin */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 245 H26 L42 265 V318" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="42" cy="265" r="2" />
+
+            {/* Right edge, near headline area — kept at the margin */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 275 H364 L348 295 V348" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="348" cy="295" r="2" />
+
+            {/* Lower hero, before video — subtle corner accents */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 465 H44 L64 488" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="64" cy="488" r="2" />
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 445 H346 L326 468" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="326" cy="468" r="2" />
 
             {/* Left margin, along video area */}
             <path className="ambient-circuit-line" d="M0 920 H52 L82 950 V1060" />
