@@ -642,10 +642,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "Can I monitor multiple products?",
-    a: { paragraphs: [
-      "Yes. You can add multiple Amazon products and configure different buying rules for each one.",
-      "As an Amazon price tracker, AmaBot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
-    ] },
+    a: { paragraphs: ["Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests."] },
   },
   {
     q: "What's the difference between Monitor Only and Auto-buy?",
