@@ -53,7 +53,40 @@ const faqs: Faq[] = [
     q: "Does AmaBot provide historical price charts?",
     a: "No. AmaBot shows the prices it observes live while monitoring is running. It is a real-time Amazon price tracker rather than a historical price-chart service.",
   },
+  {
+    q: "Can I track multiple products, and how often are prices checked?",
+    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
+  },
+  {
+    q: "Do I need to use proxies for price tracking?",
+    a: "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks.",
+  },
+  {
+    q: "Does AmaBot know if I have Amazon Prime?",
+    a: "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account.",
+  },
+  {
+    q: "Which payment method and shipping address are used if Auto-buy places an order?",
+    a: "AmaBot uses the default payment method configured in your Amazon account, and if you have an available Amazon Gift Card balance, Amazon may apply that balance first. Orders are sent to the default shipping address configured in your Amazon account, so make sure it is correct before enabling Auto-buy.",
+  },
+  {
+    q: "Do you store my personal information?",
+    a: "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device.",
+  },
+  {
+    q: "Can I switch Amazon accounts?",
+    a: "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account.",
+  },
+  {
+    q: "Why is the Amazon price tracker free?",
+    a: "AmaBot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users.",
+  },
+  {
+    q: "Is AmaBot affiliated with Amazon?",
+    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
+  },
 ];
+
 
 export const Route = createFileRoute("/amazon-price-tracker")({
   head: () => ({
