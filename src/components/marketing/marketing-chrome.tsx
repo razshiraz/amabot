@@ -56,7 +56,7 @@ function MarketingHeader() {
           <div className="flex items-center justify-between gap-2">
             <Logo size="lg" />
 
-            <nav aria-label="Main" className="hidden items-center gap-6 text-base text-white lg:ml-8 lg:flex lg:font-medium lg:whitespace-nowrap">
+            <nav aria-label="Main" className="hidden items-center gap-3 text-base text-white lg:ml-14 lg:mr-10 lg:flex lg:font-medium lg:whitespace-nowrap">
               <Link
                 to="/"
                 activeOptions={{ exact: true }}
