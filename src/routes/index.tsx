@@ -662,7 +662,11 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "Can I switch Amazon accounts?",
-    a: { paragraphs: ["Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."] },
+    a: { paragraphs: ["No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account."] },
+  },
+  {
+    q: "Does AmaBot know if I have Amazon Prime?",
+    a: { paragraphs: ["Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account."] },
   },
   {
     q: "Is my Amazon account at risk?",
