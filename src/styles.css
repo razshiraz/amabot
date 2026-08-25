@@ -195,7 +195,7 @@
     width: 100%;
     height: 100%;
   }
-  .ambient-circuits--mobile { opacity: 0.4; }
+  .ambient-circuits--mobile { opacity: 0.32; }
   .ambient-circuit-line {
     fill: none;
     stroke: var(--color-primary);
