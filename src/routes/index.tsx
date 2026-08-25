@@ -191,22 +191,30 @@ function Hero() {
         </div>
         <div className="ambient-circuits ambient-circuits--mobile md:hidden">
           <svg viewBox="0 0 390 1400" preserveAspectRatio="none">
-            {/* Mobile: sparse, refined traces pushed to outer edges and empty areas — never behind text */}
-            {/* Top-left corner, above headline / in header margin */}
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 155 H60 L85 180" />
-            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="85" cy="180" r="2.5" />
+            {/* Mobile hero: sparse circuit accents pushed to corners and far edges only */}
+            {/* Top-left corner, inside header margin, well above headline */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 95 H45 L70 120" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="70" cy="120" r="2" />
 
-            {/* Left margin, along video area */}
-            <path className="ambient-circuit-line" d="M0 920 H52 L82 950 V1060" />
-            <circle className="ambient-circuit-dot" cx="82" cy="950" r="3" />
+            {/* Top-right corner, inside header margin, well above headline */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 95 H345 L320 120" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="320" cy="120" r="2" />
 
-            {/* Right margin, along video area */}
-            <path className="ambient-circuit-line" d="M390 1000 H338 L308 1030 V1140" />
-            <circle className="ambient-circuit-dot" cx="308" cy="1030" r="3" />
+            {/* Far left edge, small accent below the video area */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 1080 H38 L62 1105" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="62" cy="1105" r="2" />
 
-            {/* Bottom-right corner, below video */}
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 1320 H330 L300 1290" />
-            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="300" cy="1290" r="2.5" />
+            {/* Far right edge, small accent below the video area */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 1080 H352 L328 1105" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="328" cy="1105" r="2" />
+
+            {/* Bottom-left corner */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 1290 H55 L85 1260" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="85" cy="1260" r="2" />
+
+            {/* Bottom-right corner */}
+            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 1290 H335 L305 1260" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="305" cy="1260" r="2" />
           </svg>
         </div>
 
