@@ -193,18 +193,18 @@ function Hero() {
           <svg viewBox="0 0 390 1400" preserveAspectRatio="none">
             {/* Mobile hero: sparse circuit accents pushed to corners and far edges only */}
             {/* Top-left corner, inside header margin, well above headline */}
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 95 H45 L70 120" />
-            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="70" cy="120" r="2" />
+            <path className="ambient-circuit-line" d="M0 95 H45 L70 120" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="70" cy="120" r="2.5" />
 
             {/* Top-right corner, inside header margin, well above headline */}
-            <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 95 H345 L320 120" />
-            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="320" cy="120" r="2" />
+            <path className="ambient-circuit-line" d="M390 95 H345 L320 120" />
+            <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="320" cy="120" r="2.5" />
 
-            {/* Far left edge, small accent below the video area */}
+            {/* Far left edge, small faint accent below the video area */}
             <path className="ambient-circuit-line ambient-circuit-line--faint" d="M0 1080 H38 L62 1105" />
             <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="62" cy="1105" r="2" />
 
-            {/* Far right edge, small accent below the video area */}
+            {/* Far right edge, small faint accent below the video area */}
             <path className="ambient-circuit-line ambient-circuit-line--faint" d="M390 1080 H352 L328 1105" />
             <circle className="ambient-circuit-dot ambient-circuit-dot--sm" cx="328" cy="1105" r="2" />
 
