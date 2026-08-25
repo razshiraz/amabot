@@ -24,7 +24,7 @@ function TelegramIcon({ className }: { className?: string }) {
 export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   const iconCls = size === "lg" ? "h-[52px] w-[52px] md:h-24 md:w-24" : "h-11 w-11";
   const wordCls = size === "lg" ? "h-8 md:h-14 w-auto translate-y-[2px]" : "h-7 w-auto translate-y-[1px]";
-  const gapCls = size === "lg" ? "gap-0.5 md:gap-1" : "gap-0.5";
+  const gapCls = size === "lg" ? "gap-1 md:gap-2" : "gap-1";
   return (
     <Link to="/" className={`flex items-center ${gapCls}`} aria-label="AmaBot home">
       <OptImage
