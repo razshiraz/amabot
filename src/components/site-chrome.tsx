@@ -22,17 +22,18 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
-  const iconCls = size === "lg" ? "h-11 w-11 md:h-24 md:w-24" : "h-14 w-14";
+  const iconCls = size === "lg" ? "h-10 w-10 md:h-20 md:w-20" : "h-12 w-12";
   const wordCls = size === "lg" ? "h-7 md:h-14 w-auto" : "h-10 w-auto";
+  const gapCls = size === "lg" ? "gap-2" : "gap-2";
   return (
-    <Link to="/" className="flex items-center gap-3" aria-label="AmaBot home">
+    <Link to="/" className={`flex items-center ${gapCls}`} aria-label="AmaBot home">
       <OptImage
         variants={iconImg}
         alt="AmaBot"
         width={384}
         height={384}
         priority
-        sizes={size === "lg" ? "(min-width: 768px) 96px, 44px" : "56px"}
+        sizes={size === "lg" ? "(min-width: 768px) 80px, 40px" : "48px"}
         className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`}
       />
       <OptImage
