@@ -39,7 +39,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         variants={wordmarkImg}
         alt="AmaBot"
         width={400}
-        height={120}
+        height={135}
         priority
         sizes={size === "lg" ? "(min-width: 768px) 200px, 100px" : "140px"}
         className={wordCls}
