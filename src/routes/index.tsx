@@ -685,6 +685,10 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
     a: { paragraphs: ["Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled."] },
   },
   {
+    q: "Do I need to use proxies?",
+    a: { paragraphs: ["No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks."] },
+  },
+  {
     q: "What happens after an order is placed?",
     a: { paragraphs: ["The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."] },
   },
