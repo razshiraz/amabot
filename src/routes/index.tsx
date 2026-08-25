@@ -53,16 +53,18 @@ const faqSchema = {
     ["Why is AmaBot free?", "AmaBot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users."],
     ["Do you store my personal information?", "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device."],
     ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside AmaBot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
-    ["Can I monitor multiple products?", "Yes. You can add multiple Amazon products and configure different buying rules for each one. As an Amazon price tracker, AmaBot checks products in rotation, allowing approximately five seconds per product."],
+    ["Can I monitor multiple products?", "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests."],
     ["What's the difference between Monitor Only and Auto-buy?", "Monitor Only sends Amazon restock alerts when a product meets your conditions and never places orders. Auto-buy works as an Amazon auto buy tool that automatically places an order when an eligible offer matches your rules, continuing until your configured order target has been reached."],
 
     ["Which shipping address will AmaBot use?", "By default, AmaBot uses the default shipping address configured in your Amazon account. Make sure it is correct before enabling Auto-buy."],
     ["Which payment method will AmaBot use?", "AmaBot uses the default payment method configured in your Amazon account. If you have an available Amazon Gift Card balance, Amazon may apply that balance before charging your default payment method."],
-    ["Can I switch Amazon accounts?", "Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."],
+    ["Can I switch Amazon accounts?", "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account."],
+    ["Does AmaBot know if I have Amazon Prime?", "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account."],
     ["Is my Amazon account at risk?", "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot follows safer automation practices but no tool can guarantee that an account will never be affected."],
     ["How do I update AmaBot?", "AmaBot updates automatically in the background. To verify that you are running the latest version, use the \"Check for Updates\" button on the Settings page."],
     ["Does AmaBot guarantee successful purchases?", "No. Product availability, checkout speed, Amazon restrictions, and competition from other buyers can affect the outcome. AmaBot can improve your chances but cannot guarantee a successful purchase."],
     ["Do I need to keep my computer running?", "Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled."],
+    ["Do I need to use proxies?", "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks."],
     ["What happens after an order is placed?", "The order will appear directly in your Amazon account. Shipping changes, cancellations, returns, and refunds must be managed through Amazon and are subject to Amazon's policies."],
     ["Is AmaBot affiliated with Amazon?", "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners."],
   ].map(([q, a]) => ({
@@ -640,10 +642,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "Can I monitor multiple products?",
-    a: { paragraphs: [
-      "Yes. You can add multiple Amazon products and configure different buying rules for each one.",
-      "As an Amazon price tracker, AmaBot checks products in rotation, allowing approximately five seconds per product. This means the interval between checks for the same product increases as you add more products: one product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.",
-    ] },
+    a: { paragraphs: ["Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests."] },
   },
   {
     q: "What's the difference between Monitor Only and Auto-buy?",
@@ -663,7 +662,11 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   },
   {
     q: "Can I switch Amazon accounts?",
-    a: { paragraphs: ["Yes. You can sign out and switch Amazon accounts at any time from the Settings page. You may need to register a new passkey after connecting a different account."] },
+    a: { paragraphs: ["No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account."] },
+  },
+  {
+    q: "Does AmaBot know if I have Amazon Prime?",
+    a: { paragraphs: ["Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account."] },
   },
   {
     q: "Is my Amazon account at risk?",
@@ -680,6 +683,10 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
   {
     q: "Do I need to keep my computer running?",
     a: { paragraphs: ["Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled."] },
+  },
+  {
+    q: "Do I need to use proxies?",
+    a: { paragraphs: ["No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks."] },
   },
   {
     q: "What happens after an order is placed?",
