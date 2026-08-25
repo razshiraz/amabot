@@ -22,9 +22,9 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
-  const iconCls = size === "lg" ? "h-11 w-11 md:h-[88px] md:w-[88px]" : "h-[52px] w-[52px]";
-  const wordCls = size === "lg" ? "h-7 md:h-14 w-auto translate-y-[2px]" : "h-10 w-auto translate-y-[1px]";
-  const gapCls = size === "lg" ? "gap-1.5 md:gap-2" : "gap-2";
+  const iconCls = size === "lg" ? "h-[52px] w-[52px] md:h-24 md:w-24" : "h-11 w-11";
+  const wordCls = size === "lg" ? "h-8 md:h-14 w-auto translate-y-[2px]" : "h-7 w-auto translate-y-[1px]";
+  const gapCls = size === "lg" ? "gap-1 md:gap-2" : "gap-1";
   return (
     <Link to="/" className={`flex items-center ${gapCls}`} aria-label="AmaBot home">
       <OptImage
@@ -33,7 +33,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         width={384}
         height={384}
         priority
-        sizes={size === "lg" ? "(min-width: 768px) 88px, 44px" : "52px"}
+        sizes={size === "lg" ? "(min-width: 768px) 96px, 52px" : "44px"}
         className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`}
       />
       <OptImage
@@ -42,7 +42,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         width={400}
         height={135}
         priority
-        sizes={size === "lg" ? "(min-width: 768px) 200px, 100px" : "140px"}
+        sizes={size === "lg" ? "(min-width: 768px) 200px, 120px" : "100px"}
         className={wordCls}
       />
     </Link>
