@@ -140,6 +140,10 @@ function Nav() {
 
 function Hero() {
   const { open: openModal } = useComingSoon();
+  const handleDownloadClick = useCallback(() => {
+    trackDownloadButtonClick("Free Download");
+    openModal();
+  }, [openModal]);
   const [playing, setPlaying] = useState(false);
   const [activated, setActivated] = useState(false);
   const [loading, setLoading] = useState(false);
