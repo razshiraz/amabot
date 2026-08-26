@@ -255,17 +255,6 @@ export function jsonLd(
     },
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "AmaBot",
-      url: "https://amabot.app/",
-      applicationCategory: "ShoppingApplication",
-      operatingSystem: "Windows, macOS",
-      isAccessibleForFree: true,
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      description: name,
-    },
-    {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://amabot.app/" },
