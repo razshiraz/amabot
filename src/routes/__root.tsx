@@ -170,7 +170,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Google tag (gtag.js) */}
         <HeadContent />
       </head>
       <body>
