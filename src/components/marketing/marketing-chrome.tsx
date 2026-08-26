@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Download, Menu, X, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
+import { trackDownloadButtonClick } from "@/lib/analytics";
 
 export const MARKETING_LINKS = [
   { to: "/what-is-amabot", label: "What Is AmaBot" },
@@ -19,6 +20,10 @@ export function DownloadButton({
   className?: string;
 }) {
   const { open } = useComingSoon();
+  const handleClick = useCallback(() => {
+    trackDownloadButtonClick("Free Download");
+    open();
+  }, [open]);
   const sizes = {
     sm: "px-3 py-2 text-xs md:px-4 md:py-2.5 md:text-sm",
     md: "px-5 py-2.5 text-sm",
@@ -27,7 +32,7 @@ export function DownloadButton({
   return (
     <button
       type="button"
-      onClick={open}
+      onClick={handleClick}
       aria-label="Download AmaBot desktop application (free)"
       className={`group inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-gradient-gold text-center font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${sizes[size]} ${className}`}
     >
