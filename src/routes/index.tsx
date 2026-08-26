@@ -294,6 +294,7 @@ function Hero() {
                     height={853}
                     sizes={POSTER_SIZES}
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     className="pointer-events-none absolute inset-0 h-full w-full object-cover"
                   />
