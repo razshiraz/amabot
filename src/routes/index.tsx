@@ -110,6 +110,10 @@ export const Route = createFileRoute("/")({
 
 function Nav() {
   const { open: openModal } = useComingSoon();
+  const handleDownloadClick = useCallback(() => {
+    trackDownloadButtonClick("Free Download");
+    openModal();
+  }, [openModal]);
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
@@ -123,7 +127,7 @@ function Nav() {
             <a href="#faq" className="cursor-pointer transition-colors duration-200 hover:text-primary">FAQ</a>
           </nav>
           <div className="flex shrink-0 items-center gap-2">
-            <button type="button" onClick={openModal} aria-label="Download AmaBot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
+            <button type="button" onClick={handleDownloadClick} aria-label="Download AmaBot desktop application (free)" className="group inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-gradient-gold px-3 py-2 text-xs font-semibold text-primary-foreground shadow-glow-sm transition hover:shadow-glow md:px-5 md:py-2.5 md:text-sm">
               Free Download
               <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </button>
