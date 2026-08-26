@@ -14,6 +14,10 @@ import icon_256_png from "@/assets/opt/icon-256.png.asset.json";
 import icon_256_webp from "@/assets/opt/icon-256.webp.asset.json";
 import icon_384_avif from "@/assets/opt/icon-384.avif.asset.json";
 import icon_384_webp from "@/assets/opt/icon-384.webp.asset.json";
+import poster_480_avif from "@/assets/opt/poster-480.avif.asset.json";
+import poster_480_webp from "@/assets/opt/poster-480.webp.asset.json";
+import poster_768_avif from "@/assets/opt/poster-768.avif.asset.json";
+import poster_768_webp from "@/assets/opt/poster-768.webp.asset.json";
 import poster_1280_avif from "@/assets/opt/poster-1280.avif.asset.json";
 import poster_1280_webp from "@/assets/opt/poster-1280.webp.asset.json";
 import poster_640_avif from "@/assets/opt/poster-640.avif.asset.json";
@@ -47,8 +51,8 @@ export const iconImg: Variants = {
 };
 
 export const posterImg: Variants = {
-  avif: { 640: poster_640_avif.url, 960: poster_960_avif.url, 1280: poster_1280_avif.url },
-  webp: { 640: poster_640_webp.url, 960: poster_960_webp.url, 1280: poster_1280_webp.url },
+  avif: { 480: poster_480_avif.url, 640: poster_640_avif.url, 768: poster_768_avif.url, 960: poster_960_avif.url, 1280: poster_1280_avif.url },
+  webp: { 480: poster_480_webp.url, 640: poster_640_webp.url, 768: poster_768_webp.url, 960: poster_960_webp.url, 1280: poster_1280_webp.url },
   fallback: { url: poster_960_jpg.url, width: 960 },
 };
 

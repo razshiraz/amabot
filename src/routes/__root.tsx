@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import spaceGroteskLatin from "@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url";
 
 function NotFoundComponent() {
   return (
@@ -94,18 +96,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "preconnect", href: "https://www.googletagmanager.com", crossOrigin: "anonymous" },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: spaceGroteskLatin,
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: interLatin,
+        crossOrigin: "anonymous",
+      },
       { rel: "stylesheet", href: appCss },
     ],
     scripts: [
       {
-        async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=G-KDCMSWEBQ5",
-      },
-      {
+        // GA4 stays fully installed; the gtag.js download is deferred until the
+        // browser is idle so it never competes with the first paint. Events sent
+        // before load are queued on dataLayer and flushed by gtag.js.
         children: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-KDCMSWEBQ5');`,
+gtag('config', 'G-KDCMSWEBQ5');
+(function(){var l=function(){if(window.__gaLoaded)return;window.__gaLoaded=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-KDCMSWEBQ5';document.head.appendChild(s);};
+if(document.readyState==='complete'){('requestIdleCallback'in window)?requestIdleCallback(l,{timeout:3000}):setTimeout(l,1200);}
+else{window.addEventListener('load',function(){('requestIdleCallback'in window)?requestIdleCallback(l,{timeout:3000}):setTimeout(l,1200);});}
+['pointerdown','keydown','touchstart'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true});});})();`,
       },
       {
         type: "application/ld+json",
