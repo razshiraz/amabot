@@ -253,7 +253,7 @@ function Hero() {
 
 
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
-          <button type="button" onClick={openModal} aria-label="Download AmaBot desktop application (free)" className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
+          <button type="button" onClick={handleDownloadClick} aria-label="Download AmaBot desktop application (free)" className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-gradient-gold px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:scale-[1.02]">
             Free Download
             <Download aria-hidden className="h-4 w-4 transition group-hover:translate-y-0.5" />
           </button>
