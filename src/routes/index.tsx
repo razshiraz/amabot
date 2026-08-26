@@ -15,7 +15,7 @@ import { trackDownloadButtonClick } from "@/lib/analytics";
 
 
 const OG_IMAGE = "https://amabot.app/og-image.jpg";
-const POSTER_SIZES = "(min-width: 1024px) 1024px, 100vw";
+const POSTER_SIZES = "(min-width: 1024px) 1024px, calc(100vw - 48px)";
 
 const webPageSchema = {
   "@context": "https://schema.org",
@@ -88,14 +88,6 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://amabot.app/" },
-      {
-        rel: "preload",
-        as: "image",
-        type: "image/avif",
-        imageSrcSet: srcSet(posterImg.avif),
-        imageSizes: POSTER_SIZES,
-        fetchPriority: "high",
-      },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(webPageSchema) },
@@ -300,7 +292,6 @@ function Hero() {
                     width={1280}
                     height={853}
                     sizes={POSTER_SIZES}
-                    fetchPriority="high"
                     loading="eager"
                     decoding="async"
                     className="pointer-events-none absolute inset-0 h-full w-full object-cover"

@@ -15,5 +15,18 @@ export default defineConfig({
   },
   vite: {
     plugins: [mcpPlugin()],
+    build: {
+      rollupOptions: {
+        output: {
+          // Keep the Supabase SDK out of the shared entry chunk: it is only
+          // needed by the auth routes, not by the marketing pages.
+          manualChunks(id: string) {
+            if (id.includes("commonjsHelpers")) return "vendor";
+            if (id.includes("node_modules/@supabase/")) return "supabase";
+            if (id.includes("/src/integrations/supabase/")) return "supabase";
+          },
+        },
+      },
+    },
   },
 });

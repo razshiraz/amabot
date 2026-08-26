@@ -1,7 +1,6 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
-import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
@@ -18,7 +17,21 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
   }
 });
 
+// Equivalent of the generated `attachSupabaseAuth`, but the Supabase client is
+// imported lazily so it stays out of the initial client bundle. Behaviour is
+// identical: the bearer token is attached to every serverFn RPC.
+const attachSupabaseAuthLazy = createMiddleware({ type: "function" }).client(
+  async ({ next }) => {
+    const { supabase } = await import("@/integrations/supabase/client");
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token;
+    return next({
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
+  },
+);
+
 export const startInstance = createStart(() => ({
-  functionMiddleware: [attachSupabaseAuth],
+  functionMiddleware: [attachSupabaseAuthLazy],
   requestMiddleware: [errorMiddleware],
 }));
