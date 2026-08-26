@@ -33,6 +33,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         width={384}
         height={384}
         priority
+        fetchPriority="auto"
         sizes={size === "lg" ? "(min-width: 768px) 96px, 52px" : "44px"}
         className={`${iconCls} shrink-0 drop-shadow-[0_0_24px_oklch(0.85_0.17_88/0.55)]`}
       />
@@ -42,6 +43,7 @@ export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
         width={400}
         height={135}
         priority
+        fetchPriority="auto"
         sizes={size === "lg" ? "(min-width: 768px) 200px, 120px" : "100px"}
         className={wordCls}
       />
