@@ -239,6 +239,7 @@ function Hero() {
           width={720}
           height={62}
           priority
+          fetchPriority="auto"
           sizes="(min-width: 768px) 360px, 280px"
           className="mx-auto mt-7 h-auto w-auto max-w-[280px] md:max-w-[360px]"
         />
@@ -293,6 +294,7 @@ function Hero() {
                     height={853}
                     sizes={POSTER_SIZES}
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     className="pointer-events-none absolute inset-0 h-full w-full object-cover"
                   />
