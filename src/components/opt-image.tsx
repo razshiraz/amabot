@@ -14,6 +14,7 @@ export function OptImage({
   height,
   className,
   priority = false,
+  fetchPriority,
   style,
 }: {
   variants: Variants;
@@ -23,6 +24,7 @@ export function OptImage({
   height: number;
   className?: string;
   priority?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
   style?: React.CSSProperties;
 }) {
   return (
@@ -39,7 +41,7 @@ export function OptImage({
         style={style}
         decoding="async"
         loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : undefined}
+        fetchPriority={fetchPriority ?? (priority ? "high" : undefined)}
       />
     </picture>
   );
