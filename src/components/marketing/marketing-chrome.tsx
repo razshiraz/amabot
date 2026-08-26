@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Download, Menu, X, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
+import { trackDownloadButtonClick } from "@/lib/analytics";
 
 export const MARKETING_LINKS = [
   { to: "/what-is-amabot", label: "What Is AmaBot" },
