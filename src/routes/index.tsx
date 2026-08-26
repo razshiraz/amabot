@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import {
   Bell, Zap, ShoppingCart, Activity, SlidersHorizontal, Filter, LayoutDashboard,
   ArrowRight, Sparkles, MessageCircle, Send,
@@ -11,6 +11,7 @@ import { Logo, SiteFooter } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
 import { OptImage } from "@/components/opt-image";
 import { dashImg, iconImg, posterImg, supportsImg, srcSet } from "@/lib/optimized-images";
+import { trackDownloadButtonClick } from "@/lib/analytics";
 
 
 const OG_IMAGE = "https://amabot.app/og-image.jpg";
