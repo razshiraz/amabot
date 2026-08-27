@@ -253,14 +253,9 @@ function RestockAlerts() {
       <FaqList items={faqs} heading="Amazon Restock Alert FAQ" />
 
       <CtaBlock
-        title="Never refresh a sold-out listing again"
+        title="Let AmaBot Watch for Restocks"
         text="Add the products you are waiting for, set your price and seller rules, and let AmaBot watch availability for you. Free on Windows and macOS."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }
