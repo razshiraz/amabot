@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ShoppingCart, Gauge, SlidersHorizontal, PackageSearch, Bell, ShieldQuestion,
+  ShoppingCart, Gauge, SlidersHorizontal, PackageSearch, Bell,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
