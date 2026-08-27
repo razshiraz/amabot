@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Sparkles, Boxes, Bell, Tag, Timer, ShieldQuestion } from "lucide-react";
+import { Sparkles, Boxes, Bell, Tag, Timer } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
   PageHero, Section, SubHeading, Callout, CardGrid, InfoCard, CompareTable,
