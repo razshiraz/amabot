@@ -116,13 +116,13 @@ function PriceTracker() {
           dashboard.
         </p>
         <p>
-          Amazon price tracking here is rule-based rather than open-ended. Your target price defines what you
-          consider acceptable, the maximum price is the hard ceiling that an offer may not exceed, and the
-          seller preference decides whose offers count. Product monitoring continues quietly until one of your
-          products satisfies all of those conditions at the same time.
+          Amazon price tracking here is rule-based rather than open-ended. The maximum price you set per
+          product is the highest total price you are willing to accept — the hard ceiling that an offer may
+          not exceed — and the seller preference decides whose offers count. Product monitoring continues
+          quietly until one of your products satisfies all of those conditions at the same time.
         </p>
         <CardGrid>
-          <InfoCard icon={Tag} title="Target price and maximum price">
+          <InfoCard icon={Tag} title="Maximum price">
             Set the highest total you would accept for each listing. Anything above that maximum price is not
             treated as a match.
           </InfoCard>
@@ -150,7 +150,7 @@ function PriceTracker() {
       <Section title="Set an Amazon Price Alert for Any Product">
         <p>
           Creating an Amazon price alert takes one product link and one number. Paste the Amazon URL, enter the
-          target price you are willing to pay in total, and choose Monitor Only so that AmaBot alerts you
+          maximum price you are willing to pay in total, and choose Monitor Only so that AmaBot alerts you
           rather than buying. From that point the product sits in your list and the alert waits for a
           qualifying offer.
         </p>
