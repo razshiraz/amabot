@@ -241,26 +241,25 @@ function PriceTracker() {
           head={["", "Price alert (Monitor Only)", "Auto-buy"]}
           rows={[
             ["Amazon price tracking", "Yes", "Yes"],
-            ["Target and maximum price", "Yes", "Yes"],
+            ["Maximum price protection", "Yes", "Yes"],
             ["Seller filtering", "Yes", "Yes"],
             ["Amazon price alert on a match", "Yes", "Yes"],
             ["Places an order", "Never", "Attempts checkout automatically"],
             ["Who decides", "You", "Your saved rules"],
-            ["Reaction speed", "Depends on you", "Immediate on match"],
+            ["Reaction speed", "Depends on you", "No manual action required after a detected match"],
             ["Best for", "Watching prices and deciding yourself", "Fast drops you cannot sit and watch"],
           ]}
         />
         <p>
-          Many people start in Monitor Only to see how their products behave in practice, then move selected
-          items to{" "}
+          Users can start in Monitor Only to observe product behavior before enabling automatic purchasing on
+          selected items. In Auto-buy mode AmaBot attempts checkout through your
+          own Amazon session, and AmaBot uses the payment and shipping settings configured in your Amazon
+          account. Your credentials and payment details are not stored on AmaBot servers, because the Amazon
+          session runs locally on your computer. Read more about{" "}
           <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             automatic Amazon purchasing
           </Link>{" "}
-          once the rules feel right. In Auto-buy mode AmaBot attempts checkout through your
-          own Amazon session, using the default shipping address and default payment method configured in your
-          Amazon account; an available Amazon Gift Card balance may be applied by Amazon first. Your
-          credentials and payment details are not stored on AmaBot servers, because the Amazon session runs
-          locally on your computer.
+          on the dedicated page.
         </p>
         <Callout title="A match is not a guaranteed order">
           Inventory can disappear mid-checkout, prices can change, quantity limits can apply, payment can be
