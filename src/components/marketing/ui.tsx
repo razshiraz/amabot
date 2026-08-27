@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Info } from "lucide-react";
+import { Check, Info, X } from "lucide-react";
 import { OptImage } from "@/components/opt-image";
 import { iconImg } from "@/lib/optimized-images";
 import { Breadcrumbs, DownloadButton } from "@/components/marketing/marketing-chrome";
