@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Activity, Bell, ShoppingCart, SlidersHorizontal, Filter, Zap,
-  Sparkles, Gamepad2, Cpu, PackageSearch, Timer, ShieldQuestion,
+  Sparkles, Gamepad2, Cpu, PackageSearch, Timer,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
@@ -218,9 +218,13 @@ function WhatIsAmabot() {
           how many orders the Amazon bot may place before it stops on its own.
         </p>
         <p>
-          Checks run roughly five seconds per product per cycle, so a single product is revisited about every
-          five seconds and two products about every ten. That trade-off is worth knowing before you load the
-          dashboard with dozens of listings.
+          AmaBot intervals are dynamic, generally taking a few seconds between requests. Adding more products
+          spreads those cycles further apart, which is worth knowing before you load the dashboard with dozens
+          of listings. For a closer look at the purchase side of this, see the dedicated{" "}
+          <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon Auto Buy
+          </Link>{" "}
+          guide.
         </p>
       </Section>
 
@@ -425,11 +429,6 @@ function WhatIsAmabot() {
         title="Try the free Amazon auto checkout bot"
         text="Set your products, your maximum price and your quantity, then let AmaBot attempt checkout the moment your conditions are met. Completely free."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }

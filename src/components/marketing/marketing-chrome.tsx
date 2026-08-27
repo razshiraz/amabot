@@ -7,6 +7,7 @@ import { trackDownloadButtonClick } from "@/lib/analytics";
 
 export const MARKETING_LINKS = [
   { to: "/what-is-amabot", label: "What Is AmaBot" },
+  { to: "/amazon-auto-buy", label: "Auto Buy" },
   { to: "/amazon-price-tracker", label: "Price Tracker" },
   { to: "/amazon-restock-alerts", label: "Restock Alerts" },
   { to: "/pokemon-restock-alerts", label: "Pokémon Alerts" },
@@ -162,7 +163,9 @@ function MarketingFooter() {
                 to={l.to}
                 className="cursor-pointer text-muted-foreground transition hover:text-foreground"
               >
-                {l.to === "/amazon-price-tracker"
+                {l.to === "/amazon-auto-buy"
+                  ? "Amazon Auto Buy"
+                  : l.to === "/amazon-price-tracker"
                   ? "Amazon Price Tracker"
                   : l.to === "/amazon-restock-alerts"
                     ? "Amazon Restock Alerts"

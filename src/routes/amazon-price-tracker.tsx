@@ -276,7 +276,11 @@ function PriceTracker() {
         />
         <p>
           Many people start in Monitor Only to see how their products behave in practice, then move selected
-          items to Auto-buy once the rules feel right. In Auto-buy mode AmaBot attempts checkout through your
+          items to{" "}
+          <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            automatic Amazon purchasing
+          </Link>{" "}
+          once the rules feel right. In Auto-buy mode AmaBot attempts checkout through your
           own Amazon session, using the default shipping address and default payment method configured in your
           Amazon account; an available Amazon Gift Card balance may be applied by Amazon first. Your
           credentials and payment details are not stored on AmaBot servers, because the Amazon session runs

@@ -18,6 +18,7 @@ import { Route as McpRouteImport } from './routes/mcp'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AmazonRestockAlertsRouteImport } from './routes/amazon-restock-alerts'
 import { Route as AmazonPriceTrackerRouteImport } from './routes/amazon-price-tracker'
+import { Route as AmazonAutoBuyRouteImport } from './routes/amazon-auto-buy'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
@@ -72,6 +73,11 @@ const AmazonPriceTrackerRoute = AmazonPriceTrackerRouteImport.update({
   path: '/amazon-price-tracker',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AmazonAutoBuyRoute = AmazonAutoBuyRouteImport.update({
+  id: '/amazon-auto-buy',
+  path: '/amazon-auto-buy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
   id: '/affiliate-disclosure',
   path: '/affiliate-disclosure',
@@ -119,6 +125,7 @@ const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-auto-buy': typeof AmazonAutoBuyRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
@@ -138,6 +145,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-auto-buy': typeof AmazonAutoBuyRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
@@ -158,6 +166,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
+  '/amazon-auto-buy': typeof AmazonAutoBuyRoute
   '/amazon-price-tracker': typeof AmazonPriceTrackerRoute
   '/amazon-restock-alerts': typeof AmazonRestockAlertsRoute
   '/auth': typeof AuthRoute
@@ -179,6 +188,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-auto-buy'
     | '/amazon-price-tracker'
     | '/amazon-restock-alerts'
     | '/auth'
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-auto-buy'
     | '/amazon-price-tracker'
     | '/amazon-restock-alerts'
     | '/auth'
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/affiliate-disclosure'
+    | '/amazon-auto-buy'
     | '/amazon-price-tracker'
     | '/amazon-restock-alerts'
     | '/auth'
@@ -237,6 +249,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
+  AmazonAutoBuyRoute: typeof AmazonAutoBuyRoute
   AmazonPriceTrackerRoute: typeof AmazonPriceTrackerRoute
   AmazonRestockAlertsRoute: typeof AmazonRestockAlertsRoute
   AuthRoute: typeof AuthRoute
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AmazonPriceTrackerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/amazon-auto-buy': {
+      id: '/amazon-auto-buy'
+      path: '/amazon-auto-buy'
+      fullPath: '/amazon-auto-buy'
+      preLoaderRoute: typeof AmazonAutoBuyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/affiliate-disclosure': {
       id: '/affiliate-disclosure'
       path: '/affiliate-disclosure'
@@ -381,6 +401,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
+  AmazonAutoBuyRoute: AmazonAutoBuyRoute,
   AmazonPriceTrackerRoute: AmazonPriceTrackerRoute,
   AmazonRestockAlertsRoute: AmazonRestockAlertsRoute,
   AuthRoute: AuthRoute,
