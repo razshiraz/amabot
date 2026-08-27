@@ -160,8 +160,8 @@ function PokemonRestockAlerts() {
         </p>
         <CardGrid>
           <InfoCard icon={Boxes} title="Pokémon Elite Trainer Boxes">
-            Pokémon ETBs are the classic example of a product that restocks briefly and disappears again within
-            minutes.
+            Pokémon ETBs are the classic example of a product that restocks briefly and disappears again after a
+            short time.
           </InfoCard>
           <InfoCard icon={Sparkles} title="Pokémon booster boxes and booster bundles">
             High-demand sealed booster products where the Amazon-sold offer is usually the only one near retail
