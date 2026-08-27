@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Activity, Bell, ShoppingCart, SlidersHorizontal, Filter, Zap,
-  Sparkles, Gamepad2, Cpu, PackageSearch, Timer, ShieldQuestion,
+  Sparkles, Gamepad2, Cpu, PackageSearch, Timer,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
