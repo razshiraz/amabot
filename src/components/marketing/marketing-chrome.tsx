@@ -173,7 +173,7 @@ export function MarketingLayout({ children }: { children: ReactNode }) {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
         />
         <main className="mobile-centered relative">{children}</main>
-        <MarketingFooter />
+        <SiteFooter />
       </div>
     </ComingSoonProvider>
   );
