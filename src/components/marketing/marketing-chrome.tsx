@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Download, Menu, X, ChevronRight } from "lucide-react";
-import { Logo } from "@/components/site-chrome";
+import { Logo, SiteFooter } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
 import { trackDownloadButtonClick } from "@/lib/analytics";
 
@@ -137,60 +137,7 @@ function MarketingHeader() {
   );
 }
 
-function MarketingFooter() {
-  return (
-    <footer className="border-t border-border/50 py-12">
-      <div className="mx-auto w-full max-w-5xl px-5 md:px-4">
-        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-start md:justify-between md:text-left">
-          <div className="flex flex-col items-center md:items-start">
-            <Logo />
-            <p className="mt-3 max-w-md text-xs text-muted-foreground">
-              AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or
-              officially connected to Amazon.
-            </p>
-            <p className="mt-2 max-w-md text-xs text-foreground/80">
-              As an Amazon Associate I earn from qualifying purchases.
-            </p>
-          </div>
-          <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm md:justify-start">
-
-            <Link to="/" className="cursor-pointer text-muted-foreground transition hover:text-foreground">
-              Home
-            </Link>
-            {MARKETING_LINKS.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="cursor-pointer text-muted-foreground transition hover:text-foreground"
-              >
-                {l.to === "/amazon-auto-buy"
-                  ? "Amazon Auto Buy"
-                  : l.to === "/amazon-price-tracker"
-                  ? "Amazon Price Tracker"
-                  : l.to === "/amazon-restock-alerts"
-                    ? "Amazon Restock Alerts"
-                    : l.to === "/pokemon-restock-alerts"
-                      ? "Pokémon Restock Alerts"
-                      : l.label}
-              </Link>
-            ))}
-            <a
-              href="https://x.com/amabot_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-muted-foreground transition hover:text-foreground"
-            >
-              X profile
-            </a>
-          </nav>
-        </div>
-        <div className="mt-10 border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} amabot. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
+// Internal pages use the exact homepage footer (SiteFooter) as the visual source of truth.
 
 export function Breadcrumbs({ current }: { current: string }) {
   return (
@@ -226,7 +173,7 @@ export function MarketingLayout({ children }: { children: ReactNode }) {
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] grid-pattern opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
         />
         <main className="mobile-centered relative">{children}</main>
-        <MarketingFooter />
+        <SiteFooter />
       </div>
     </ComingSoonProvider>
   );
