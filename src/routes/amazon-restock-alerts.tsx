@@ -105,7 +105,7 @@ function RestockAlerts() {
       <PageHero
         eyebrow="Restock monitoring"
         breadcrumb="Amazon Restock Alerts"
-        h1={<>Get an Instant <span className="text-gradient-gold">Amazon Restock Alert</span></>}
+        h1={<>Get an Amazon Restock Alert <span className="text-gradient-gold">with AmaBot</span></>}
         intro={
           <p>
             AmaBot provides an Amazon restock alert when a monitored product becomes available again. It also
