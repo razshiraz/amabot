@@ -10,7 +10,7 @@ import {
 
 const TITLE = "Amazon Price Tracker and Price Drop Alerts | AmaBot";
 const DESCRIPTION =
-  "Use the AmaBot Amazon price tracker to monitor product prices, set a target price and receive an Amazon price alert when selected conditions are met.";
+  "Use the AmaBot Amazon price tracker to monitor product prices, set a maximum price and receive an Amazon price alert when selected conditions are met.";
 
 const faqs: Faq[] = [
   {
@@ -35,7 +35,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does AmaBot provide Amazon deal alerts?",
-    a: "AmaBot provides an Amazon deal alert only for the products you added and only against your own target price. It does not publish a general feed of deals for products you are not tracking.",
+    a: "AmaBot provides an Amazon deal alert only for the products you added and only against your own maximum price. It does not publish a general feed of deals for products you are not tracking.",
   },
   {
     q: "How does Amazon product price tracking work with different sellers?",
