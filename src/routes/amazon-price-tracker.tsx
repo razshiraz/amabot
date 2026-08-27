@@ -290,11 +290,6 @@ function PriceTracker() {
         title="Start tracking Amazon prices for free"
         text="Add your products, set a maximum price per item and choose alerts or automatic purchasing. Windows and macOS, no credit card required."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }
