@@ -272,11 +272,6 @@ function AmazonAutoBuy() {
         title="Set your conditions, let AmaBot attempt the purchase"
         text="Add a product, choose a maximum price and quantity, and Amazon auto buy takes over from there. Free on Windows and macOS."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }
