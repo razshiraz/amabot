@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Sparkles, Boxes, Bell, Tag, Timer, ShieldQuestion } from "lucide-react";
+import { Sparkles, Boxes, Bell, Tag, Timer } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
   PageHero, Section, SubHeading, Callout, CardGrid, InfoCard, CompareTable,
@@ -24,12 +24,8 @@ const faqs: Faq[] = [
     a: "Yes. Pokémon Elite Trainer Boxes are one of the most commonly tracked items, and any Pokémon ETB with an Amazon listing you can link to can be monitored.",
   },
   {
-    q: "Can AmaBot track Pokémon booster boxes?",
-    a: "Yes. Pokémon booster boxes can be added like any other Amazon product, with their own maximum price and quantity settings.",
-  },
-  {
-    q: "Can AmaBot track Pokémon booster bundles?",
-    a: "Yes. Pokémon booster bundles, tins, collection boxes and other sealed items are all supported as long as they have an Amazon listing.",
+    q: "Can AmaBot track Pokémon booster boxes and booster bundles?",
+    a: "Yes. Pokémon booster boxes, booster bundles, tins, collection boxes and other sealed items can be added like any other Amazon product, with their own maximum price and quantity settings.",
   },
   {
     q: "Can I set a maximum price for Pokémon products?",
@@ -37,7 +33,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can AmaBot automatically buy Pokémon products?",
-    a: "Yes, if you enable Auto-buy for that product. AmaBot then attempts checkout through your own Amazon session as soon as an eligible offer matches your price, quantity and seller rules.",
+    a: "Yes, if you enable Auto-buy for that product. AmaBot then attempts checkout through your own Amazon session when an eligible offer matches your price, quantity and seller rules.",
   },
   {
     q: "Can AmaBot monitor third-party Amazon sellers?",
@@ -52,40 +48,16 @@ const faqs: Faq[] = [
     a: "No. Sealed Pokémon products are highly competitive: inventory can sell out mid-checkout, prices and sellers can change, quantity limits can apply and Amazon may request verification. Pokemon restock alerts improve your chances without guaranteeing checkout.",
   },
   {
-    q: "How many Pokémon products can I monitor, and how often are they checked?",
+    q: "How many Pokémon products can I monitor?",
     a: "You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
-  },
-  {
-    q: "Do I need proxies for Pokémon drops?",
-    a: "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks.",
-  },
-  {
-    q: "Does AmaBot know if I have Amazon Prime?",
-    a: "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account.",
-  },
-  {
-    q: "Which payment method and shipping address will AmaBot use?",
-    a: "AmaBot uses the default payment method configured in your Amazon account, and if you have an available Amazon Gift Card balance, Amazon may apply that balance first. Orders are sent to the default shipping address configured in your Amazon account, so make sure it is correct before enabling Auto-buy.",
-  },
-  {
-    q: "Do you store my personal information?",
-    a: "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device.",
-  },
-  {
-    q: "Can I switch Amazon accounts?",
-    a: "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account.",
   },
   {
     q: "Is my Amazon account at risk?",
     a: "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot follows safer automation practices but no tool can guarantee that an account will never be affected.",
   },
   {
-    q: "Why is AmaBot free?",
-    a: "AmaBot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users.",
-  },
-  {
     q: "Is AmaBot affiliated with Amazon?",
-    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
+    a: "AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially connected to Amazon.",
   },
 ];
 
@@ -128,7 +100,7 @@ function PokemonRestockAlerts() {
         <p>
           Sealed Pokémon products combine three things that make them brutal to buy at retail: limited
           allocation, enormous demand and a resale market that rewards whoever gets there first. A restock can
-          last minutes, sometimes less, and it is never announced in advance.
+          last only a short time, and many Pokemon restocks appear without advance notice.
         </p>
         <p>
           The result is familiar to every collector. You find the listing hours after the fact, the Amazon
@@ -162,16 +134,16 @@ function PokemonRestockAlerts() {
             Monitor Only keeps the decision with you and never places an order by itself.
           </InfoCard>
           <InfoCard icon={Sparkles} title="Optional automatic purchasing">
-            Auto-buy attempts checkout the moment an eligible offer appears on a monitored listing.
+            Auto-buy attempts checkout when an eligible offer is detected on a monitored listing.
           </InfoCard>
         </CardGrid>
       </Section>
 
       <Section title="Get Pokemon Restock Alerts from Amazon">
         <p>
-          Pokemon restock alerts exist for one reason: Amazon Pokémon restocks are unannounced and short. The
-          tracker checks product availability continuously while your session runs, so the alert arrives from a
-          check that already happened rather than from you deciding to look.
+          Pokemon restock alerts exist for one reason: Amazon Pokémon restocks are often short and unannounced.
+          The tracker checks product availability while your session runs, so the alert arrives from a check that
+          already happened rather than from you deciding to look.
         </p>
         <p>
           Because availability and price are evaluated together, an alert means more than "the page changed".
@@ -188,8 +160,8 @@ function PokemonRestockAlerts() {
         </p>
         <CardGrid>
           <InfoCard icon={Boxes} title="Pokémon Elite Trainer Boxes">
-            Pokémon ETBs are the classic example of a product that restocks briefly and disappears again within
-            minutes.
+            Pokémon ETBs are the classic example of a product that restocks briefly and disappears again after a
+            short time.
           </InfoCard>
           <InfoCard icon={Sparkles} title="Pokémon booster boxes and booster bundles">
             High-demand sealed booster products where the Amazon-sold offer is usually the only one near retail
@@ -228,14 +200,15 @@ function PokemonRestockAlerts() {
         </p>
         <CompareTable
           caption="Pokemon restock tracker and Pokemon restock alerts compared with manual refreshing"
-          head={["", "Manual refreshing", "AmaBot Pokemon restock tracker"]}
+          head={["", "Manual Refreshing", "AmaBot Pokemon Tracker"]}
           rows={[
-            ["Watches while you sleep", "No", "Yes, while the session runs"],
-            ["Pokemon restock alerts", "Only if you happen to look", "Yes, on a rule match"],
-            ["Applies a maximum price", "You judge each time", "Automatic"],
-            ["Filters by seller", "Manual", "Automatic"],
-            ["Reaction speed", "However fast you are", "Immediate on match with Auto-buy"],
-            ["Effort per product", "Constant", "One-time setup"],
+            ["Automatic monitoring", "No", "Yes"],
+            ["Monitors while you're away", "No", "Yes"],
+            ["Pokemon restock alerts", "No", "Yes"],
+            ["Maximum price control", "No", "Yes"],
+            ["Seller filtering", "No", "Yes"],
+            ["Auto-buy option", "No", "Yes"],
+            ["Manual refreshing required", "Yes", "No"],
           ]}
         />
         <SubHeading>Keep the list focused</SubHeading>
@@ -249,15 +222,13 @@ function PokemonRestockAlerts() {
       <Section title="Alerts vs Optional Automatic Purchasing">
         <p>
           Alert mode reports a qualifying offer and leaves the purchase to you, which is ideal when you want to
-          judge condition, bundle or seller yourself. Its limitation is obvious during a two-minute drop: the
-          order depends on how quickly you can act.
+          judge condition, bundle or seller yourself. Its limitation is obvious during a short drop: the order
+          depends on whether you are available to act.
         </p>
         <p>
-          An automatic purchase attempt removes that delay. Auto-buy places orders through your own Amazon
-          session using the default shipping address and default payment method already set in your Amazon
-          account, and an available Amazon Gift Card balance may be applied by Amazon first. Your credentials
-          and payment information are not stored on AmaBot servers, because the session runs locally on your
-          computer.
+          An automatic purchase attempt handles the purchase step for you. Auto-buy uses the payment and shipping
+          settings configured in your Amazon account. Your credentials and payment information are not stored on
+          AmaBot servers, because the session runs locally on your computer.
         </p>
         <p>
           Neither mode guarantees checkout. Inventory sells out during checkout, prices change, Amazon applies
@@ -296,11 +267,6 @@ function PokemonRestockAlerts() {
         title="Be there when the next Pokémon drop happens"
         text="Add your sealed products, set a fair maximum price and let AmaBot watch the listing for you. Free on Windows and macOS."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by or sponsored by Amazon or any
-        product manufacturer.
-      </div>
     </MarketingLayout>
   );
 }
