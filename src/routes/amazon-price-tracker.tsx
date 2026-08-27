@@ -287,7 +287,7 @@ function PriceTracker() {
       <FaqList items={faqs} heading="Amazon Price Tracker FAQ" />
 
       <CtaBlock
-        title="Start tracking Amazon prices for free"
+        title="Set your products and conditions, let AmaBot checkout automatically for you"
         text="Add your products, set a maximum price per item and choose alerts or automatic purchasing. Windows and macOS, no credit card required."
       />
     </MarketingLayout>
