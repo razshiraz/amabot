@@ -191,17 +191,16 @@ function WhatIsAmabot() {
         </p>
         <CompareTable
           caption="Comparison of AmaBot automatic checkout and optional alert-only monitoring"
-          head={["Feature", "Automatic checkout", "Alert-only monitoring"]}
+          head={["Feature", "Automatic Checkout", "Alert-Only Monitoring"]}
           rows={[
-            ["Product monitoring", "Yes, continuous", "Yes, continuous"],
-            ["Price monitoring", "Yes, against your maximum", "Yes, optional"],
+            ["Product monitoring", "Yes", "Yes"],
+            ["Price monitoring", "Yes", "Yes"],
             ["Restock detection", "Yes", "Yes"],
-            ["User notification", "Yes", "Yes"],
-            ["Checkout attempt", "AmaBot attempts the purchase when the selected conditions are met", "None — AmaBot notifies you only"],
-            ["Maximum price controls", "Yes, per product", "Yes, per product"],
-            ["Quantity controls", "Yes, per product", "Not applicable"],
-            ["User action required", "None during checkout", "You complete the purchase manually"],
-            ["Successful order guaranteed", "No", "No"],
+            ["User notifications", "Yes", "Yes"],
+            ["Automatic checkout", "Yes", "No"],
+            ["Maximum price control", "Yes", "Yes"],
+            ["Quantity control", "Yes", "No"],
+            ["Manual purchase required", "No", "Yes"],
           ]}
         />
         <p>
@@ -279,7 +278,7 @@ function WhatIsAmabot() {
       <FaqList items={faqs} heading="Amazon Auto Checkout Bot FAQ" />
 
       <CtaBlock
-        title="Try the free Amazon auto checkout bot"
+        title="Try AmaBot For Free"
         text="Set your products, your maximum price and your quantity, then let AmaBot attempt checkout the moment your conditions are met. Completely free."
       />
     </MarketingLayout>
