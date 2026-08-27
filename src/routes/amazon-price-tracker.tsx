@@ -243,11 +243,11 @@ function PriceTracker() {
             ["Amazon price tracking", "Yes", "Yes"],
             ["Maximum price protection", "Yes", "Yes"],
             ["Seller filtering", "Yes", "Yes"],
-            ["Amazon price alert on a match", "Yes", "Yes"],
-            ["Places an order", "Never", "Attempts checkout automatically"],
-            ["Who decides", "You", "Your saved rules"],
-            ["Reaction speed", "Depends on you", "No manual action required after a detected match"],
-            ["Best for", "Watching prices and deciding yourself", "Fast drops you cannot sit and watch"],
+            ["Price alert on match", "Yes", "Yes"],
+            ["Automatic checkout", "No", "Yes"],
+            ["Manual purchase required", "Yes", "No"],
+            ["Quantity controls", "No", "Yes"],
+            ["User action after a match", "Yes", "No"],
           ]}
         />
         <p>
