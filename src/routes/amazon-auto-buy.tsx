@@ -35,7 +35,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Which Amazon account and payment details are used?",
-    a: "Automatic Amazon purchasing runs through your own existing Amazon session and your configured Amazon account settings, including the default shipping address and default payment method. Your credentials are not stored on AmaBot servers.",
+    a: "Automatic Amazon purchasing uses your existing Amazon session and the payment and shipping settings configured in your Amazon account. Your credentials are not stored on AmaBot servers.",
   },
   {
     q: "Can I set a maximum price for Amazon auto purchase?",
