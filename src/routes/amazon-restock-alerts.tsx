@@ -188,16 +188,14 @@ function RestockAlerts() {
         <p>
           Used as an Amazon restock bot, AmaBot removes two human bottlenecks: the refreshing and the reaction.
           Instead of reloading a product page hoping to catch the moment, the app performs the check for you;
-          instead of noticing an alert and typing your details, Auto-buy can start checkout the moment an
-          eligible offer appears.
+          instead of noticing an alert and typing your details, Auto-buy can start checkout when a matching
+          offer is detected.
         </p>
         <p>
-          The Amazon restock bot works entirely through your own Amazon session on your own computer. It uses
-          the default shipping address and default payment method configured in your Amazon account, and an
-          available Amazon Gift Card balance may be applied by Amazon before that method is charged. It does
-          not bypass Amazon restrictions, quantity limits or verification requests, and any automated
-          interaction with Amazon carries a general risk that the platform requests verification or restricts
-          certain activity.
+          The Amazon restock bot works entirely through your own Amazon session on your own computer. AmaBot
+          uses the payment and shipping settings configured in your Amazon account. It does not bypass Amazon
+          restrictions, quantity limits or verification requests, and any automated interaction with Amazon
+          carries a general risk that the platform requests verification or restricts certain activity.
         </p>
         <Callout title="Auto-buy runs on the rules you saved">
           Before leaving Auto-buy unattended, confirm the maximum price, the quantity per order, the number of
