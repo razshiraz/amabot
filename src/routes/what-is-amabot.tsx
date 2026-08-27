@@ -429,11 +429,6 @@ function WhatIsAmabot() {
         title="Try the free Amazon auto checkout bot"
         text="Set your products, your maximum price and your quantity, then let AmaBot attempt checkout the moment your conditions are met. Completely free."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }

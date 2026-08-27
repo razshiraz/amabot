@@ -266,7 +266,12 @@ function RestockAlerts() {
         <p>
           Once an order exists it belongs to your Amazon account, and changes, cancellations, returns and
           refunds are handled through Amazon under Amazon's policies. AmaBot improves your odds; it cannot
-          promise the outcome.
+          promise the outcome. The conditions that decide whether a checkout attempt is made at all are
+          covered in detail on the{" "}
+          <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon auto buy
+          </Link>{" "}
+          page.
         </p>
       </Section>
 

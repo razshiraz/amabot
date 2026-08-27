@@ -273,7 +273,12 @@ function PokemonRestockAlerts() {
           <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon restock alert
           </Link>{" "}
-          works across any product category. For target-price rules in detail, read the{" "}
+          works across any product category. To see how a detected drop turns into a checkout attempt, read
+          about{" "}
+          <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon auto purchase
+          </Link>{" "}
+          conditions. For target-price rules in detail, read the{" "}
           <Link to="/amazon-price-tracker" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon price tracker
           </Link>{" "}
