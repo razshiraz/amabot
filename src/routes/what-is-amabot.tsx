@@ -278,7 +278,7 @@ function WhatIsAmabot() {
       <FaqList items={faqs} heading="Amazon Auto Checkout Bot FAQ" />
 
       <CtaBlock
-        title="Try the free Amazon auto checkout bot"
+        title="Try AmaBot For Free"
         text="Set your products, your maximum price and your quantity, then let AmaBot attempt checkout the moment your conditions are met. Completely free."
       />
     </MarketingLayout>
