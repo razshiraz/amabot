@@ -135,7 +135,7 @@ function RestockAlerts() {
           The sequence is straightforward. A product you want goes out of stock or has no buyable offer.
           You add its Amazon link to AmaBot and monitoring continues in the background. When availability
           changes and a purchasable offer appears, AmaBot evaluates it against your rules, and if it fits you
-          receive an Amazon restock alert — or the automatic action you selected begins immediately.
+          receive an Amazon restock alert — or the automatic action you selected begins after a detected match.
         </p>
         <CardGrid>
           <InfoCard icon={PackageSearch} title="Buyable offer detection">
