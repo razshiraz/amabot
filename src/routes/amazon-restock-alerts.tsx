@@ -210,14 +210,15 @@ function RestockAlerts() {
         </p>
         <CompareTable
           caption="Amazon restock alert and restock tracker compared with manual refreshing"
-          head={["", "Manual refreshing", "AmaBot restock tracker"]}
+          head={["Feature", "Manual Refreshing", "AmaBot Restock Tracker"]}
           rows={[
-            ["Checks while you sleep", "No", "Yes, while the session runs"],
-            ["Amazon restock alert on availability", "Only if you happen to look", "Yes"],
-            ["Applies a maximum price", "You judge each time", "Automatic"],
-            ["Applies a seller filter", "Manual", "Automatic"],
-            ["Reaction speed", "However fast you are", "Immediate on match with Auto-buy"],
-            ["Effort per product", "Constant", "One-time setup"],
+            ["Automatic monitoring", "No", "Yes"],
+            ["Monitors while you're away", "No", "Yes"],
+            ["Restock alerts", "No", "Yes"],
+            ["Maximum price control", "No", "Yes"],
+            ["Seller filtering", "No", "Yes"],
+            ["Automatic checkout option", "No", "Yes"],
+            ["Manual refreshing required", "Yes", "No"],
           ]}
         />
         <p>
