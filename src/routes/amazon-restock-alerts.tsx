@@ -119,7 +119,7 @@ function RestockAlerts() {
 
       <Section title="Why Amazon Restocks Are So Easy to Miss">
         <p>
-          Amazon does not announce restocks. A product that has been unavailable for weeks can quietly gain a
+          Amazon restocks are often unannounced. A product that has been unavailable for weeks can quietly gain a
           buyable offer at any hour, stay purchasable for a few minutes, and go back to sold out before most
           people notice anything happened.
         </p>
