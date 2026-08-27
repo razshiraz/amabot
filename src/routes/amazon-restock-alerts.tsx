@@ -150,7 +150,7 @@ function RestockAlerts() {
             Get an Amazon restock alert and complete the purchase yourself on Amazon.
           </InfoCard>
           <InfoCard icon={ShoppingCart} title="Auto-buy on restock">
-            Let AmaBot attempt checkout the instant an eligible offer appears, without waiting for you to
+            Let AmaBot attempt checkout when a matching offer is detected, without waiting for you to
             react.
           </InfoCard>
           <InfoCard icon={Repeat} title="Continuous rotation">
