@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Download, Menu, X, ChevronRight } from "lucide-react";
-import { Logo } from "@/components/site-chrome";
+import { Logo, SiteFooter } from "@/components/site-chrome";
 import { ComingSoonProvider, useComingSoon } from "@/components/coming-soon-modal";
 import { trackDownloadButtonClick } from "@/lib/analytics";
 
