@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Activity, Bell, ShoppingCart, SlidersHorizontal, Filter, Zap,
-  Sparkles, Gamepad2, Cpu, PackageSearch, Timer,
+  Activity, Bell, ShoppingCart, SlidersHorizontal, PackageSearch, Zap,
+  Sparkles, Gamepad2, Cpu, Timer,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
@@ -11,7 +11,7 @@ import {
 
 const TITLE = "What Is AmaBot? Free Amazon Auto Checkout Bot";
 const DESCRIPTION =
-  "AmaBot is a free Amazon auto checkout bot with Amazon auto buy, restock tracking and optional price monitoring based on your selected conditions.";
+  "AmaBot is a free Amazon auto checkout bot for Windows and macOS. It monitors selected products and automatically attempts checkout when your price, quantity and availability conditions are met.";
 
 const faqs: Faq[] = [
   {
@@ -24,91 +24,27 @@ const faqs: Faq[] = [
   },
   {
     q: "How does Amazon auto buy work with AmaBot?",
-    a: "You paste an Amazon product link, set a maximum price and a quantity, and start monitoring. Amazon auto buy runs continuously in the background: when an eligible offer matches every rule you configured, AmaBot begins the checkout process through your own Amazon session.",
-  },
-  {
-    q: "What does Amazon auto purchase mean?",
-    a: "Amazon auto purchase means the software attempts to place the order for you instead of waiting for you to click Buy Now. With AmaBot, an Amazon auto purchase is only attempted when the listing matches the conditions you selected for that product.",
-  },
-  {
-    q: "Is AmaBot an Amazon bot?",
-    a: "Yes. AmaBot is an independent Amazon bot that runs on your own computer, checks the products you add and acts only on the rules you configure. It is not built, endorsed or operated by Amazon.",
+    a: "You paste an Amazon product link, set a maximum price and a quantity, and start monitoring. When an eligible offer matches every rule you configured, AmaBot begins the checkout process through your own Amazon session.",
   },
   {
     q: "Can AmaBot automatically purchase Amazon products?",
     a: "Yes. AmaBot attempts the purchase automatically when a monitored product becomes available within your maximum price and quantity settings, and it keeps going until your configured order target has been reached.",
   },
   {
-    q: "Does AmaBot send an Amazon restock alert?",
-    a: "Yes. AmaBot can send an Amazon restock alert the moment a sold-out listing gets a buyable offer again, and it can attempt automatic checkout at the same time when your conditions are met.",
-  },
-  {
-    q: "Can AmaBot work as an Amazon restock tracker?",
-    a: "Yes. Used as an Amazon restock tracker, AmaBot keeps checking unavailable listings in rotation and reports the moment availability returns, so a restock does not depend on you refreshing the page.",
-  },
-  {
-    q: "Is AmaBot an Amazon restock bot?",
-    a: "Yes. AmaBot works as an Amazon restock bot because restock detection is wired directly into the checkout engine: detection and the checkout attempt happen in the same cycle rather than as two separate steps.",
-  },
-  {
-    q: "Can AmaBot send an Amazon price alert?",
-    a: "Yes. When you prefer not to buy automatically, AmaBot can send an Amazon price alert as soon as a monitored listing falls inside the maximum price you set.",
-  },
-  {
-    q: "Can AmaBot work as an Amazon price monitor?",
-    a: "Yes. Users can enable optional price monitoring and alerts when they prefer to track a product without using automatic checkout. In that mode AmaBot acts as an Amazon price monitor and leaves the purchase decision to you.",
-  },
-  {
-    q: "How does Amazon price tracking work?",
-    a: "Amazon price tracking in AmaBot compares the complete price of the current buyable offer, including shipping, against the maximum you set for that product. Each check reads the live listing rather than a cached figure.",
-  },
-  {
-    q: "Is AmaBot an Amazon price tracker?",
-    a: "AmaBot includes Amazon price tracker functionality as a supporting capability of automatic checkout. If price tracking is your main goal, the dedicated Amazon price tracker page covers that use case in more detail.",
-  },
-  {
-    q: "Can AmaBot send an Amazon price drop alert?",
-    a: "Yes. An Amazon price drop alert is triggered when a monitored listing moves from above your maximum price to within it, provided the offer is buyable at that moment.",
-  },
-  {
-    q: "Does AmaBot provide Amazon deal alerts?",
-    a: "AmaBot provides an Amazon deal alert based on the rules you set rather than on a curated list of promotions. It reports what the live listing shows; it does not judge whether a price is a genuine bargain.",
-  },
-  {
-    q: "How does Amazon product price tracking work?",
-    a: "Amazon product price tracking is applied per product. Every listing you add carries its own maximum price, so one product can be set for automatic checkout while another is only being watched.",
-  },
-  {
     q: "Does automatic checkout guarantee a successful order?",
     a: "No. AmaBot automatically attempts checkout, but inventory can disappear mid-checkout, the price or seller can change, quantity limits can apply and Amazon may request additional verification. A checkout attempt is not a guaranteed order.",
-  },
-  {
-    q: "Is AmaBot affiliated with Amazon?",
-    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
-  },
-  {
-    q: "Why is AmaBot free?",
-    a: "AmaBot is a free Amazon auto checkout bot because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users.",
   },
   {
     q: "Do you store my personal information?",
     a: "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device.",
   },
   {
+    q: "Which payment method and shipping address does AmaBot use?",
+    a: "AmaBot uses the payment method and shipping address configured in your Amazon account. Make sure your Amazon defaults are correct before enabling automatic checkout.",
+  },
+  {
     q: "Do I need to use proxies?",
     a: "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks.",
-  },
-  {
-    q: "Can I switch Amazon accounts?",
-    a: "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account.",
-  },
-  {
-    q: "Does AmaBot know if I have Amazon Prime?",
-    a: "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account.",
-  },
-  {
-    q: "Which payment method and shipping address will AmaBot use?",
-    a: "AmaBot uses the default payment method configured in your Amazon account, and if you have an available Amazon Gift Card balance, Amazon may apply that balance first. Orders are sent to the default shipping address configured in your Amazon account, so make sure it is correct before enabling Auto-buy.",
   },
   {
     q: "Can I monitor multiple products?",
@@ -116,14 +52,17 @@ const faqs: Faq[] = [
   },
   {
     q: "Is my Amazon account at risk?",
-    a: "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot follows safer automation practices but no tool can guarantee that an account will never be affected.",
+    a: "Automated interaction with Amazon can carry account-related risks, and no tool can guarantee that an account will never be affected. Amazon may occasionally request verification or restrict certain activity.",
   },
   {
     q: "Do I need to keep my computer running?",
     a: "Yes. Because AmaBot runs locally, your computer, internet connection, and AmaBot session must remain active while monitoring or automatic purchasing is enabled.",
   },
+  {
+    q: "Is AmaBot affiliated with Amazon?",
+    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
+  },
 ];
-
 
 export const Route = createFileRoute("/what-is-amabot")({
   head: () => ({
@@ -146,9 +85,8 @@ function WhatIsAmabot() {
         intro={
           <p>
             AmaBot is a free Amazon auto checkout bot that monitors selected products and automatically
-            attempts checkout when the user's price, quantity and availability conditions are met. It
-            combines Amazon auto buy and Amazon auto purchase functionality with restock monitoring, while
-            users can also enable optional price monitoring and alerts.
+            attempts checkout when the user's price, quantity and availability conditions are met. It runs
+            on Windows and macOS and leaves the purchase decision to the rules you configure.
           </p>
         }
         secondary={{ href: "/#how-it-works", label: "See How It Works" }}
@@ -159,7 +97,7 @@ function WhatIsAmabot() {
           An Amazon auto checkout bot is software that watches a product listing on your behalf and starts
           the checkout process the moment that listing matches the rules you defined. Instead of a person
           sitting on a product page pressing refresh, an Amazon bot performs the checks continuously and
-          reacts within the same second it detects a match.
+          automatically reacts when it detects a match.
         </p>
         <p>
           People use automatic checkout for one reason: timing. On fast-selling products the window between
@@ -193,141 +131,56 @@ function WhatIsAmabot() {
         </Callout>
       </Section>
 
-      <Section title="How AmaBot Handles Amazon Auto Buy">
+      <Section title="Amazon Auto Buy and Automatic Purchasing">
         <p>
-          Amazon auto buy in AmaBot is a short, explicit setup. You are not training anything or writing
-          scripts — you describe an acceptable purchase, and the Amazon bot enforces that description.
-        </p>
-        <ol className="ml-5 list-decimal space-y-2">
-          <li>You add an Amazon product by pasting its listing link.</li>
-          <li>You choose a maximum price, which is the complete price including shipping.</li>
-          <li>You select the desired quantity and how many orders may be placed in total.</li>
-          <li>AmaBot monitors that product's price, offers and availability in a continuous rotation.</li>
-          <li>When the selected conditions are met, AmaBot automatically attempts checkout.</li>
-          <li>
-            The result can still depend on inventory, the seller behind the offer, payment, shipping and
-            your Amazon account conditions.
-          </li>
-        </ol>
-        <SubHeading>Maximum price and quantity controls</SubHeading>
-        <p>
-          The maximum price is the single most important control in Amazon auto buy, because the same
-          listing can be served by Amazon at one moment and by a third-party seller at a very different
-          price the next. An offer priced above your limit is simply not eligible, and automatic checkout is
-          not attempted. Quantity controls work the same way: they cap how many units one order includes and
-          how many orders the Amazon bot may place before it stops on its own.
+          Amazon auto buy in AmaBot is a short, explicit setup. You describe an acceptable purchase by
+          setting price, quantity, availability and seller conditions, and AmaBot monitors the product until
+          the live offer matches those rules. When everything lines up, AmaBot attempts checkout through
+          your own Amazon session.
         </p>
         <p>
-          AmaBot intervals are dynamic, generally taking a few seconds between requests. Adding more products
-          spreads those cycles further apart, which is worth knowing before you load the dashboard with dozens
-          of listings. For a closer look at the purchase side of this, see the dedicated{" "}
+          A purchase is not guaranteed. Inventory can disappear mid-checkout, the seller or price can change,
+          and Amazon may request additional verification. AmaBot only acts when your predefined conditions
+          are met, and it never shops for you, substitutes products or relaxes a rule that nearly matched.
+        </p>
+        <p>
+          For a deeper look at the purchase workflow, see the dedicated{" "}
           <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon Auto Buy
           </Link>{" "}
-          guide.
+          page.
         </p>
       </Section>
 
-      <Section title="Amazon Auto Purchase Based on Your Conditions">
+      <Section title="Amazon Restock Alerts and Monitoring">
         <p>
-          Amazon auto purchase is driven entirely by the settings you selected for that specific product.
-          AmaBot does not shop for you, does not substitute similar items and does not buy anything outside
-          the conditions you defined. If the maximum price, the quantity or the seller rule does not line up
-          with the live offer, no checkout attempt is made.
-        </p>
-        <CardGrid>
-          <InfoCard icon={ShoppingCart} title="Amazon auto purchase">
-            The purchase is attempted through your own Amazon session, using the default shipping address and
-            payment method already set in your Amazon account.
-          </InfoCard>
-          <InfoCard icon={Filter} title="Seller conditions">
-            Restrict a product to Amazon as the seller, or accept any eligible seller. Seller changes during
-            a restock are a common reason an offer stops qualifying.
-          </InfoCard>
-        </CardGrid>
-        <p>
-          Product availability is evaluated at the same instant as price and seller. Because all three can
-          shift between one check and the next, a checkout attempt reflects the listing as it looked at that
-          moment. AmaBot does not store card details, and your Amazon credentials never leave your machine —
-          the session runs locally on your computer.
-        </p>
-        <Callout title="Check your Amazon defaults first">
-          AmaBot uses whatever Amazon has set as default, so confirm the correct address and payment method
-          are selected in your Amazon account before you start automatic checkout.
-        </Callout>
-      </Section>
-
-      <Section title="Amazon Restock Alerts and Automatic Checkout">
-        <p>
-          Restock monitoring exists to feed the checkout engine. When a product is unavailable, AmaBot keeps
-          the listing in its rotation and watches for a buyable offer to reappear. The moment availability
-          returns, you can receive an Amazon restock alert, and AmaBot can automatically attempt checkout in
-          the same cycle when your selected conditions are met.
+          AmaBot can monitor unavailable listings and detect the moment a buyable offer reappears. When a
+          restock is detected, AmaBot can notify you and, if your conditions are met, attempt automatic
+          checkout in the same cycle.
         </p>
         <p>
-          Working as an Amazon restock tracker, AmaBot reports what actually changed on the listing rather
-          than guessing at release schedules. Used as an Amazon restock bot, it turns that detection into an
-          immediate purchase attempt. Both behaviors come from the same monitoring loop, which is why the
-          delay between "back in stock" and "checkout started" stays short.
-        </p>
-        <p>
-          Two realities apply to every restock. A product can sell out again before checkout finishes, and
-          prices and sellers frequently change during a restock — the offer that reappears is not always the
-          offer that disappeared. Read more about{" "}
+          Restock monitoring is a supporting capability of the Amazon auto checkout bot. If tracking
+          restocks is your main goal, read more about{" "}
           <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon restock alerts
-          </Link>{" "}
-          if that side of the tool matters most to you, or see the{" "}
-          <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Pokémon restock tracker
-          </Link>{" "}
-          for a category where restocks are especially unpredictable.
+          </Link>
+          .
         </p>
       </Section>
 
-      <Section title="Optional Amazon Price Monitoring and Alerts">
+      <Section title="Amazon Price Monitoring and Alerts">
         <p>
           Users can also enable optional price monitoring when they want AmaBot to track a product without
-          immediately attempting checkout. In this mode, AmaBot can work as an Amazon price monitor and send
-          an Amazon price alert when the product matches the selected price conditions, leaving the purchase
-          decision entirely to you.
+          immediately attempting checkout. In this mode, AmaBot works as an Amazon price monitor and sends an
+          alert when the product matches your selected price conditions, leaving the purchase decision to you.
         </p>
         <p>
-          This optional alert-only setting is useful while you are still tuning your rules, or for products
-          where you want a human to look at the offer before money moves. Amazon price tracking here uses the
-          same engine as automatic checkout — the same complete-price comparison, the same per-product
-          maximum — only the final step differs. If price watching rather than buying is your main goal, the
-          dedicated{" "}
+          Automatic checkout is the core AmaBot feature, while price monitoring is available for users who
+          prefer alerts. If price watching is your main goal, the dedicated{" "}
           <Link to="/amazon-price-tracker" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             Amazon price tracker
           </Link>{" "}
           page covers that workflow in depth.
-        </p>
-        <p>
-          Optional price monitoring is a supporting capability, not the core of the tool. Most users run
-          automatic checkout on the products they genuinely want and reserve the Amazon price monitor mode
-          for listings they are merely curious about.
-        </p>
-      </Section>
-
-      <Section title="Amazon Price Drop and Deal Alerts">
-        <p>
-          Prices on Amazon are not static. The same product page can move between sellers, and each seller
-          can quote a different total once shipping is included. Because your maximum price is stored per
-          product, Amazon product price tracking is evaluated against your own threshold rather than against
-          a generic discount percentage.
-        </p>
-        <p>
-          An Amazon price drop alert fires when a monitored listing crosses from above your maximum to within
-          it. That is a useful signal, but it is worth being precise about what it means: a detected change
-          is not automatically a genuine discount. A lower number can come from a different seller, a
-          different condition or a temporary offer, and availability may change at the very same moment the
-          price does.
-        </p>
-        <p>
-          The same logic produces an Amazon deal alert. AmaBot reports what the live listing shows and leaves
-          interpretation to you; Amazon price tracking inside the app is a live comparison rather than a
-          historical price chart.
         </p>
       </Section>
 
@@ -407,10 +260,10 @@ function WhatIsAmabot() {
         </ul>
         <p>
           There is also a general risk that applies to any automated interaction with Amazon: the platform
-          may occasionally request verification or restrict certain activity. AmaBot follows safer automation
-          practices, but no tool can guarantee that an account will never be affected. Once an order is
-          placed it lives entirely inside your Amazon account, and cancellations, returns and refunds are
-          handled through Amazon under Amazon's policies.
+          may occasionally request verification or restrict certain activity. Automated interaction with
+          Amazon can carry account-related risks, and no tool can guarantee that an account will never be
+          affected. Once an order is placed it lives entirely inside your Amazon account, and cancellations,
+          returns and refunds are handled through Amazon under Amazon's policies.
         </p>
         <p>
           AmaBot runs as a desktop application on Windows and macOS. Because it runs locally, your computer,
