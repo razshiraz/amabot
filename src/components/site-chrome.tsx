@@ -21,6 +21,15 @@ function TelegramIcon({ className }: { className?: string }) {
   );
 }
 
+// X (Twitter) brand icon
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 export function Logo({ size = "md" }: { size?: "md" | "lg" }) {
   const iconCls = size === "lg" ? "h-[52px] w-[52px] md:h-24 md:w-24" : "h-11 w-11";
   const wordCls = size === "lg" ? "h-8 md:h-14 w-auto translate-y-[2px]" : "h-7 w-auto translate-y-[1px]";
@@ -69,6 +78,7 @@ export function SiteFooter() {
           <nav aria-label="Resources" className="flex flex-col gap-3 text-sm">
             <h2 className="text-sm font-semibold text-foreground">Resources</h2>
             <Link to="/what-is-amabot" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">What Is AmaBot?</Link>
+            <Link to="/amazon-auto-buy" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Amazon Auto Buy</Link>
             <Link to="/amazon-price-tracker" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Amazon Price Tracker</Link>
             <Link to="/amazon-restock-alerts" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Amazon Restock Alerts</Link>
             <Link to="/pokemon-restock-alerts" className="cursor-pointer text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">Pokémon Restock Alerts</Link>
