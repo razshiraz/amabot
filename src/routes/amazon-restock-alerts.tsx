@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Bell, PackageSearch, ShoppingCart, Timer, Filter, Repeat, ShieldQuestion,
+  Bell, PackageSearch, ShoppingCart, Timer, Filter, Repeat,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
@@ -31,7 +31,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can AmaBot automatically purchase a restocked product?",
-    a: "Yes, if Auto-buy is enabled for that product. AmaBot then attempts an order as soon as an eligible offer matches your rules instead of only sending an Amazon restock alert.",
+    a: "Yes, if Auto-buy is enabled for that product. AmaBot then attempts an order when a matching offer is detected instead of only sending an Amazon restock alert.",
   },
   {
     q: "Can I set a maximum price?",
@@ -42,7 +42,7 @@ const faqs: Faq[] = [
     a: "Yes. You set the quantity per order and how many orders AmaBot may place for that product before it stops.",
   },
   {
-    q: "How quickly does AmaBot detect a restock?",
+    q: "How quickly does AmaBot check products?",
     a: "AmaBot intervals are dynamic, generally taking a few seconds between requests, so monitored listings are re-checked continuously while the app is running. Actual detection speed also depends on your connection and on Amazon itself, so no fixed reaction time can be promised.",
   },
   {
@@ -50,40 +50,16 @@ const faqs: Faq[] = [
     a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
   },
   {
-    q: "Do I need to use proxies?",
-    a: "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks.",
-  },
-  {
-    q: "Does AmaBot know if I have Amazon Prime?",
-    a: "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account.",
-  },
-  {
-    q: "Which payment method and shipping address will an Auto-buy order use?",
-    a: "AmaBot uses the default payment method configured in your Amazon account, and if you have an available Amazon Gift Card balance, Amazon may apply that balance first. Orders are sent to the default shipping address configured in your Amazon account, so make sure it is correct before enabling Auto-buy.",
-  },
-  {
-    q: "Do you store my personal information?",
-    a: "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device.",
-  },
-  {
-    q: "Can I switch Amazon accounts?",
-    a: "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account.",
-  },
-  {
-    q: "Is my Amazon account at risk?",
-    a: "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. AmaBot follows safer automation practices but no tool can guarantee that an account will never be affected.",
-  },
-  {
     q: "Does every Amazon restock alert result in an order?",
     a: "No. Inventory can sell out during checkout, prices can change, the seller can change, quantity limits can apply and Amazon may request verification. An Amazon restock alert improves your chances; it does not guarantee an order.",
   },
   {
-    q: "Why is AmaBot free?",
-    a: "AmaBot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users.",
+    q: "Is my Amazon account at risk?",
+    a: "Any automated interaction with Amazon may carry some risk, and Amazon may occasionally request verification or restrict certain activity. No tool can guarantee that an account will never be affected.",
   },
   {
     q: "Is AmaBot affiliated with Amazon?",
-    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
+    a: "No. AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially connected to Amazon. Amazon and its related trademarks belong to their respective owners.",
   },
 ];
 
@@ -105,7 +81,7 @@ function RestockAlerts() {
       <PageHero
         eyebrow="Restock monitoring"
         breadcrumb="Amazon Restock Alerts"
-        h1={<>Get an Instant <span className="text-gradient-gold">Amazon Restock Alert</span></>}
+        h1={<>Get an Amazon Restock Alert <span className="text-gradient-gold">with AmaBot</span></>}
         intro={
           <p>
             AmaBot provides an Amazon restock alert when a monitored product becomes available again. It also
@@ -119,7 +95,7 @@ function RestockAlerts() {
 
       <Section title="Why Amazon Restocks Are So Easy to Miss">
         <p>
-          Amazon does not announce restocks. A product that has been unavailable for weeks can quietly gain a
+          Amazon restocks are often unannounced. A product that has been unavailable for weeks can quietly gain a
           buyable offer at any hour, stay purchasable for a few minutes, and go back to sold out before most
           people notice anything happened.
         </p>
@@ -135,7 +111,7 @@ function RestockAlerts() {
           The sequence is straightforward. A product you want goes out of stock or has no buyable offer.
           You add its Amazon link to AmaBot and monitoring continues in the background. When availability
           changes and a purchasable offer appears, AmaBot evaluates it against your rules, and if it fits you
-          receive an Amazon restock alert — or the automatic action you selected begins immediately.
+          receive an Amazon restock alert — or the automatic action you selected begins after a detected match.
         </p>
         <CardGrid>
           <InfoCard icon={PackageSearch} title="Buyable offer detection">
@@ -150,7 +126,7 @@ function RestockAlerts() {
             Get an Amazon restock alert and complete the purchase yourself on Amazon.
           </InfoCard>
           <InfoCard icon={ShoppingCart} title="Auto-buy on restock">
-            Let AmaBot attempt checkout the instant an eligible offer appears, without waiting for you to
+            Let AmaBot attempt checkout when a matching offer is detected, without waiting for you to
             react.
           </InfoCard>
           <InfoCard icon={Repeat} title="Continuous rotation">
@@ -188,16 +164,14 @@ function RestockAlerts() {
         <p>
           Used as an Amazon restock bot, AmaBot removes two human bottlenecks: the refreshing and the reaction.
           Instead of reloading a product page hoping to catch the moment, the app performs the check for you;
-          instead of noticing an alert and typing your details, Auto-buy can start checkout the moment an
-          eligible offer appears.
+          instead of noticing an alert and typing your details, Auto-buy can start checkout when a matching
+          offer is detected.
         </p>
         <p>
-          The Amazon restock bot works entirely through your own Amazon session on your own computer. It uses
-          the default shipping address and default payment method configured in your Amazon account, and an
-          available Amazon Gift Card balance may be applied by Amazon before that method is charged. It does
-          not bypass Amazon restrictions, quantity limits or verification requests, and any automated
-          interaction with Amazon carries a general risk that the platform requests verification or restricts
-          certain activity.
+          The Amazon restock bot works entirely through your own Amazon session on your own computer. AmaBot
+          uses the payment and shipping settings configured in your Amazon account. It does not bypass Amazon
+          restrictions, quantity limits or verification requests, and any automated interaction with Amazon
+          carries a general risk that the platform requests verification or restricts certain activity.
         </p>
         <Callout title="Auto-buy runs on the rules you saved">
           Before leaving Auto-buy unattended, confirm the maximum price, the quantity per order, the number of
@@ -212,14 +186,15 @@ function RestockAlerts() {
         </p>
         <CompareTable
           caption="Amazon restock alert and restock tracker compared with manual refreshing"
-          head={["", "Manual refreshing", "AmaBot restock tracker"]}
+          head={["Feature", "Manual Refreshing", "AmaBot Restock Tracker"]}
           rows={[
-            ["Checks while you sleep", "No", "Yes, while the session runs"],
-            ["Amazon restock alert on availability", "Only if you happen to look", "Yes"],
-            ["Applies a maximum price", "You judge each time", "Automatic"],
-            ["Applies a seller filter", "Manual", "Automatic"],
-            ["Reaction speed", "However fast you are", "Immediate on match with Auto-buy"],
-            ["Effort per product", "Constant", "One-time setup"],
+            ["Automatic monitoring", "No", "Yes"],
+            ["Monitors while you're away", "No", "Yes"],
+            ["Restock alerts", "No", "Yes"],
+            ["Maximum price control", "No", "Yes"],
+            ["Seller filtering", "No", "Yes"],
+            ["Automatic checkout option", "No", "Yes"],
+            ["Manual refreshing required", "Yes", "No"],
           ]}
         />
         <p>
@@ -278,14 +253,9 @@ function RestockAlerts() {
       <FaqList items={faqs} heading="Amazon Restock Alert FAQ" />
 
       <CtaBlock
-        title="Never refresh a sold-out listing again"
+        title="Let AmaBot Watch for Restocks"
         text="Add the products you are waiting for, set your price and seller rules, and let AmaBot watch availability for you. Free on Windows and macOS."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }
