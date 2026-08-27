@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ShoppingCart, Gauge, SlidersHorizontal, PackageSearch, Bell,
+  ShoppingCart, Gauge, SlidersHorizontal, PackageSearch, Bell, Tag, Store, Timer,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
@@ -10,44 +10,48 @@ import {
 
 const TITLE = "Amazon Auto Buy - Automatic Amazon Purchasing | AmaBot";
 const DESCRIPTION =
-  "AmaBot monitors Amazon products and can attempt an automatic purchase when your selected price, quantity, and availability conditions are met. Learn how Amazon auto buy works.";
+  "Amazon auto buy explained: how the Amazon Auto Buy feature on Amazon works for target prices, and how AmaBot Auto Buy monitors live offers and attempts automatic Amazon checkout.";
 
 const faqs: Faq[] = [
   {
-    q: "What does Amazon auto buy mean?",
-    a: "Amazon auto buy means software places the order attempt instead of you clicking Buy Now. With AmaBot, an automatic Amazon purchase is only attempted when the live offer satisfies the maximum price, quantity and availability conditions you saved for that specific product.",
+    q: "What is the Amazon Auto Buy feature on Amazon?",
+    a: "The Amazon Auto Buy feature on Amazon is Amazon's own built-in option that lets a customer choose an eligible product, set a desired or target price, and have Amazon place the order automatically when its conditions are met, using the payment and shipping settings already configured in that Amazon account.",
   },
   {
-    q: "How is Amazon auto buying different from an alert?",
-    a: "An alert tells you something changed and leaves the purchase to you. Amazon auto buying continues into checkout on its own, in the same monitoring cycle that detected the match, so no human step sits between detection and the order attempt.",
+    q: "How does the Amazon Auto Buy feature on Amazon work?",
+    a: "In broad terms, you select an eligible product and set the price you are willing to pay. Amazon then follows that product's price for you and, when its own conditions for the request are satisfied, completes the purchase without you clicking Buy Now. Amazon's published material has described the feature as operating within a broader purchase window after the desired price is met, so it is best understood as a price-driven convenience rather than a race for scarce inventory.",
   },
   {
-    q: "How fast does automated Amazon purchasing react?",
-    a: "AmaBot intervals are dynamic, generally taking a few seconds between requests. No fixed detection, reaction or checkout speed can be promised, because your connection and Amazon's own responses affect every cycle.",
+    q: "What is the difference between Amazon's Auto Buy feature and AmaBot Auto Buy?",
+    a: "Amazon's official Auto Buy feature on Amazon is centred on waiting for the right price on a product you can generally buy at any time. AmaBot Auto Buy is centred on catching the right offer while it is still available: it re-reads the live listing frequently and attempts checkout when availability, total price, seller and quantity all match the rules you saved.",
   },
   {
-    q: "Does Amazon auto buy guarantee that the order goes through?",
-    a: "No. AmaBot attempts checkout; it cannot guarantee a successful purchase. Inventory can disappear mid-checkout, the price or seller can change, quantity limits can apply, a payment method can be declined and Amazon may request additional verification.",
+    q: "Is the Amazon Auto Buy feature on Amazon designed for high-demand products?",
+    a: "Amazon presents the feature around target prices and price drops rather than around scarce restocks. That framing suits ordinary deal shopping. It is not a statement that the feature fails elsewhere — simply that a target-price tool and a restock-focused tool are solving different problems.",
   },
   {
-    q: "Can AmaBot create stock that does not exist?",
-    a: "No. AmaBot cannot create inventory or stock. It can only act on offers Amazon actually publishes, which is why an unavailable product simply stays in the monitoring rotation until a buyable offer appears.",
+    q: "Why does monitoring frequency matter for fast-selling Amazon products?",
+    a: "On high-demand listings the buyable offer can appear and disappear without notice. For those products, even a relatively short delay between an eligible offer appearing and the purchase attempt can matter, so how often the live listing is re-read becomes as important as the price you were willing to pay.",
   },
   {
-    q: "Which Amazon account and payment details are used?",
-    a: "Automatic Amazon purchasing uses your existing Amazon session and the payment and shipping settings configured in your Amazon account. Your credentials are not stored on AmaBot servers.",
+    q: "How does AmaBot Auto Buy work?",
+    a: "You add a product and define your rules: maximum price, quantity per order, how many orders may be placed, seller preference and the requirement that the offer is actually buyable. AmaBot then monitors that product and, when a qualifying live offer is detected, it can automatically attempt checkout through your existing Amazon session based on the rules you configured.",
   },
   {
-    q: "Can I set a maximum price for Amazon auto purchase?",
-    a: "Yes. Every product carries its own maximum price, compared against the complete price of the current buyable offer including shipping. An offer above your ceiling is not eligible and no purchase attempt is made.",
+    q: "How often does AmaBot monitor products?",
+    a: "AmaBot intervals are dynamic, generally taking a few seconds between requests. No fixed interval is promised, and adding more products can increase the time before AmaBot returns to each individual listing.",
   },
   {
-    q: "Can I limit how much AmaBot buys?",
-    a: "Yes. Quantity settings define how many units belong in one order and how many orders may be placed in total, so an unattended session has a predictable worst case before it stops on its own.",
+    q: "Can I set a maximum price with AmaBot Auto Buy?",
+    a: "Yes. Each product carries its own maximum price, compared against the complete price of the current buyable offer including shipping. An offer above your ceiling is not eligible and no AmaBot purchase attempt is made.",
+  },
+  {
+    q: "Does AmaBot guarantee a successful purchase?",
+    a: "No. AmaBot attempts checkout; it cannot guarantee a completed order. Inventory can disappear mid-checkout, the price or seller can change, quantity restrictions can apply, a payment method can be declined, shipping eligibility can change and Amazon may request additional verification or cancel an order.",
   },
   {
     q: "Is AmaBot affiliated with Amazon?",
-    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners.",
+    a: "No. AmaBot is an independent tool and is not endorsed by, sponsored by, or affiliated with Amazon. Amazon and its related trademarks belong to their respective owners. Automated interaction with Amazon can carry account-related risks, and no tool can guarantee that an account will never be affected.",
   },
 ];
 
@@ -70,148 +74,105 @@ function AmazonAutoBuy() {
         breadcrumb="Amazon Auto Buy"
         h1={<>Amazon Auto Buy with <span className="text-gradient-gold">AmaBot</span></>}
         intro={
-          <p>
-            Amazon auto buy is the point where watching a listing turns into acting on it. AmaBot keeps the
-            products you choose under observation and, when the live offer satisfies the price, quantity and
-            availability conditions you saved, it attempts the purchase for you. Everything below describes
-            how that automatic Amazon purchasing decision is made — and what it deliberately will not do.
-          </p>
+          <>
+            <p>
+              Two different things now share the same name. The{" "}
+              <strong className="text-foreground">Amazon Auto Buy feature on Amazon</strong> is Amazon's own
+              built-in option, designed primarily around automatically purchasing a product once your target
+              price is reached. <strong className="text-foreground">AmaBot Auto Buy</strong> is AmaBot's own
+              automatic purchasing functionality, and it is built for a different situation.
+            </p>
+            <p className="mt-4">
+              Target-price buying works well when the product is there and you are simply waiting for a better
+              deal. High-demand products create another problem entirely: the right offer may appear
+              unexpectedly and sell out again quickly, so the question is not only whether the price was
+              reached, but whether the eligible offer was detected and acted on while it still existed. AmaBot
+              Auto Buy is designed around that second use case.
+            </p>
+          </>
         }
         secondary={{ to: "/what-is-amabot", label: "What Is AmaBot?" }}
       />
 
-      <Section id="what-is-amazon-auto-buy" title="What Amazon Auto Buy Actually Means">
+      <Section id="amazon-auto-buy-feature" title="What Is the Amazon Auto Buy Feature on Amazon?">
         <p>
-          The phrase describes a simple exchange of responsibility. Normally a person decides that an offer is
-          acceptable and then clicks through checkout. With Amazon auto buy, that judgement is written down in
-          advance as a set of conditions, and the software automatically attempts the purchase when those
-          predefined conditions are met. Nothing is inferred and nothing is guessed: an Amazon auto purchase
-          happens only where your saved description of an acceptable offer and the live listing agree.
+          Amazon's official Auto Buy feature on Amazon lets a customer hand a price decision over to Amazon
+          itself. In outline, you select an eligible product, set the desired or target price you are willing
+          to pay, and allow Amazon to follow that product's price on your behalf. When the feature's own
+          conditions are met, Amazon places the order automatically, using the payment and shipping
+          configuration already stored in your Amazon account.
         </p>
         <p>
-          That distinction matters because automatic Amazon purchasing is often described as if it were
-          intelligence. It is not. AmaBot has no opinion on whether a product is worth buying, whether a price
-          is fair, or whether a seller is reputable. It compares the offer in front of it against the numbers
-          you entered, and it either acts or waits.
+          For ordinary price drops and everyday deals this is genuinely convenient. It removes the habit of
+          checking a listing every morning, and it means a discount that arrives at an inconvenient hour is
+          not missed simply because nobody was watching. Amazon's published material has described the Auto
+          Buy feature as operating within a broader purchase window after the desired price is met, which fits
+          that purpose: for a product that stays in stock, completing the order a little later is not a
+          problem.
+        </p>
+        <Callout title="Two names, two products">
+          Throughout this page, "Amazon Auto Buy feature on Amazon" means Amazon's own official feature.
+          "AmaBot Auto Buy" means AmaBot's independent automatic purchasing functionality. AmaBot is not
+          affiliated with Amazon.
+        </Callout>
+      </Section>
+
+      <Section title="Why High-Demand Amazon Products Are Different">
+        <p>
+          It helps to separate two shopping problems that look similar from the outside.
+        </p>
+        <p>
+          <strong className="text-foreground">Price-driven shopping.</strong> The product is available now and
+          you are waiting for a better number. Time pressure is low, because the listing will still be there
+          tomorrow. This is exactly what a target-price tool is for, and it is also what{" "}
+          <Link to="/amazon-price-tracker" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon price monitoring
+          </Link>{" "}
+          is good at.
+        </p>
+        <p>
+          <strong className="text-foreground">High-demand restock shopping.</strong> The right offer may appear
+          without warning and disappear again quickly. Sealed{" "}
+          <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Pokémon products
+          </Link>
+          , collectibles, limited releases, gaming hardware, limited electronics and short-lived Amazon
+          restocks all behave this way. Here price alone is not enough information to act on.
+        </p>
+        <p>
+          For those products the system has to evaluate availability, total price, seller and your purchase
+          conditions together, while the eligible offer is still live. For high-demand products, even a
+          relatively short delay between an eligible offer appearing and the purchase attempt can matter.
         </p>
         <CardGrid>
-          <InfoCard icon={PackageSearch} title="Observation">
-            Each product you add stays in a rotation and is re-read from the live listing rather than from a
-            cached snapshot.
+          <InfoCard icon={Tag} title="Price is one signal">
+            A number that looks right on a listing with nothing purchasable behind it is not an opportunity.
           </InfoCard>
-          <InfoCard icon={SlidersHorizontal} title="Conditions">
-            Maximum price, quantity, order target and seller preference are stored per product and define
-            eligibility.
+          <InfoCard icon={PackageSearch} title="Availability is the other">
+            Whether an offer can be ordered right now is the condition that decides if anything can happen at
+            all.
           </InfoCard>
-          <InfoCard icon={ShoppingCart} title="Action">
-            When every condition agrees with the live offer, Amazon auto buying continues straight into a
-            checkout attempt.
+          <InfoCard icon={Store} title="Seller matters">
+            The same listing can swap between an Amazon-sold offer and a marked-up third-party seller.
           </InfoCard>
-          <InfoCard icon={Gauge} title="Restraint">
-            No agreement, no attempt. A near-miss on price or quantity leaves the product waiting in the
-            rotation.
+          <InfoCard icon={Timer} title="Timing matters">
+            On scarce inventory, the gap between detection and checkout is part of the outcome.
           </InfoCard>
         </CardGrid>
       </Section>
 
-      <Section title="How AmaBot Monitors Amazon Products">
+      <Section title="Amazon Auto Buy Feature on Amazon vs AmaBot Auto Buy">
         <p>
-          Monitoring is the machinery underneath Amazon auto buy. Each listing you add is requested again and
-          again while the app runs, and every pass reads three things together: the price of the current
-          buyable offer, whether that offer can actually be ordered right now, and who is selling it. Reading
-          them together is deliberate — a price that looks right on a listing with no purchasable offer is
-          not a match, and neither is availability at a price you rejected in advance.
+          The cleanest way to hold the difference in mind is this: Amazon's Auto Buy feature is built around
+          waiting for the right price. AmaBot Auto Buy is built around catching the right offer while it is
+          still available.
         </p>
         <p>
-          AmaBot intervals are dynamic, generally taking a few seconds between requests. That pacing is a
-          design choice rather than a limitation to work around: it keeps request volume conservative while
-          still revisiting listings often enough to catch short-lived offers. Adding more products spreads
-          those cycles further apart, which is worth remembering before filling the dashboard with dozens of
-          listings.
-        </p>
-        <SubHeading>Maximum price settings</SubHeading>
-        <p>
-          The maximum price you store for a product is a ceiling on the complete price, shipping included, of
-          whatever offer happens to hold the buy box at that moment. This is the control that keeps automated
-          Amazon purchasing honest during a spike: when a listing returns through a marked-up third-party
-          seller, the offer simply fails the comparison and nothing is bought. Setting a ceiling you would
-          genuinely accept is more useful than setting an optimistic one you will later have to raise. If you
-          would rather watch a number move before committing, the{" "}
-          <Link to="/amazon-price-tracker" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Amazon price monitoring
-          </Link>{" "}
-          workflow covers that path instead.
-        </p>
-        <SubHeading>Quantity settings</SubHeading>
-        <p>
-          Quantity works on two levels. The first is how many units a single order should contain; the second
-          is how many orders AmaBot may place for that product before it stops on its own. Together they give
-          an unattended session a predictable worst case, which is the practical reason to configure them
-          carefully rather than leaving them at whatever felt convenient during setup.
-        </p>
-        <SubHeading>Availability conditions</SubHeading>
-        <p>
-          Availability is evaluated as a yes-or-no fact about the current offer: is there something here that
-          can be ordered? A page that shows a price while every seller is out of stock does not qualify.
-          Because availability on high-demand items reappears without warning, this check is also what links
-          Amazon auto buying to{" "}
-          <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            Amazon restock monitoring
-          </Link>{" "}
-          — the same observation that would raise an alert is the one that opens a purchase attempt.
-        </p>
-      </Section>
-
-      <Section title="How Automatic Amazon Purchasing Works Step by Step">
-        <p>
-          Once the conditions agree, the sequence is short and takes place entirely inside your own Amazon
-          session.
-        </p>
-        <ol className="ml-5 list-decimal space-y-2">
-          <li>A monitoring pass reads the live listing and finds a buyable offer.</li>
-          <li>The complete price, including shipping, is compared with the maximum you saved.</li>
-          <li>The seller is checked against your seller preference for that product.</li>
-          <li>Quantity and remaining order target are checked against your limits.</li>
-          <li>If everything agrees, AmaBot attempts checkout through your existing Amazon session.</li>
-          <li>After an order attempt, AmaBot updates the remaining order target and continues or stops according to your settings.</li>
-        </ol>
-        <p>
-          At no point does AmaBot substitute a similar product, relax a rule that nearly matched, or complete
-          a purchase you did not describe. When a condition fails, the attempt is not made and the product
-          simply stays under observation.
-        </p>
-        <Callout title="Your Amazon account settings decide the details">
-          Automatic Amazon purchasing uses your existing Amazon session and the payment and shipping settings
-          configured in your Amazon account. Confirm those defaults are the ones you want before enabling auto
-          buy.
-        </Callout>
-      </Section>
-
-      <Section title="Monitoring vs Amazon Auto Buy">
-        <p>
-          These two modes are often confused, but they describe different stopping points along the same
-          process.
-        </p>
-        <CompareTable
-          caption="How monitoring and Amazon auto buy differ"
-          head={["", "Monitoring", "Amazon Auto Buy"]}
-          rows={[
-            ["Reads the live listing", "Yes", "Yes"],
-            ["Applies saved conditions", "Yes", "Yes"],
-            ["Price monitoring", "Yes", "Yes"],
-            ["Restock detection", "Yes", "Yes"],
-            ["Automatic checkout", "No", "Yes"],
-            ["Manual purchase required", "Yes", "No"],
-            ["Maximum price protection", "Yes", "Yes"],
-            ["Seller filtering", "Yes", "Yes"],
-            ["Quantity controls", "No", "Yes"],
-          ]}
-        />
-        <p>
-          Monitoring is observation. Amazon auto buying is observation that continues into an order attempt
-          without waiting for you. The engine underneath is identical in both cases; only the final step
-          changes, which is why the same product can be moved between them without reconfiguring anything
-          else. For a wider view of the application itself, see{" "}
+          Neither framing is wrong; they answer different questions. Amazon's official Auto Buy feature on
+          Amazon is primarily centred on target-price purchasing for products you could buy today if you were
+          willing to pay more. AmaBot Auto Buy is designed around frequent live product monitoring and
+          attempting checkout when your specific offer conditions are detected — which is the harder part when
+          inventory, not price, is the scarce thing. For a broader description of the application itself, see{" "}
           <Link to="/what-is-amabot" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             how AmaBot works
           </Link>
@@ -219,59 +180,170 @@ function AmazonAutoBuy() {
         </p>
       </Section>
 
-      <Section title="What Amazon Auto Buy Cannot Do">
+      <Section title="How AmaBot Auto Buy Works">
         <p>
-          Being useful about automatic purchasing means being blunt about its ceiling. A checkout attempt is
-          the beginning of a transaction, not proof of one.
+          You choose the product and write down, in advance, what an acceptable offer looks like. Those rules
+          are stored per product and nothing outside them is ever acted on.
         </p>
         <ul className="ml-5 list-disc space-y-2">
-          <li>AmaBot cannot guarantee a successful purchase, only an attempt on a matching offer.</li>
-          <li>AmaBot cannot create inventory or stock; it can only act on offers Amazon publishes.</li>
-          <li>Availability can end between detection and the completion of checkout.</li>
-          <li>Prices and sellers can change during the same window, invalidating a match that was real a second earlier.</li>
-          <li>Your connection quality and Amazon's own response times affect every cycle.</li>
-          <li>Amazon may apply quantity limits, request additional verification, or cancel an order after it was placed.</li>
-          <li>Payment or shipping eligibility problems inside your Amazon account will stop an otherwise valid attempt.</li>
+          <li><strong className="text-foreground">Maximum price</strong> — the ceiling you are willing to pay.</li>
+          <li><strong className="text-foreground">Quantity</strong> — how many units belong in a single order.</li>
+          <li><strong className="text-foreground">Order limits</strong> — how many orders may be placed in total.</li>
+          <li><strong className="text-foreground">Seller preference</strong> — Amazon only, or any eligible seller.</li>
+          <li><strong className="text-foreground">Availability conditions</strong> — the offer must actually be buyable.</li>
         </ul>
         <p>
-          There is also the general reality that any automated interaction with Amazon may prompt the platform
-          to request verification or restrict certain activity. AmaBot is built to behave conservatively, but
-          no tool can promise that an account is never affected. Collectors chasing the most competitive
-          category of all can read how the same limits play out for{" "}
-          <Link to="/pokemon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
-            sealed Pokémon products
-          </Link>
-          .
+          AmaBot then monitors the selected product while the app runs. AmaBot intervals are dynamic, generally
+          taking a few seconds between requests. No fixed interval is promised, and adding more products can
+          increase the time before AmaBot returns to each individual listing — which is worth remembering
+          before filling the dashboard with dozens of listings.
+        </p>
+
+        <SubHeading>Real-time offer evaluation</SubHeading>
+        <p>
+          Every pass reads the live listing and asks the same questions together rather than one at a time: is
+          the product currently buyable, is the total price within your maximum, does the seller meet your
+          preference, and does the requested quantity fit the rules you configured? A near-miss on any one of
+          them is not a match, and the product simply stays in the monitoring rotation.
+        </p>
+        <p>
+          When a qualifying live offer is detected, AmaBot can automatically attempt checkout based on the
+          rules the user configured. That attempt happens in the same cycle that found the offer, with no
+          human step in between. Automatic purchasing uses your existing Amazon session and the payment and
+          shipping settings configured in your Amazon account; your credentials are not stored on AmaBot
+          servers.
+        </p>
+
+        <SubHeading>Maximum price protection</SubHeading>
+        <p>
+          The maximum price you store is a ceiling on the complete eligible price of whatever offer holds the
+          buy box at that moment, shipping included. This matters most during a high-demand restock: an
+          Amazon-sold offer can disappear and be replaced by a more expensive third-party offer within
+          seconds. AmaBot does not attempt checkout when the new offer sits above your configured maximum.
+        </p>
+
+        <SubHeading>Seller filtering</SubHeading>
+        <p>
+          Seller preference is set per product. You can restrict a product to Amazon-sold offers only, or allow
+          any eligible seller when getting the item matters more than who ships it. Restricting to Amazon is
+          the usual choice on collectibles, where third-party pricing moves fastest.
+        </p>
+
+        <SubHeading>Quantity and order controls</SubHeading>
+        <p>
+          Quantity works on two levels: how many units a single order should contain, and how many orders
+          AmaBot may place for that product before it stops on its own. Together they give an unattended
+          session a predictable worst case.
         </p>
       </Section>
 
-      <Section title="When Amazon Auto Buying Is Worth Enabling">
+      <Section title="Built for Short-Lived Amazon Offers">
         <p>
-          Automatic purchasing earns its place where the buyable window is shorter than a human reaction, and
-          it is mostly wasted where it is not. A product that sits in stock for weeks does not need it; a
-          product whose offer survives for seconds is exactly the case it was written for.
+          AmaBot automatic checkout earns its place in the situations where a person cannot realistically be
+          the one watching:
+        </p>
+        <ul className="ml-5 list-disc space-y-2">
+          <li>Amazon-sold stock returns briefly and without an announcement.</li>
+          <li>A third-party seller replaces an Amazon offer at a higher price.</li>
+          <li>Inventory appears at an hour nobody planned for.</li>
+          <li>The acceptable price exists only for a short period.</li>
+          <li>You cannot sit at the computer refreshing a listing manually.</li>
+        </ul>
+        <p>
+          Consider a concrete case. An Amazon-sold offer appears at $49.99 and later disappears or is replaced
+          by a higher-priced third-party seller. Price history alone will tell you afterwards that $49.99
+          existed. The question that decides whether you own the product is whether that qualifying $49.99
+          offer was detected and acted on while it was still available. That is the gap between price tracking
+          and live offer availability — and the reason{" "}
+          <Link to="/amazon-restock-alerts" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon restock monitoring
+          </Link>{" "}
+          and Amazon restock auto buy belong to the same conversation.
+        </p>
+      </Section>
+
+      <Section title="Price Monitoring Is Not the Same as Catching a Restock">
+        <p>
+          For an ordinary product the sequence is forgiving: the price reaches your target, the product remains
+          available, and an automated purchase can happen comfortably afterwards.
+        </p>
+        <p>
+          For a high-demand product the sequence is unforgiving: an eligible offer appears, inventory may
+          disappear quickly, and the delay between detection and checkout becomes part of the result.
+        </p>
+        <p>
+          This is the whole design principle. AmaBot is designed to reduce the delay between detecting an
+          eligible offer and attempting checkout. That is a design goal, not a promise of zero delay — your
+          connection and Amazon's own response times affect every cycle.
         </p>
         <CardGrid>
-          <InfoCard icon={Bell} title="Unannounced returns">
-            Listings that come back to stock without any schedule, where noticing at all is the hard part.
+          <InfoCard icon={Gauge} title="Detection">
+            The live listing is re-read on a dynamic interval rather than from a cached snapshot.
           </InfoCard>
-          <InfoCard icon={Gauge} title="Short buyable windows">
-            High-demand releases where the offer disappears faster than a page can be loaded manually.
+          <InfoCard icon={SlidersHorizontal} title="Evaluation">
+            Availability, price, seller and quantity are checked together in the same pass.
           </InfoCard>
-          <InfoCard icon={SlidersHorizontal} title="Volatile pricing">
-            Products where sellers rotate through the buy box and a stored ceiling prevents overpaying.
+          <InfoCard icon={ShoppingCart} title="Attempt">
+            A match continues straight into a checkout attempt in your own Amazon session.
           </InfoCard>
-          <InfoCard icon={ShoppingCart} title="Unattended hours">
-            Drops that land while you are asleep or at work, where an alert would arrive too late to use.
+          <InfoCard icon={Bell} title="Restraint">
+            No match, no attempt — the product simply stays under observation.
           </InfoCard>
         </CardGrid>
+      </Section>
+
+      <Section title="Amazon Auto Buy Feature on Amazon vs AmaBot">
+        <p>
+          Only points that can be stated fairly about both tools are listed here. Where Amazon's behaviour is
+          not publicly documented, the row is left out rather than guessed at.
+        </p>
+        <CompareTable
+          caption="Amazon Auto Buy feature on Amazon compared with AmaBot Auto Buy"
+          head={["Feature", "Amazon Auto Buy Feature on Amazon", "AmaBot Auto Buy"]}
+          rows={[
+            ["Target-price purchasing", "Yes", "Yes"],
+            ["Automatic purchasing", "Yes", "Yes"],
+            ["Product monitoring", "Yes", "Yes"],
+            ["Maximum price controls", "Yes", "Yes"],
+            ["Automatic checkout", "Yes", "Yes"],
+            ["Uses your Amazon account payment and shipping settings", "Yes", "Yes"],
+            ["Runs inside Amazon itself", "Yes", "No"],
+            ["Primary design focus", "Target price is reached", "Qualifying live offer is detected"],
+          ]}
+        />
+        <p>
+          The final row is the one that actually explains the choice. Both tools can buy for you; they are
+          simply organised around different triggers.
+        </p>
+      </Section>
+
+      <Section title="What AmaBot Auto Buy Cannot Guarantee">
+        <p>
+          A fast automatic checkout attempt is not the same thing as a guaranteed purchase. A checkout attempt
+          is the beginning of a transaction, not proof of one.
+        </p>
+        <ul className="ml-5 list-disc space-y-2">
+          <li>Inventory can disappear between detection and the completion of checkout.</li>
+          <li>The price can change during the same window, invalidating a match that was real a second earlier.</li>
+          <li>The seller behind the buy box can change mid-attempt.</li>
+          <li>Amazon may apply quantity restrictions to the order.</li>
+          <li>A payment method can be declined.</li>
+          <li>Shipping eligibility can change for the address on the account.</li>
+          <li>Amazon may request additional verification.</li>
+          <li>Amazon may limit or cancel an order after it was placed.</li>
+        </ul>
+        <p>
+          AmaBot also cannot create inventory or stock; it can only act on offers Amazon actually publishes.
+          Automated interaction with Amazon can carry account-related risks, and no tool can guarantee that an
+          account will never be affected — Amazon can request verification or restrict certain activity.
+        </p>
       </Section>
 
       <FaqList items={faqs} heading="Amazon Auto Buy FAQ" />
 
       <CtaBlock
-        title="Set your conditions, let AmaBot attempt the purchase"
-        text="Add a product, choose a maximum price and quantity, and Amazon auto buy takes over from there. Free on Windows and macOS."
+        title="Built for the Amazon Drops You Can't Miss"
+        text="Set your products, maximum price and buying conditions, then let AmaBot monitor for a matching offer and attempt checkout automatically."
       />
     </MarketingLayout>
   );
