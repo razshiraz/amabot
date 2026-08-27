@@ -107,6 +107,16 @@ export function SiteFooter() {
             >
               <TelegramIcon className="h-5 w-5" />
             </a>
+            <a
+              href="https://x.com/amabot_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow AmaBot on X"
+              title="X"
+              className="text-muted-foreground transition hover:text-primary"
+            >
+              <XIcon className="h-5 w-5" />
+            </a>
           </div>
         </div>
         <div className="mt-10 border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
