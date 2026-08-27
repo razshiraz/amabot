@@ -140,6 +140,26 @@ export function InfoCard({
   );
 }
 
+function CompareCell({ value }: { value: string }) {
+  if (value === "Yes") {
+    return (
+      <span className="inline-flex items-center justify-center" role="img" aria-label="Yes">
+        <Check aria-hidden className="h-5 w-5 text-emerald-500" />
+        <span className="sr-only">Yes</span>
+      </span>
+    );
+  }
+  if (value === "No") {
+    return (
+      <span className="inline-flex items-center justify-center" role="img" aria-label="No">
+        <X aria-hidden className="h-5 w-5 text-red-500" />
+        <span className="sr-only">No</span>
+      </span>
+    );
+  }
+  return <>{value}</>;
+}
+
 export function CompareTable({
   caption,
   head,
@@ -156,8 +176,12 @@ export function CompareTable({
           <caption className="sr-only">{caption}</caption>
           <thead>
             <tr className="border-b border-border/60">
-              {head.map((h) => (
-                <th key={h} scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-primary">
+              {head.map((h, i) => (
+                <th
+                  key={h}
+                  scope="col"
+                  className={`px-4 py-3 text-xs font-semibold uppercase tracking-wider text-primary ${i === 0 ? "text-left" : "text-center"}`}
+                >
                   {h}
                 </th>
               ))}
@@ -169,9 +193,13 @@ export function CompareTable({
                 {r.map((cell, i) => (
                   <td
                     key={i}
-                    className={`px-4 py-3 align-top ${i === 0 ? "font-medium text-foreground" : "text-muted-foreground"}`}
+                    className={`px-4 py-3 ${
+                      i === 0
+                        ? "text-left align-top font-medium text-foreground"
+                        : "text-center align-middle text-muted-foreground"
+                    }`}
                   >
-                    {cell}
+                    <CompareCell value={cell} />
                   </td>
                 ))}
               </tr>
