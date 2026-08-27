@@ -84,9 +84,9 @@ function AmazonAutoBuy() {
         <p>
           The phrase describes a simple exchange of responsibility. Normally a person decides that an offer is
           acceptable and then clicks through checkout. With Amazon auto buy, that judgement is written down in
-          advance as a set of conditions, and the software carries out the click. Nothing is inferred and
-          nothing is guessed: an Amazon auto purchase happens only where your saved description of an
-          acceptable offer and the live listing agree.
+          advance as a set of conditions, and the software automatically attempts the purchase when those
+          predefined conditions are met. Nothing is inferred and nothing is guessed: an Amazon auto purchase
+          happens only where your saved description of an acceptable offer and the live listing agree.
         </p>
         <p>
           That distinction matters because automatic Amazon purchasing is often described as if it were
@@ -173,7 +173,7 @@ function AmazonAutoBuy() {
           <li>The seller is checked against your seller preference for that product.</li>
           <li>Quantity and remaining order target are checked against your limits.</li>
           <li>If everything agrees, AmaBot attempts checkout through your existing Amazon session.</li>
-          <li>The order target is decremented, and monitoring continues or stops according to your settings.</li>
+          <li>After an order attempt, AmaBot updates the remaining order target and continues or stops according to your settings.</li>
         </ol>
         <p>
           At no point does AmaBot substitute a similar product, relax a rule that nearly matched, or complete
@@ -181,9 +181,8 @@ function AmazonAutoBuy() {
           simply stays under observation.
         </p>
         <Callout title="Your Amazon account settings decide the details">
-          Automatic Amazon purchasing uses your existing Amazon session and your configured Amazon account
-          settings — the default shipping address, the default payment method, and any gift card balance
-          Amazon chooses to apply first. Confirm those defaults are the ones you want before enabling auto
+          Automatic Amazon purchasing uses your existing Amazon session and the payment and shipping settings
+          configured in your Amazon account. Confirm those defaults are the ones you want before enabling auto
           buy.
         </Callout>
       </Section>
@@ -243,11 +242,6 @@ function AmazonAutoBuy() {
           </Link>
           .
         </p>
-        <Callout title="An independent tool">
-          AmaBot is an independent application that runs on your own computer. It is not affiliated with,
-          endorsed by, sponsored by or officially connected to Amazon, and it acts only on the rules you
-          configure.
-        </Callout>
       </Section>
 
       <Section title="When Amazon Auto Buying Is Worth Enabling">
