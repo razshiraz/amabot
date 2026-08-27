@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Bell, PackageSearch, ShoppingCart, Timer, Filter, Repeat, ShieldQuestion,
+  Bell, PackageSearch, ShoppingCart, Timer, Filter, Repeat,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
