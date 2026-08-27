@@ -218,9 +218,13 @@ function WhatIsAmabot() {
           how many orders the Amazon bot may place before it stops on its own.
         </p>
         <p>
-          Checks run roughly five seconds per product per cycle, so a single product is revisited about every
-          five seconds and two products about every ten. That trade-off is worth knowing before you load the
-          dashboard with dozens of listings.
+          AmaBot intervals are dynamic, generally taking a few seconds between requests. Adding more products
+          spreads those cycles further apart, which is worth knowing before you load the dashboard with dozens
+          of listings. For a closer look at the purchase side of this, see the dedicated{" "}
+          <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
+            Amazon Auto Buy
+          </Link>{" "}
+          guide.
         </p>
       </Section>
 
