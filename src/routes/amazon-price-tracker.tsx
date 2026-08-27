@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Tag, Filter, Bell, ShoppingCart, LineChart, ListChecks, ShieldQuestion,
+  Tag, Filter, Bell, ShoppingCart, LineChart, ListChecks,
 } from "lucide-react";
 import { MarketingLayout } from "@/components/marketing/marketing-chrome";
 import {
@@ -10,7 +10,7 @@ import {
 
 const TITLE = "Amazon Price Tracker and Price Drop Alerts | AmaBot";
 const DESCRIPTION =
-  "Use the AmaBot Amazon price tracker to monitor product prices, set a target price and receive an Amazon price alert when selected conditions are met.";
+  "Use the AmaBot Amazon price tracker to monitor product prices, set a maximum price and receive an Amazon price alert when selected conditions are met.";
 
 const faqs: Faq[] = [
   {
@@ -35,7 +35,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does AmaBot provide Amazon deal alerts?",
-    a: "AmaBot provides an Amazon deal alert only for the products you added and only against your own target price. It does not publish a general feed of deals for products you are not tracking.",
+    a: "AmaBot provides an Amazon deal alert only for the products you added and only against your own maximum price. It does not publish a general feed of deals for products you are not tracking.",
   },
   {
     q: "How does Amazon product price tracking work with different sellers?",
@@ -56,30 +56,6 @@ const faqs: Faq[] = [
   {
     q: "Can I track multiple products, and how often are prices checked?",
     a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
-  },
-  {
-    q: "Do I need to use proxies for price tracking?",
-    a: "No. AmaBot does not support or require proxies. All Amazon activity is performed using your own internet connection and IP address. AmaBot is designed to operate conservatively and minimize unnecessary requests, using controlled and carefully managed request timing rather than routing your activity through external proxy networks.",
-  },
-  {
-    q: "Does AmaBot know if I have Amazon Prime?",
-    a: "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account.",
-  },
-  {
-    q: "Which payment method and shipping address are used if Auto-buy places an order?",
-    a: "AmaBot uses the default payment method configured in your Amazon account, and if you have an available Amazon Gift Card balance, Amazon may apply that balance first. Orders are sent to the default shipping address configured in your Amazon account, so make sure it is correct before enabling Auto-buy.",
-  },
-  {
-    q: "Do you store my personal information?",
-    a: "AmaBot does not store your Amazon credentials or payment information on our servers. Your Amazon session runs locally on your computer through a separate browser session. Product links, buying rules, and preferences may be saved locally on your device.",
-  },
-  {
-    q: "Can I switch Amazon accounts?",
-    a: "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account.",
-  },
-  {
-    q: "Why is the Amazon price tracker free?",
-    a: "AmaBot is free because we may earn affiliate commissions from qualifying purchases made through Amazon, at no additional cost to you. These commissions help us develop new features, release updates, and improve the platform while keeping it free for users.",
   },
   {
     q: "Is AmaBot affiliated with Amazon?",
@@ -140,13 +116,13 @@ function PriceTracker() {
           dashboard.
         </p>
         <p>
-          Amazon price tracking here is rule-based rather than open-ended. Your target price defines what you
-          consider acceptable, the maximum price is the hard ceiling that an offer may not exceed, and the
-          seller preference decides whose offers count. Product monitoring continues quietly until one of your
-          products satisfies all of those conditions at the same time.
+          Amazon price tracking here is rule-based rather than open-ended. The maximum price you set per
+          product is the highest total price you are willing to accept — the hard ceiling that an offer may
+          not exceed — and the seller preference decides whose offers count. Product monitoring continues
+          quietly until one of your products satisfies all of those conditions at the same time.
         </p>
         <CardGrid>
-          <InfoCard icon={Tag} title="Target price and maximum price">
+          <InfoCard icon={Tag} title="Maximum price">
             Set the highest total you would accept for each listing. Anything above that maximum price is not
             treated as a match.
           </InfoCard>
@@ -174,7 +150,7 @@ function PriceTracker() {
       <Section title="Set an Amazon Price Alert for Any Product">
         <p>
           Creating an Amazon price alert takes one product link and one number. Paste the Amazon URL, enter the
-          target price you are willing to pay in total, and choose Monitor Only so that AmaBot alerts you
+          maximum price you are willing to pay in total, and choose Monitor Only so that AmaBot alerts you
           rather than buying. From that point the product sits in your list and the alert waits for a
           qualifying offer.
         </p>
@@ -265,26 +241,25 @@ function PriceTracker() {
           head={["", "Price alert (Monitor Only)", "Auto-buy"]}
           rows={[
             ["Amazon price tracking", "Yes", "Yes"],
-            ["Target and maximum price", "Yes", "Yes"],
+            ["Maximum price protection", "Yes", "Yes"],
             ["Seller filtering", "Yes", "Yes"],
             ["Amazon price alert on a match", "Yes", "Yes"],
             ["Places an order", "Never", "Attempts checkout automatically"],
             ["Who decides", "You", "Your saved rules"],
-            ["Reaction speed", "Depends on you", "Immediate on match"],
+            ["Reaction speed", "Depends on you", "No manual action required after a detected match"],
             ["Best for", "Watching prices and deciding yourself", "Fast drops you cannot sit and watch"],
           ]}
         />
         <p>
-          Many people start in Monitor Only to see how their products behave in practice, then move selected
-          items to{" "}
+          Users can start in Monitor Only to observe product behavior before enabling automatic purchasing on
+          selected items. In Auto-buy mode AmaBot attempts checkout through your
+          own Amazon session, and AmaBot uses the payment and shipping settings configured in your Amazon
+          account. Your credentials and payment details are not stored on AmaBot servers, because the Amazon
+          session runs locally on your computer. Read more about{" "}
           <Link to="/amazon-auto-buy" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             automatic Amazon purchasing
           </Link>{" "}
-          once the rules feel right. In Auto-buy mode AmaBot attempts checkout through your
-          own Amazon session, using the default shipping address and default payment method configured in your
-          Amazon account; an available Amazon Gift Card balance may be applied by Amazon first. Your
-          credentials and payment details are not stored on AmaBot servers, because the Amazon session runs
-          locally on your computer.
+          on the dedicated page.
         </p>
         <Callout title="A match is not a guaranteed order">
           Inventory can disappear mid-checkout, prices can change, quantity limits can apply, payment can be
@@ -315,11 +290,6 @@ function PriceTracker() {
         title="Start tracking Amazon prices for free"
         text="Add your products, set a maximum price per item and choose alerts or automatic purchasing. Windows and macOS, no credit card required."
       />
-      <div className="pb-4 text-center text-xs text-muted-foreground">
-        <ShieldQuestion aria-hidden className="mx-auto mb-2 h-4 w-4" />
-        AmaBot is an independent tool and is not affiliated with, endorsed by, sponsored by or officially
-        connected to Amazon.
-      </div>
     </MarketingLayout>
   );
 }
