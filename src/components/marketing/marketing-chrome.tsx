@@ -57,12 +57,12 @@ function MarketingHeader() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto mt-4 max-w-6xl px-4">
+      <div className="mx-auto mt-4 max-w-6xl px-4 lg:max-w-7xl 2xl:max-w-[1400px]">
         <div className="rounded-2xl border border-white/10 bg-background/25 px-3 py-3 backdrop-blur-2xl md:px-5 md:py-4">
           <div className="flex items-center justify-between gap-2">
             <Logo size="lg" />
 
-            <nav aria-label="Main" className="hidden items-center gap-3 text-base text-white lg:ml-14 lg:mr-10 lg:flex lg:font-medium lg:whitespace-nowrap">
+            <nav aria-label="Main" className="hidden items-center gap-3 text-base text-white lg:ml-16 lg:mr-12 xl:ml-20 xl:mr-16 2xl:ml-24 2xl:mr-20 lg:flex lg:font-medium lg:whitespace-nowrap">
               <Link
                 to="/"
                 activeOptions={{ exact: true }}
