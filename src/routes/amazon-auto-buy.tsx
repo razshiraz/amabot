@@ -187,30 +187,31 @@ function AmazonAutoBuy() {
         </Callout>
       </Section>
 
-      <Section title="Monitoring, Alerts and Amazon Auto Buy Compared">
+      <Section title="Monitoring vs Amazon Auto Buy">
         <p>
-          These three words often get used interchangeably, which causes most of the confusion around what an
-          automated purchasing tool actually does. They describe three different stopping points along the
-          same process.
+          These two modes are often confused, but they describe different stopping points along the same
+          process.
         </p>
         <CompareTable
-          caption="How monitoring, alerts and Amazon auto buy differ"
-          head={["", "Monitoring", "Alerts", "Amazon auto buy"]}
+          caption="How monitoring and Amazon auto buy differ"
+          head={["", "Monitoring", "Amazon Auto Buy"]}
           rows={[
-            ["Reads the live listing", "Yes", "Yes", "Yes"],
-            ["Applies your saved conditions", "Yes", "Yes", "Yes"],
-            ["Tells you something changed", "In the dashboard", "Yes", "Yes"],
-            ["Continues into checkout", "No", "No", "Yes, on a full match"],
-            ["Who places the order", "You", "You", "AmaBot, on your behalf"],
-            ["Time between detection and order", "However long you take", "However long you take", "No human step in between"],
-            ["Guarantees a completed order", "No", "No", "No"],
+            ["Reads the live listing", "Yes", "Yes"],
+            ["Applies saved conditions", "Yes", "Yes"],
+            ["Price monitoring", "Yes", "Yes"],
+            ["Restock detection", "Yes", "Yes"],
+            ["Automatic checkout", "No", "Yes"],
+            ["Manual purchase required", "Yes", "No"],
+            ["Maximum price protection", "Yes", "Yes"],
+            ["Seller filtering", "Yes", "Yes"],
+            ["Quantity controls", "No", "Yes"],
           ]}
         />
         <p>
-          Monitoring is observation. An alert is observation plus a message. Amazon auto buying is observation
-          that continues into an order attempt without waiting for you. The engine underneath is identical in
-          all three cases; only the final step changes, which is why the same product can be moved between
-          them without reconfiguring anything else. For a wider view of the application itself, see{" "}
+          Monitoring is observation. Amazon auto buying is observation that continues into an order attempt
+          without waiting for you. The engine underneath is identical in both cases; only the final step
+          changes, which is why the same product can be moved between them without reconfiguring anything
+          else. For a wider view of the application itself, see{" "}
           <Link to="/what-is-amabot" className="cursor-pointer text-primary underline-offset-4 hover:underline">
             how AmaBot works
           </Link>
