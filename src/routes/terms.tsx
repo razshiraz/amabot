@@ -21,7 +21,7 @@ function TermsPage() {
     <LegalLayout title="Terms of Use" lastUpdated="August 30, 2026">
       <LegalSection title="1. Acceptance of these terms">
         <p>These Terms of Use govern your access to and use of the AmaBot website, desktop application, monitoring features, notification features, and automatic purchasing tools.</p>
-        <p>By creating an account, downloading or using AmaBot, or enabling any monitoring or purchasing feature, you agree to these Terms. If you do not agree, do not use amabot.</p>
+        <p>By creating an account, downloading or using AmaBot, or enabling any monitoring or purchasing feature, you agree to these Terms. If you do not agree, do not use AmaBot.</p>
       </LegalSection>
 
       <LegalSection title="2. About AmaBot">
