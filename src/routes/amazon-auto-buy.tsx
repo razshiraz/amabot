@@ -108,8 +108,8 @@ function AmazonAutoBuy() {
             checkout attempt.
           </InfoCard>
           <InfoCard icon={Gauge} title="Restraint">
-            No agreement, no attempt. A near-miss on price or quantity leaves the product waiting in the
-            rotation.
+            No agreement, no attempt. A near-miss on price or quantity leaves the product under continuous
+            monitoring until a qualifying offer is detected.
           </InfoCard>
         </CardGrid>
       </Section>
@@ -123,11 +123,10 @@ function AmazonAutoBuy() {
           not a match, and neither is availability at a price you rejected in advance.
         </p>
         <p>
-          AmaBot intervals are dynamic, generally taking a few seconds between requests. That pacing is a
-          design choice rather than a limitation to work around: it keeps request volume conservative while
-          still revisiting listings often enough to catch short-lived offers. Adding more products spreads
-          those cycles further apart, which is worth remembering before filling the dashboard with dozens of
-          listings.
+          AmaBot monitors each individual product every few seconds while the app is running. Each monitored
+          product continues to be checked every few seconds even when additional products are added. Monitoring
+          frequency for an individual product does not become slower based on the total number of products
+          being monitored.
         </p>
         <SubHeading>Maximum price settings</SubHeading>
         <p>
