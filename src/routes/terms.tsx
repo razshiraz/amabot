@@ -30,7 +30,7 @@ function TermsPage() {
       </LegalSection>
 
       <LegalSection title="3. Eligibility">
-        <p>You must be at least 18 years old and legally capable of entering into a binding agreement to use amabot.</p>
+        <p>You must be at least 18 years old and legally capable of entering into a binding agreement to use AmaBot.</p>
         <p>You are responsible for ensuring that your use of AmaBot complies with the laws and marketplace terms that apply to you.</p>
       </LegalSection>
 
@@ -93,7 +93,7 @@ function TermsPage() {
           <li>Use AmaBot for unlawful, fraudulent, abusive, or deceptive purposes.</li>
           <li>Attempt to bypass Amazon restrictions, security measures, or purchase limits.</li>
           <li>Reverse engineer, copy, modify, resell, sublicense, or redistribute AmaBot except where applicable law expressly permits it.</li>
-          <li>Interfere with the security, availability, or operation of amabot.</li>
+          <li>Interfere with the security, availability, or operation of AmaBot.</li>
           <li>Use AmaBot to access another person's Amazon account without authorization.</li>
           <li>Introduce malware, malicious code, or automated attacks.</li>
           <li>Misrepresent your relationship with AmaBot, Amazon, or any seller.</li>
@@ -108,7 +108,7 @@ function TermsPage() {
 
       <LegalSection title="15. Affiliate relationship">
         <p>AmaBot may earn commissions from qualifying purchases made through Amazon affiliate links.</p>
-        <p>This affiliate relationship does not increase the price you pay and does not mean that Amazon endorses or sponsors amabot.</p>
+        <p>This affiliate relationship does not increase the price you pay and does not mean that Amazon endorses or sponsors AmaBot.</p>
         <p>Additional details are available in the Affiliate Disclosure.</p>
       </LegalSection>
 
