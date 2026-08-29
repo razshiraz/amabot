@@ -6,9 +6,11 @@ import { Logo, SiteFooter } from "@/components/site-chrome";
 export function LegalLayout({
   title,
   children,
+  lastUpdated = "July 23, 2026",
 }: {
   title: string;
   children: ReactNode;
+  lastUpdated?: string;
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,7 +41,7 @@ export function LegalLayout({
         <article className="mx-auto max-w-[900px] px-4">
           <div className="mb-10">
             <h1 className="text-balance text-4xl font-bold md:text-5xl">{title}</h1>
-            <p className="mt-3 text-sm text-muted-foreground">Last updated: July 23, 2026</p>
+            <p className="mt-3 text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
           </div>
           <div className="legal-prose space-y-6 text-[15px] leading-relaxed text-foreground/90">
             {children}

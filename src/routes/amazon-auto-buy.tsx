@@ -23,7 +23,7 @@ const faqs: Faq[] = [
   },
   {
     q: "How fast does automated Amazon purchasing react?",
-    a: "AmaBot intervals are dynamic, generally taking a few seconds between requests. No fixed detection, reaction or checkout speed can be promised, because your connection and Amazon's own responses affect every cycle.",
+    a: "AmaBot checks each individual product every few seconds. When a qualifying offer is detected and Auto-buy is enabled, AmaBot can begin the purchasing process automatically. Actual detection and checkout timing may still vary because of your internet connection and Amazon response times.",
   },
   {
     q: "Does Amazon auto buy guarantee that the order goes through?",
@@ -31,7 +31,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can AmaBot create stock that does not exist?",
-    a: "No. AmaBot cannot create inventory or stock. It can only act on offers Amazon actually publishes, which is why an unavailable product simply stays in the monitoring rotation until a buyable offer appears.",
+    a: "No. AmaBot cannot create inventory or stock. It can only act on offers Amazon actually publishes, which is why an unavailable product continues to be checked every few seconds until a buyable offer appears.",
   },
   {
     q: "Which Amazon account and payment details are used?",
@@ -96,8 +96,8 @@ function AmazonAutoBuy() {
         </p>
         <CardGrid>
           <InfoCard icon={PackageSearch} title="Observation">
-            Each product you add stays in a rotation and is re-read from the live listing rather than from a
-            cached snapshot.
+            Each product you add is checked every few seconds and is re-read from the live listing rather than
+            from a cached snapshot.
           </InfoCard>
           <InfoCard icon={SlidersHorizontal} title="Conditions">
             Maximum price, quantity, order target and seller preference are stored per product and define

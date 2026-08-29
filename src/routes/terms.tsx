@@ -18,7 +18,7 @@ export const Route = createFileRoute("/terms")({
 
 function TermsPage() {
   return (
-    <LegalLayout title="Terms of Use">
+    <LegalLayout title="Terms of Use" lastUpdated="August 30, 2026">
       <LegalSection title="1. Acceptance of these terms">
         <p>These Terms of Use govern your access to and use of the AmaBot website, desktop application, monitoring features, notification features, and automatic purchasing tools.</p>
         <p>By creating an account, downloading or using AmaBot, or enabling any monitoring or purchasing feature, you agree to these Terms. If you do not agree, do not use amabot.</p>
@@ -82,9 +82,9 @@ function TermsPage() {
       </LegalSection>
 
       <LegalSection title="12. Product-check intervals">
-        <p>AmaBot checks products in rotation, allowing approximately five seconds per product.</p>
-        <p>The interval between checks for the same product increases as more products are added. One product is checked about every 5 seconds, two products about every 10 seconds, three products about every 15 seconds, and so on.</p>
-        <p>Actual timing may vary because of network performance, Amazon response times, verification requests, or other technical conditions.</p>
+        <p>AmaBot monitors each individual configured product every few seconds while monitoring is active.</p>
+        <p>The monitoring interval for an individual product does not increase based on the total number of products configured by the user.</p>
+        <p>Actual detection and response timing may still vary because of network performance, Amazon response times, verification requests, or other technical conditions.</p>
       </LegalSection>
 
       <LegalSection title="13. Acceptable use">
