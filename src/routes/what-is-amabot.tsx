@@ -48,7 +48,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can I monitor multiple products?",
-    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
+    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. Each individual product continues to be monitored every few seconds, even when multiple products are being monitored at the same time.",
   },
   {
     q: "Is my Amazon account at risk?",
@@ -112,7 +112,7 @@ function WhatIsAmabot() {
             rather than notifying you and waiting.
           </InfoCard>
           <InfoCard icon={Activity} title="Continuous monitoring">
-            Every product you add is checked in rotation for as long as monitoring is running, so nothing
+            Every product you add is continuously monitored and checked every few seconds for as long as monitoring is running, so nothing
             depends on you being at the keyboard.
           </InfoCard>
           <InfoCard icon={SlidersHorizontal} title="Your conditions">

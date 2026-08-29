@@ -19,7 +19,7 @@ const faqs: Faq[] = [
   },
   {
     q: "How does an Amazon restock tracker work?",
-    a: "An Amazon restock tracker checks selected listings in rotation instead of relying on manual refreshing. In AmaBot you add the product link, set a maximum price and quantity, choose a seller preference, and the tracker keeps checking availability while the session runs.",
+    a: "An Amazon restock tracker continuously checks selected listings instead of relying on manual refreshing. In AmaBot you add the product link, set a maximum price and quantity, choose a seller preference, and each individual product is checked every few seconds while the session runs.",
   },
   {
     q: "Is AmaBot an Amazon restock bot?",
@@ -43,11 +43,11 @@ const faqs: Faq[] = [
   },
   {
     q: "How quickly does AmaBot check products?",
-    a: "AmaBot intervals are dynamic, generally taking a few seconds between requests, so monitored listings are re-checked continuously while the app is running. Actual detection speed also depends on your connection and on Amazon itself, so no fixed reaction time can be promised.",
+    a: "AmaBot checks each individual product every few seconds while monitoring is running. Adding more products does not make the monitoring interval of existing products slower. Actual detection speed can still be affected by your internet connection and Amazon response times.",
   },
   {
     q: "Can I monitor multiple products at once?",
-    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
+    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. Each individual product continues to be checked every few seconds, even when multiple products are being monitored at the same time.",
   },
   {
     q: "Does every Amazon restock alert result in an order?",
@@ -129,8 +129,8 @@ function RestockAlerts() {
             Let AmaBot attempt checkout when a matching offer is detected, without waiting for you to
             react.
           </InfoCard>
-          <InfoCard icon={Repeat} title="Continuous rotation">
-            Products are checked one after another for as long as monitoring stays on.
+          <InfoCard icon={Repeat} title="Continuous monitoring">
+            Each individual product is checked every few seconds for as long as monitoring stays on.
           </InfoCard>
           <InfoCard icon={Timer} title="Runs while you do other things">
             The app keeps watching in the background so the restock window does not depend on your attention.
@@ -146,11 +146,10 @@ function RestockAlerts() {
           decide between alerts and optional automatic purchasing and start monitoring.
         </p>
         <p>
-          From there the Amazon restock tracker takes over product availability monitoring. Each product in
-          your list is checked in rotation, and the live dashboard shows what was observed on each pass:
-          whether an offer exists, what it costs and whether it satisfied your rules. Because checks happen in
-          rotation, a short deliberate list is revisited more often than a long wish list — which matters when
-          a restock lasts only minutes.
+          From there the Amazon restock tracker takes over product availability monitoring. Each individual
+          product is checked every few seconds, and the live dashboard shows what was observed: whether an
+          offer exists, what it costs and whether it satisfied your rules. Monitoring frequency for an
+          individual product does not become slower when additional products are added.
         </p>
         <SubHeading>Choosing your seller preference</SubHeading>
         <p>

@@ -23,7 +23,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can I use AmaBot as an Amazon price monitor?",
-    a: "Yes. Used as an Amazon price monitor, AmaBot checks the current listing price of each product in rotation while the app is running, so you do not have to keep reloading Amazon product pages yourself.",
+    a: "Yes. Used as an Amazon price monitor, AmaBot checks the current listing price of each individual product every few seconds while the app is running, so you do not have to keep reloading Amazon product pages yourself.",
   },
   {
     q: "How does Amazon price tracking work?",
@@ -55,7 +55,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Can I track multiple products, and how often are prices checked?",
-    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
+    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. Each individual product is checked every few seconds, even when multiple products are being monitored at the same time.",
   },
   {
     q: "Is AmaBot affiliated with Amazon?",
@@ -112,8 +112,8 @@ function PriceTracker() {
         <p>
           The AmaBot Amazon price tracker is a desktop application for Windows and macOS. You add products by
           pasting their Amazon links, and each product carries its own rules. Once product monitoring is
-          running, AmaBot works through your list in rotation and reports every observation in a live activity
-          dashboard.
+          running, AmaBot checks each individual product every few seconds and reports its observations in a
+          live activity dashboard.
         </p>
         <p>
           Amazon price tracking here is rule-based rather than open-ended. The maximum price you set per
@@ -170,10 +170,10 @@ function PriceTracker() {
 
       <Section title="Use AmaBot as an Amazon Price Monitor">
         <p>
-          As an Amazon price monitor, AmaBot keeps checking the current listing price of each product for as
-          long as the session stays open, which removes the constant manual refreshing that makes watching a
-          drop exhausting. Products are checked in rotation, so a short focused list is revisited far more
-          often than a long wish list.
+          As an Amazon price monitor, AmaBot checks the current listing price of each individual product every
+          few seconds for as long as the session stays open, which removes the constant manual refreshing that
+          makes watching a drop exhausting. Adding more products does not make the monitoring interval of
+          existing products slower.
         </p>
         <p>
           The monitor reports what it actually sees: the current price, whether a buyable offer exists and

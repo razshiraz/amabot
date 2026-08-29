@@ -57,7 +57,7 @@ const faqSchema = {
     ["Can I switch Amazon accounts?", "No. For security purposes, each Amazon account is linked to a single AmaBot account. Once your Amazon account is connected, you cannot simply switch to a different Amazon account under the same AmaBot user. This helps keep account sessions consistent and provides a safer and more controlled connection between AmaBot and your Amazon account."],
     ["What is Register Passkey?", "Register Passkey helps maintain a secure, persistent Amazon session inside AmaBot's separate browser. It reduces repeated sign-ins, although Amazon may occasionally request additional verification."],
     ["Does AmaBot know if I have Amazon Prime?", "Yes. AmaBot can recognize whether your connected Amazon account has an active Prime membership and will automatically work with the pricing, shipping costs, and Prime benefits available to your account. If you are not a Prime member, AmaBot will also account for the prices and shipping costs that apply specifically to your Amazon account."],
-    ["Can I monitor multiple products?", "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests."],
+    ["Can I monitor multiple products?", "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot monitors each individual product every few seconds, even when multiple products are being monitored at the same time."],
     ["What is an Amazon bot?", "An Amazon bot is a tool that monitors selected Amazon products and reacts when specific price or availability conditions are met. AmaBot is designed for consumers who want alerts or optional automatic purchasing without constantly refreshing product pages."],
     ["Is AmaBot an Amazon auto checkout bot?", "Yes. AmaBot can work as an Amazon auto checkout bot when automatic purchasing is enabled. It monitors the selected product and can attempt checkout when the price, quantity and availability match the user's settings."],
     ["How does Amazon auto buy work with AmaBot?", "Amazon auto buy allows AmaBot to attempt a purchase automatically after a monitored product matches the conditions selected by the user. A successful order is not guaranteed because inventory, prices, sellers, shipping eligibility and payment status can change."],
@@ -666,7 +666,7 @@ const faqs: Array<{ q: string; a: FaqAnswer }> = [
 
   {
     q: "Can I monitor multiple products?",
-    a: { paragraphs: ["Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests."] },
+    a: { paragraphs: ["Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot monitors each individual product every few seconds, even when multiple products are being monitored at the same time."] },
   },
 
   {
