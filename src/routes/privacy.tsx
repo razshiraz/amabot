@@ -72,7 +72,7 @@ function PrivacyPage() {
       <LegalSection title="7. How information is used">
         <p>Information may be used to:</p>
         <ul className="ml-5 list-disc space-y-2">
-          <li>Provide and maintain amabot.</li>
+          <li>Provide and maintain AmaBot.</li>
           <li>Authenticate and secure accounts.</li>
           <li>Deliver application updates.</li>
           <li>Troubleshoot errors and support requests.</li>
@@ -98,7 +98,7 @@ function PrivacyPage() {
         <p>AmaBot does not sell personal information.</p>
         <p>Information may be shared only when reasonably necessary:</p>
         <ul className="ml-5 list-disc space-y-2">
-          <li>With service providers that help operate amabot.</li>
+          <li>With service providers that help operate AmaBot.</li>
           <li>To comply with law, legal process, or valid government requests.</li>
           <li>To investigate fraud, abuse, or security incidents.</li>
           <li>To protect users, AmaBot, or the public.</li>

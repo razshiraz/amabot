@@ -34,7 +34,7 @@ function AffiliatePage() {
       <LegalSection title="Why AmaBot uses affiliate links">
         <p>Affiliate commissions help fund:</p>
         <ul className="ml-5 list-disc space-y-2">
-          <li>Continued development of amabot.</li>
+          <li>Continued development of AmaBot.</li>
           <li>Application maintenance.</li>
           <li>Compatibility updates.</li>
           <li>New features.</li>

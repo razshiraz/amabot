@@ -49,7 +49,7 @@ const faqs: Faq[] = [
   },
   {
     q: "How many Pokémon products can I monitor?",
-    a: "You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot intervals are dynamic, generally taking a few seconds between requests.",
+    a: "Yes. You can add and monitor multiple Amazon products and configure different buying rules for each one. AmaBot monitors each individual product every few seconds, even when multiple products are being monitored at the same time.",
   },
   {
     q: "Is my Amazon account at risk?",
@@ -98,7 +98,7 @@ function PokemonRestockAlerts() {
 
       <Section title="Why Pokémon Drops Are Different">
         <p>
-          Sealed Pokémon products combine three things that make them brutal to buy at retail: limited
+          Sealed Pokémon products combine three things that make them highly competitive to buy at retail: limited
           allocation, enormous demand and a resale market that rewards whoever gets there first. A restock can
           last only a short time, and many Pokemon restocks appear without advance notice.
         </p>
@@ -124,8 +124,8 @@ function PokemonRestockAlerts() {
         </p>
         <CardGrid>
           <InfoCard icon={Tag} title="Maximum price per product">
-            The complete price including shipping must fit your ceiling, so a scalper-priced restock is not a
-            match.
+            The complete price including shipping must fit your ceiling, so a heavily marked-up restock is
+            not a match.
           </InfoCard>
           <InfoCard icon={Boxes} title="Quantity and order limits">
             Decide how many units belong in an order and how many orders AmaBot may place before it stops.
@@ -211,11 +211,11 @@ function PokemonRestockAlerts() {
             ["Manual refreshing required", "Yes", "No"],
           ]}
         />
-        <SubHeading>Keep the list focused</SubHeading>
+        <SubHeading>Monitor multiple products</SubHeading>
         <p>
-          Since checks happen in rotation, every extra product increases the delay before the tracker returns
-          to any single listing. Collectors get better results from a short list of products they truly intend
-          to buy than from a long list of maybes.
+          Each individual product continues to be monitored every few seconds, even when multiple products are
+          being tracked at the same time. Adding more products does not make the monitoring interval of
+          existing products slower.
         </p>
       </Section>
 
