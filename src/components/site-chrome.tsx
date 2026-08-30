@@ -120,7 +120,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-10 border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} amabot. All rights reserved.
+          © {new Date().getFullYear()} AmaBot. All rights reserved.
         </div>
       </div>
     </footer>

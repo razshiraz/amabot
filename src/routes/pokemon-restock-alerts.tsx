@@ -117,10 +117,10 @@ function PokemonRestockAlerts() {
           eligible seller does.
         </p>
         <p>
-          Once monitoring starts, AmaBot cycles through your products looking for a buyable offer that
-          satisfies every rule, and the live dashboard shows each observation as it happens. From there you
-          choose the outcome: alerts, so you buy manually, or optional automatic purchasing, so a match becomes
-          a checkout attempt without waiting for you.
+          Once monitoring starts, AmaBot monitors each individual product every few seconds, looking for a
+          buyable offer that satisfies every rule, while the live dashboard shows each observation as it
+          happens. From there you choose the outcome: alerts, so you buy manually, or optional automatic
+          purchasing, so a match becomes a checkout attempt without waiting for you.
         </p>
         <CardGrid>
           <InfoCard icon={Tag} title="Maximum price per product">
