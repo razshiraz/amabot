@@ -88,7 +88,7 @@ export function SiteFooter() {
             <Link to="/privacy" className="text-muted-foreground transition hover:text-foreground">Privacy Policy</Link>
             <Link to="/affiliate-disclosure" className="text-muted-foreground transition hover:text-foreground">Affiliate Disclosure</Link>
             <a
-              href="https://discord.gg/CT9F6ZYxhx"
+              href="https://discord.gg/XXFPVH386F"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Join AmaBot on Discord"
