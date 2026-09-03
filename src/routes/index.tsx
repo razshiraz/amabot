@@ -560,7 +560,7 @@ function Community() {
             label="Community & Support"
             desc="Ask questions, get setup help, share feedback, and connect with other AmaBot users."
             cta="Join Discord"
-            href="https://discord.gg/CT9F6ZYxhx"
+            href="https://discord.gg/XXFPVH386F"
           />
           <CommunityCard
             icon={<Send className="h-6 w-6" />}
